@@ -295,8 +295,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28C60DDB1E575C6B00D83C5B /* Build configuration list for PBXNativeTarget "garagee" */;
 			buildPhases = (
-				28894E5B1E676AA3005F8F05 /* ShellScript */,
 				11DC9D86F2C525377322E30A /* [CP] Check Pods Manifest.lock */,
+				28894E5B1E676AA3005F8F05 /* ShellScript */,
 				28C60DAC1E575C6A00D83C5B /* Sources */,
 				28C60DAD1E575C6A00D83C5B /* Frameworks */,
 				28C60DAE1E575C6A00D83C5B /* Resources */,

@@ -50,3 +50,14 @@ extension Mamrd: Persistable {
     }
     
 }
+
+extension Mamrd: Equatable {}
+
+func ==(lhs: Mamrd, rhs: Mamrd) -> Bool {
+    return lhs.id == rhs.id
+}
+
+extension Mamrd: Hashable {
+    
+    var hashValue: Int { return self.identity.hashValue }
+}

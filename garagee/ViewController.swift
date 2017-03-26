@@ -36,8 +36,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClicked(_ sender: Any) {
-        let newZmrdWithTheSameId = Zmrd(id: "zmrdicek", value: "hahahhaha")
-        self.test.zmrdi.addItem(newZmrdWithTheSameId)
+//        let newZmrdWithTheSameId = Zmrd(id: "zmrdicek", value: "hahahhaha")
+        let zmrds = [Zmrd(id: "zmrdicek", value: "hahahhaha"), Zmrd(id: "zmrdicek", value: "hahahhaha") , Zmrd(id: "zmrdicek", value: "hahahhaha") ,Zmrd(id: "zmrdicek", value: "hahahhaha")]
+        self.test.zmrdi.addItems(zmrds)
+        print(self.test.zmrdi.value())
         try? coreDataStack.managedObjectContext.rx.update(test)
         print(Mamrd.fetchAll())
     }
