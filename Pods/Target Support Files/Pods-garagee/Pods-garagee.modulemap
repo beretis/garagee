@@ -1,0 +1,6 @@
+framework module Pods_garagee {
+  umbrella header "Pods-garagee-umbrella.h"
+
+  export *
+  module * { export * }
+}

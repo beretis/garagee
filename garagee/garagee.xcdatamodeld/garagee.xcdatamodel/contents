@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1212" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Mamrd" representedClassName="." syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="zmrdi" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Zmrd" inverseName="mamrd" inverseEntity="Zmrd" syncable="YES"/>
+    </entity>
+    <entity name="Zmrd" representedClassName="." syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mamrd" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mamrd" inverseName="zmrdi" inverseEntity="Mamrd" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Mamrd" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Zmrd" positionX="-54" positionY="-9" width="128" height="90"/>
+    </elements>
+</model>
