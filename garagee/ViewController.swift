@@ -39,9 +39,9 @@ class ViewController: UIViewController {
 //        let newZmrdWithTheSameId = Zmrd(id: "zmrdicek", value: "hahahhaha")
         let zmrds = [Zmrd(id: "zmrdicek", value: "hahahhaha"), Zmrd(id: "zmrdicek", value: "hahahhaha") , Zmrd(id: "zmrdicek", value: "hahahhaha") ,Zmrd(id: "zmrdicek", value: "hahahhaha")]
         self.test.zmrdi.addItems(zmrds)
-        print(self.test.zmrdi.value())
+        print("ARRAY: \(self.test.zmrdi.value())")
         try? coreDataStack.managedObjectContext.rx.update(test)
-        print(Mamrd.fetchAll())
+        print("core data: \(Mamrd.fetchAll())")
     }
     @IBAction func createClicked(_ sender: Any) {
         self.test = Mamrd(id: "bacov kokot", value: "kokot")

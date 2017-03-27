@@ -44,10 +44,11 @@ public class PersistableOrEntity<P> :Equatable where P:Persistable, P: Hashable 
         return self.persistableValue!
     }
     
-    func getEntityValue() -> P.T {
+    func getEntityValue(context: NSManagedObjectContext? = coreDataStack.managedObjectContext) -> P.T {
+        guard context != nil else { fatalError("context cant be nil") }
         guard self.entityValue != nil || self.persistableValue != nil else { fatalError("this object needs to have value") }
         guard self.entityValue != nil else {
-            return self.persistableValue!.toEntity()
+            return self.persistableValue!.toEntity(context: context!)
         }
         return self.entityValue!
     }
@@ -105,6 +106,7 @@ public struct ToOneRelationship<P> where P:Persistable, P: Hashable {
     
 }
 
+/// To many relationship class , it guarantees unique items in items (based on Identity of persistable). Main problem was relationship creating infinite loop of dependencies, it was resolved by using PersistableOrEntity instead of Persistable so the Persistable's function toEntity isn't called every time.
 public struct TooManyRelationship<P> where P:Persistable, P:Hashable {
     public var key: String
     private var items: Array<PersistableOrEntity<P>>?
@@ -131,18 +133,20 @@ public struct TooManyRelationship<P> where P:Persistable, P:Hashable {
         if self.items == nil {
             self.items = []
         }
-        let value = items.map { item in
-            return PersistableOrEntity<P>(value: item)
+        for item in items {
+            self.addItem(item)
         }
-        self.items!.append(contentsOf: value)
     }
     
     mutating func addItem(_ item: P) {
-        if self.items == nil {
-            self.items = []
+        let persistableOrEntity = PersistableOrEntity<P>(value: item)
+        guard self.items != nil else {
+            return self.items = [persistableOrEntity]
         }
-        
-        self.items!.append(PersistableOrEntity<P>(value: item))
+        if let index = self.items?.index(of: persistableOrEntity) {
+            return self.items![index].setValue(value: item)
+        }
+        self.items!.append(persistableOrEntity)
     }
     
     func value() -> [P] {
@@ -151,17 +155,9 @@ public struct TooManyRelationship<P> where P:Persistable, P:Hashable {
             item.getPersistableValue()
             }.flatMap { $0 }
     }
-    
+    //TODO
     func interleave(ToEntity entity: NSManagedObject) {
         
-    }
-    
-    /// Saves only if there is something to save
-    ///
-    /// - Parameter entity: entity to which save
-    func update(ToEntity entity: NSManagedObject) {
-        guard !self.isEmpty else { return }
-        self.save(ToEntity: entity)
     }
     
     /// This funcion will save items array to entity no metter what...so if you empty array of items it weill delete your current data
@@ -171,7 +167,8 @@ public struct TooManyRelationship<P> where P:Persistable, P:Hashable {
         guard self.items != nil else {
             return
         }
-        let entities = Set(items!.map { $0.getEntityValue() })
+        //TODO: save only if differs from entity (might be too big burden for performance)
+        let entities = Set(items!.map { $0.getEntityValue(context: entity.managedObjectContext!) })
         entity.setValue(entities, forKey: self.key)
     }
     
