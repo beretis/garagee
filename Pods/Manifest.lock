@@ -1,51 +1,170 @@
 PODS:
-  - Alamofire (4.4.0)
-  - Locksmith (3.0.0)
-  - Moya/Core (8.0.3):
+  - Alamofire (4.6.0)
+  - BBCoordinators (0.1.0)
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Differentiator (3.0.2)
+  - Fabric (1.7.2)
+  - Firebase/Auth (4.8.0):
+    - Firebase/Core
+    - FirebaseAuth (= 4.4.1)
+  - Firebase/Core (4.8.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.13)
+  - Firebase/Database (4.8.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.1.3)
+  - Firebase/Messaging (4.8.0):
+    - Firebase/Core
+    - FirebaseMessaging (= 2.0.8)
+  - FirebaseAnalytics (4.0.5):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseAuth (4.4.1):
+    - FirebaseAnalytics (~> 4.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (4.0.13):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (4.1.3):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (2.0.8):
+    - FirebaseCore (~> 4.0)
+  - FirebaseMessaging (2.0.8):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/Logger (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.3)
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+  - GTMSessionFetcher/Core (1.1.12)
+  - leveldb-library (1.20)
+  - Localize-Swift (2.0.0)
+  - MBProgressHUD (1.1.0)
+  - Moya/Core (10.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.3):
+  - Moya/RxSwift (10.0.1):
     - Moya/Core
-    - RxSwift (~> 3.0)
-  - Result (3.2.1)
-  - RxCocoa (3.4.0):
-    - RxSwift (~> 3.4)
-  - RxDataSources (1.0.3):
-    - RxCocoa (~> 3.0)
-    - RxSwift (~> 3.0)
-  - RxSwift (3.4.0)
-  - SwiftDate (4.1.1)
-  - SwiftGen (4.2.0)
-  - SwiftyJSON (3.1.4)
-  - Swinject (2.1.0)
-  - SwinjectStoryboard (1.1.1):
-    - Swinject (~> 2.0)
+    - RxSwift (~> 4.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.1.1):
+    - NVActivityIndicatorView/Presenter (= 4.1.1)
+  - NVActivityIndicatorView/Presenter (4.1.1)
+  - Protobuf (3.5.0)
+  - Result (3.2.4)
+  - RxCocoa (4.1.0):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.0.2):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxKeyboard (0.7.1):
+    - RxCocoa (>= 4.0.0)
+    - RxSwift (>= 4.0.0)
+  - RxSwift (4.1.0)
+  - RxViewModel (5.1.0):
+    - RxSwift (~> 4.0)
+  - Sourcery (0.10.1)
+  - SwiftGen (5.2.1)
+  - SwiftLint (0.24.0)
+  - SwiftyJSON (4.0.0)
+  - Swinject (2.1.1)
+  - SwinjectStoryboard (1.1.2):
+    - Swinject (~> 2.1)
+  - Unbox (2.5.0)
 
 DEPENDENCIES:
-  - Locksmith
+  - BBCoordinators (from `git@github.com:blueberryapps/bb-ios-coordinators.git`, branch `protocol`)
+  - Crashlytics
+  - Fabric
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Database
+  - Firebase/Messaging
+  - Localize-Swift
+  - MBProgressHUD
   - Moya/RxSwift
+  - NVActivityIndicatorView
   - Result
+  - RxCocoa
   - RxDataSources
-  - SwiftDate
+  - RxKeyboard
+  - RxSwift
+  - RxViewModel
+  - Sourcery
   - SwiftGen
+  - SwiftLint
   - SwiftyJSON
   - Swinject
   - SwinjectStoryboard
+  - Unbox
+
+EXTERNAL SOURCES:
+  BBCoordinators:
+    :branch: protocol
+    :git: git@github.com:blueberryapps/bb-ios-coordinators.git
+
+CHECKOUT OPTIONS:
+  BBCoordinators:
+    :commit: 5d2ca693b720b8e1d7a59703d4280f3e026b155e
+    :git: git@github.com:blueberryapps/bb-ios-coordinators.git
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
-  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
-  RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
-  RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
-  RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
-  SwiftDate: ae615078806a322183e5f64e02e80ca8d939bf48
-  SwiftGen: b6bfed151243348e4603b91bf5bc4eb2486c9d5b
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
-  SwinjectStoryboard: 4c71c25f312322844d39ee06f0f523db7b9b10a3
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  BBCoordinators: f2c63ee898bb60af77920d4efa49d6591ec55783
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseAuth: dc0dd403beca5b2b016aac89c2d0b8dad1c81926
+  FirebaseCore: 3c02ec652db3d03fdc8bc6d9154af3e20d64b6f5
+  FirebaseDatabase: 7088bfc4af2cc00231bb36e1404fc2d7509eb4dc
+  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
+  FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: cc1fec49cdc8fabe645964de7c51c099a36c2aa8
+  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
+  RxKeyboard: eae01da0d1750e1c4852d20798279cf7b318c304
+  RxSwift: 4219941c1244c88002901bd87a69d3aea9ae71f0
+  RxViewModel: fb8b3f73dafb72f1fd02af2fb48e97f0133a838d
+  Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
+  SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
+  SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  Swinject: afea49fd95f392b41171669f165842879c48fad6
+  SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
+  Unbox: 30e437e6151a6de16139375fd4e8dd9a664cfbf7
 
-PODFILE CHECKSUM: b04286039ee66940b0f512e1b0e1d2b455d9424f
+PODFILE CHECKSUM: c13082de0ed249b78bd61bf44149f4b487e15083
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1

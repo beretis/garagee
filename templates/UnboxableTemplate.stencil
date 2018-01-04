@@ -1,0 +1,20 @@
+{% macro unboxVariable unboxVar %}{%if not unboxVar.isOptional%}try {%endif%}unboxer.unbox(key: "{% call unboxerKey unboxVar %}"){% endmacro %}
+{% macro unboxerKey varToUnbox %}{% if unboxVar.annotations.unboxerKey %}{{varToUnbox.annotations.unboxerKey}}{%else%}{{varToUnbox.name}}{% endif %}{% endmacro %}
+{% for type in types.implementing.AutoUnboxable %}
+// sourcery:inline:auto:{{type.name}}.UnboxableTemplate
+{% set spacing %}{% if type.parentName %}    {% endif %}{% endset %}
+{{spacing}}    {{ type.accessLevel }} required init(unboxer: Unboxer) throws {
+{{spacing}}        {% for variable in type.storedVariables %}
+                   {% if not variable.annotations.skipUnboxable %}
+{{spacing}}        self.{{ variable.name }} = {% call unboxVariable variable %}
+                   {% endif %}
+                   {% if variable.annotations.customUnboxable %}
+{{spacing}}         {{variable.annotations.customUnboxable}}
+                   {% endif %}
+{{spacing}}        {% endfor %}
+{{spacing}}    }
+// sourcery:end
+{% endfor %}
+
+
+

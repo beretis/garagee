@@ -1,0 +1,22 @@
+{
+  "name": "BBCoordinators",
+  "version": "0.1.0",
+  "summary": "An iOS Coordination framework for MVVM architecture.",
+  "description": "BBCoordinators is an iOS framework, that encapsulates all navigation logic in MVVM architecture into a single element - Coordinator. It automates most of the repetitive work around creating a working navigation flow and makes it easier to maintain.\n\nThe idea is based on blog post from Soroush Khanlou http://khanlou.com/2015/10/coordinators-redux/.",
+  "homepage": "https://github.com/blueberryapps/bb-ios-coordinators",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "David Lenský": "david.lensky.77@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/blueberryapps/bb-ios-coordinators.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "BBCoordinators/Classes/**/*"
+}

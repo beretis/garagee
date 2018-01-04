@@ -1,0 +1,43 @@
+{% for type in types.implementing.AutoDTO %}
+{% macro unboxVariable unboxVar %}{%if not unboxVar.isOptional%}try {%endif%}unboxer.unbox(key: "{% call unboxerKey unboxVar %}"){% endmacro %}
+{% macro unboxerKey varToUnbox %}{% if varToUnbox.annotations.unboxerKey %}{{varToUnbox.annotations.unboxerKey}}{%else%}{{varToUnbox.name}}{% endif %}{% endmacro %}
+
+// sourcery:inline:auto:{{type.name}}.DTOTemplate
+{% set spacing %}{% if type.parentName %}    {% endif %}{% endset %}
+{{spacing}}    convenience init(dto: {{type.name}}DTO, context: NSManagedObjectContext) {
+{{spacing}}    self.init(context: context)
+{% for variable in type.variables where variable.attributes.NSManaged %}
+{% if variable.annotations.toMany %}
+{{spacing}}    self.{{variable.name}} = {{variable.typeName}}(dto.{{variable.name}}.map { {{variable.annotations.toMany}}.init(dto: $0, context: context) })
+{% else %}
+{{spacing}}    self.{{variable.name}} = dto.{{variable.name}}
+{% endif %}
+{% endfor %}
+}
+// sourcery:file:{{type.name}}.dto.swift
+import Foundation
+import Unbox
+{% macro variableType var %}{% if var.annotations.toMany %}[{{var.annotations.toMany}}DTO] = []{% else %}{{var.typeName}}{% endif %}{% endmacro %}
+
+public class {{type.name}}DTO: AutoEquatable, AutoHashable {
+{% for variable in type.variables where variable.attributes.NSManaged %}
+    {% if not variable.type %} 
+    ///sourcery: skipHashing
+    {%endif%}
+    {% if variable.isOptional %} 
+    ///sourcery: skipHashing
+    {%endif%}
+    var {{variable.name}}: {% call variableType variable %}
+{% endfor %}
+
+{% set spacing %}{% if type.parentName %}    {% endif %}{% endset %}
+{% map type.storedVariables into parameters using tmpVar %}{{ tmpVar.name }}: {% if tmpVar.annotations.toMany %}Array<{{tmpVar.annotations.toMany}}DTO>{% else %}{{tmpVar.typeName}}{% endif %} {% endmap %}
+{{spacing}}    {{ type.accessLevel }} init({{ parameters|join:", " }}) { // swiftlint:disable:this line_length
+{{spacing}}        {% for variable in type.storedVariables %}
+{{spacing}}        self.{{ variable.name }} = {{ variable.name }}
+{{spacing}}        {% endfor %}
+{{spacing}}    }
+}
+
+// sourcery:end
+{%endfor%}

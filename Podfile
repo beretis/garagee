@@ -4,18 +4,33 @@
 target 'garagee' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-	
-    pod 'Swinject'
-    pod 'Moya/RxSwift'
-    pod 'RxDataSources'
-    pod 'SwiftGen'
-    pod 'Locksmith'
-    pod 'Result'
-    pod 'SwiftyJSON'
-    pod 'SwiftDate'
-    pod 'SwinjectStoryboard'
 
-  # Pods for garagee
+    pod 'SwiftGen'
+    pod 'SwiftyJSON'
+    pod 'SwinjectStoryboard'
+	pod 'SwiftGen'
+	pod 'Firebase/Core'
+	pod 'Firebase/Messaging'
+	pod 'Firebase/Database'
+	pod 'Firebase/Auth'
+	pod 'Fabric'
+	pod 'Crashlytics'
+	pod 'Swinject'
+	pod 'RxSwift'
+	pod 'RxCocoa'
+	pod 'Moya/RxSwift'
+	pod 'RxDataSources'
+	pod 'SwiftyJSON'
+	pod 'Unbox'
+	pod 'RxKeyboard'
+	pod 'MBProgressHUD'
+	pod 'RxViewModel'
+	pod 'SwiftLint'
+	pod 'Localize-Swift'
+	pod 'Result'
+	pod 'NVActivityIndicatorView'
+	pod 'Sourcery'
+	pod 'BBCoordinators', :git=> 'git@github.com:blueberryapps/bb-ios-coordinators.git', :branch => 'protocol'  # Pods for garagee
 
   target 'garageeTests' do
     inherit! :search_paths

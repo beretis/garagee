@@ -1,0 +1,6 @@
+framework module BBCoordinators {
+  umbrella header "BBCoordinators-umbrella.h"
+
+  export *
+  module * { export * }
+}
