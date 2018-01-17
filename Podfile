@@ -30,7 +30,7 @@ target 'garagee' do
 	pod 'Result'
 	pod 'NVActivityIndicatorView'
 	pod 'Sourcery'
-	pod 'BBCoordinators', :git=> 'git@github.com:blueberryapps/bb-ios-coordinators.git', :branch => 'protocol'  # Pods for garagee
+    pod 'RxFlow'
 
   target 'garageeTests' do
     inherit! :search_paths

@@ -82,11 +82,6 @@ class BaseViewController<VM: BaseViewModel>: UIViewController, UIGestureRecogniz
     }
 
     public func setupBackButton() {
-        guard (navigationController?.viewControllers.index(of: self) ?? 0) > 0 else {
-            return
-        }
-        let backButton = UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.done, target: nil, action: nil)
-        navigationItem.leftBarButtonItem = backButton
-        backButton.rx.tap.bind(to: self.viewModel.backButtonObserver).disposed(by: self.disposeBag)
+
     }
 }

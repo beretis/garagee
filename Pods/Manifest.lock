@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (4.6.0)
-  - BBCoordinators (0.1.0)
   - Crashlytics (3.9.3):
     - Fabric (~> 1.7.2)
   - Differentiator (3.0.2)
@@ -78,6 +77,9 @@ PODS:
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
+  - RxFlow (1.0.2):
+    - RxCocoa (>= 4.0.0)
+    - RxSwift (>= 4.0.0)
   - RxKeyboard (0.7.1):
     - RxCocoa (>= 4.0.0)
     - RxSwift (>= 4.0.0)
@@ -94,7 +96,6 @@ PODS:
   - Unbox (2.5.0)
 
 DEPENDENCIES:
-  - BBCoordinators (from `git@github.com:blueberryapps/bb-ios-coordinators.git`, branch `protocol`)
   - Crashlytics
   - Fabric
   - Firebase/Auth
@@ -108,6 +109,7 @@ DEPENDENCIES:
   - Result
   - RxCocoa
   - RxDataSources
+  - RxFlow
   - RxKeyboard
   - RxSwift
   - RxViewModel
@@ -119,19 +121,8 @@ DEPENDENCIES:
   - SwinjectStoryboard
   - Unbox
 
-EXTERNAL SOURCES:
-  BBCoordinators:
-    :branch: protocol
-    :git: git@github.com:blueberryapps/bb-ios-coordinators.git
-
-CHECKOUT OPTIONS:
-  BBCoordinators:
-    :commit: 5d2ca693b720b8e1d7a59703d4280f3e026b155e
-    :git: git@github.com:blueberryapps/bb-ios-coordinators.git
-
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  BBCoordinators: f2c63ee898bb60af77920d4efa49d6591ec55783
   Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
@@ -154,6 +145,7 @@ SPEC CHECKSUMS:
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: cc1fec49cdc8fabe645964de7c51c099a36c2aa8
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
+  RxFlow: 3677c64de1a2154597e206b56c2f2b84c98f70f2
   RxKeyboard: eae01da0d1750e1c4852d20798279cf7b318c304
   RxSwift: 4219941c1244c88002901bd87a69d3aea9ae71f0
   RxViewModel: fb8b3f73dafb72f1fd02af2fb48e97f0133a838d
@@ -165,6 +157,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 92e75763c3299cdf627bef98a5180dc894864336
   Unbox: 30e437e6151a6de16139375fd4e8dd9a664cfbf7
 
-PODFILE CHECKSUM: c13082de0ed249b78bd61bf44149f4b487e15083
+PODFILE CHECKSUM: fe5a9a6284c219ab66ea79d480a92523ed8f945f
 
 COCOAPODS: 1.3.1

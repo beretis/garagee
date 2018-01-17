@@ -12,11 +12,4 @@ import RxViewModel
 
 class BaseViewModel: RxViewModel {
 
-    weak var coordinator: CoordinatorType?
-
-    var backButtonObserver: AnyObserver<Void> {
-        return AnyObserver(eventHandler: { [unowned self] (event) in
-            self.coordinator?.removeSelf()
-        })
-    }
 }
