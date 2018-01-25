@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomersVC: UIViewController {
+class CustomersVC: BaseCollectionView<CustomersVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -65,6 +65,9 @@
 		28C60DC11E575C6A00D83C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C60DBF1E575C6A00D83C5B /* LaunchScreen.storyboard */; };
 		28C60DCC1E575C6B00D83C5B /* garageeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C60DCB1E575C6B00D83C5B /* garageeTests.swift */; };
 		28C60DD71E575C6B00D83C5B /* garageeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C60DD61E575C6B00D83C5B /* garageeUITests.swift */; };
+		28CF6D7120193538004314E9 /* OrdersFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF6D7020193538004314E9 /* OrdersFlow.swift */; };
+		28CF6D7320193547004314E9 /* CustomersFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF6D7220193547004314E9 /* CustomersFlow.swift */; };
+		28CF6D7520193570004314E9 /* PartsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF6D7420193570004314E9 /* PartsFlow.swift */; };
 		483EDF319621A186F9DE33DA /* Pods_garageeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B42FC222D8E5F5FCFCE59D /* Pods_garageeUITests.framework */; };
 		B0F87BCF1494973040105BEA /* Pods_garagee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1ADBE4212E6F7FD30987E7 /* Pods_garagee.framework */; };
 		ED0A208E9EB3B1F43A48F54E /* Pods_garageeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B5E37A41FAD3846E0FCF2D /* Pods_garageeTests.framework */; };
@@ -154,6 +157,9 @@
 		28C60DD21E575C6B00D83C5B /* garageeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = garageeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C60DD61E575C6B00D83C5B /* garageeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garageeUITests.swift; sourceTree = "<group>"; };
 		28C60DD81E575C6B00D83C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28CF6D7020193538004314E9 /* OrdersFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersFlow.swift; sourceTree = "<group>"; };
+		28CF6D7220193547004314E9 /* CustomersFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersFlow.swift; sourceTree = "<group>"; };
+		28CF6D7420193570004314E9 /* PartsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsFlow.swift; sourceTree = "<group>"; };
 		40B42FC222D8E5F5FCFCE59D /* Pods_garageeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_garageeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B568EF1D39406876C1D939 /* Pods-garageeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garageeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-garageeUITests/Pods-garageeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		630E9520E9CE4FC090FD755B /* Pods-garageeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garageeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-garageeUITests/Pods-garageeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -365,6 +371,9 @@
 			children = (
 				287FCB21200FFB3A0005461A /* GaragerStep.swift */,
 				287FCB23200FFD5E0005461A /* MainFlow.swift */,
+				28CF6D7020193538004314E9 /* OrdersFlow.swift */,
+				28CF6D7220193547004314E9 /* CustomersFlow.swift */,
+				28CF6D7420193570004314E9 /* PartsFlow.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -883,6 +892,7 @@
 				282B8FC01FFECC27000495DB /* PartsVC.swift in Sources */,
 				287EB1311FF5773C00AFE22A /* Managed.swift in Sources */,
 				287EB14D1FF57B5700AFE22A /* NavigationController.swift in Sources */,
+				28CF6D7320193547004314E9 /* CustomersFlow.swift in Sources */,
 				287EB1471FF57B5700AFE22A /* BaseViewModel.swift in Sources */,
 				282B8FC41FFECC40000495DB /* OrdersVC.swift in Sources */,
 				287FCB22200FFB3A0005461A /* GaragerStep.swift in Sources */,
@@ -912,7 +922,9 @@
 				28894E5D1E676AC9005F8F05 /* Storyboards.swift in Sources */,
 				28C60DBC1E575C6A00D83C5B /* garagee.xcdatamodeld in Sources */,
 				281C5D7D1FF6DDF60025538F /* Part+CoreDataProperties.swift in Sources */,
+				28CF6D7520193570004314E9 /* PartsFlow.swift in Sources */,
 				287EB14F1FF57B5700AFE22A /* ActivityIndicator.swift in Sources */,
+				28CF6D7120193538004314E9 /* OrdersFlow.swift in Sources */,
 				287EB1591FF57B7600AFE22A /* String+Convenience.swift in Sources */,
 				281C5D791FF6DDF60025538F /* Customer+CoreDataClass.swift in Sources */,
 				287FCB24200FFD5E0005461A /* MainFlow.swift in Sources */,

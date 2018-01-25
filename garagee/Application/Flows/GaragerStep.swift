@@ -11,6 +11,7 @@ import RxFlow
 
 enum GaragerStep: Step {
     
+    case dashboard
     case parts
     case partDetail
     case customers

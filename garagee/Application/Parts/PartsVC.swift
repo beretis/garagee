@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PartsVC: UIViewController {
+class PartsVC: BaseCollectionView<PartsVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()

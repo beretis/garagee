@@ -27,17 +27,37 @@ class MainFlow: Flow {
     func navigate(to step: Step) -> [Flowable] {
         guard let step = step as? GaragerStep else { return Flowable.noFlow }
         switch step {
-        case .orders:
+        case .dashboard:
             return navigateToOrders()
         default:
             return Flowable.noFlow
         }
     }
     
-    func navigateToOrders() -> [Flowable] {
-        let ordersVM = OrdersVM()
-        let ordersVC = OrdersVC.init(viewModel: ordersVM)
-        self.rootViewController.pushViewController(ordersVC, animated: true)
-        return [Flowable(nextPresentable: ordersVC, nextStepper: ordersVM)]
+    private func navigateToOrders () -> [Flowable] {
+        let tabbarController = UITabBarController()
+        let partsFlow = PartsFlow()
+        let ordersFlow = OrdersFlow()
+        let customersFlow = CustomersFlow()
+        
+        Flows.whenReady(flow1: partsFlow, flow2: ordersFlow, flow3: customersFlow, block: { [unowned self] (root1: UINavigationController, root2: UINavigationController, root3: UINavigationController) in
+            let tabBarItem1 = UITabBarItem(title: "Wishlist", image: UIImage(named: "wishlist"), selectedImage: nil)
+            let tabBarItem2 = UITabBarItem(title: "Watched", image: UIImage(named: "watched"), selectedImage: nil)
+            let tabBarItem3 = UITabBarItem(title: "Sperm", image: UIImage(named: "sperm"), selectedImage: nil)
+
+            root1.tabBarItem = tabBarItem1
+            root1.title = "Wishlist"
+            root2.tabBarItem = tabBarItem2
+            root2.title = "Watched"
+            root3.tabBarItem = tabBarItem3
+            root3.title = "Sperm"
+            
+            tabbarController.setViewControllers([root1, root2, root3], animated: false)
+            self.rootViewController.pushViewController(tabbarController, animated: true)
+        })
+        
+        return ([Flowable(nextPresentable: partsFlow, nextStepper: wishlistStepper),
+                 Flowable(nextPresentable: watchedFlow, nextStepper: OneStepper(withSingleStep: DemoStep.movieList))])
     }
+    
 }
