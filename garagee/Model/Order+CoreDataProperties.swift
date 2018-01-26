@@ -16,11 +16,11 @@ extension Order {
         return NSFetchRequest<Order>(entityName: "Order")
     }
 
-    @NSManaged public var createdAt: Date?
-    @NSManaged public var id: String?
-    @NSManaged public var name: String?
+    @NSManaged public var createdAt: Date
+    @NSManaged public var id: String
+    @NSManaged public var name: String
     @NSManaged public var repeatIntervalDays: Int
-    @NSManaged public var subject: String?
+    @NSManaged public var subject: String
     @NSManaged public var car: Car?
     @NSManaged public var customer: Customer?
 	///sourcery: toMany = "Part"

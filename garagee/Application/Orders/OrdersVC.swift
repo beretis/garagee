@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class OrdersVC: BaseCollectionView<OrdersVM> {
+
+	override var cellClasses: [UICollectionViewCell.Type] { return [OrderCell.self] }
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("this shit is visible")
     }
-    
+
+	override func setupRx() {
+		super.setupRx()
+		self.viewModel.sections.asObservable().bind(to: self.collectionView.rx.items(dataSource: self.dataSource))
+			.disposed(by: self.disposeBag)
+//		self.collectionView.rx.itemSelected.bind(to: self.viewModel.selectedIndexPath)
+//			.disposed(by: self.disposeBag)
+	}
+
 }

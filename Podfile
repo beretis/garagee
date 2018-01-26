@@ -7,7 +7,6 @@ target 'garagee' do
 
     pod 'SwiftGen'
     pod 'SwiftyJSON'
-    pod 'SwinjectStoryboard'
 	pod 'SwiftGen'
 	pod 'Firebase/Core'
 	pod 'Firebase/Messaging'

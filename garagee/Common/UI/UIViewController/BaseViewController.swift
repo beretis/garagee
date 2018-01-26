@@ -49,18 +49,22 @@ class BaseViewController<VM: BaseViewModel>: UIViewController, UIGestureRecogniz
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.activeDisposeBag = DisposeBag()
-		self.viewModel.active = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupBackButton()
-		self.viewModel.active = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+		self.viewModel.active = true
     }
+
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		self.viewModel.active = false
+	}
 
     private func setupKeyboardDismiss() {
 
@@ -73,7 +77,7 @@ class BaseViewController<VM: BaseViewModel>: UIViewController, UIGestureRecogniz
                 } else {
                     self.view.removeGestureRecognizer(self.tap)
                 }
-        }).addDisposableTo(activeDisposeBag)
+			}).disposed(by: activeDisposeBag)
 
     }
 

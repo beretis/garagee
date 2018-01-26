@@ -35,7 +35,7 @@ class OrdersFlow: Flow {
     }
     
     func navigateToOrders() -> [Flowable] {
-        let ordersVM = OrdersVM()
+		let ordersVM = OrdersVM(coreDataService: DI.get()!)
         let ordersVC = OrdersVC.init(viewModel: ordersVM)
         self.rootViewController.pushViewController(ordersVC, animated: true)
         return [Flowable(nextPresentable: ordersVC, nextStepper: ordersVM)]

@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = root
         })
         
-        coordinator.coordinate(flow: mainFlow, withStepper: OneStepper(withSingleStep: GaragerStep.orders))
+        coordinator.coordinate(flow: mainFlow, withStepper: OneStepper(withSingleStep: GaragerStep.dashboard))
         
         return true
     }

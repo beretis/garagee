@@ -40,24 +40,25 @@ class MainFlow: Flow {
         let ordersFlow = OrdersFlow()
         let customersFlow = CustomersFlow()
         
-        Flows.whenReady(flow1: partsFlow, flow2: ordersFlow, flow3: customersFlow, block: { [unowned self] (root1: UINavigationController, root2: UINavigationController, root3: UINavigationController) in
-            let tabBarItem1 = UITabBarItem(title: "Wishlist", image: UIImage(named: "wishlist"), selectedImage: nil)
-            let tabBarItem2 = UITabBarItem(title: "Watched", image: UIImage(named: "watched"), selectedImage: nil)
-            let tabBarItem3 = UITabBarItem(title: "Sperm", image: UIImage(named: "sperm"), selectedImage: nil)
+        Flows.whenReady(flow1: ordersFlow, flow2: partsFlow, flow3: customersFlow, block: { [unowned self] (root1: UINavigationController, root2: UINavigationController, root3: UINavigationController) in
+            let tabBarItem1 = UITabBarItem(title: "Orders", image: UIImage(named: "wishlist"), selectedImage: nil)
+            let tabBarItem2 = UITabBarItem(title: "Customers", image: UIImage(named: "watched"), selectedImage: nil)
+            let tabBarItem3 = UITabBarItem(title: "Parts", image: UIImage(named: "sperm"), selectedImage: nil)
 
             root1.tabBarItem = tabBarItem1
-            root1.title = "Wishlist"
+            root1.title = "Orders"
             root2.tabBarItem = tabBarItem2
-            root2.title = "Watched"
+            root2.title = "Customers"
             root3.tabBarItem = tabBarItem3
-            root3.title = "Sperm"
+            root3.title = "Parts"
             
             tabbarController.setViewControllers([root1, root2, root3], animated: false)
             self.rootViewController.pushViewController(tabbarController, animated: true)
         })
         
-        return ([Flowable(nextPresentable: partsFlow, nextStepper: wishlistStepper),
-                 Flowable(nextPresentable: watchedFlow, nextStepper: OneStepper(withSingleStep: DemoStep.movieList))])
+        return ([Flowable(nextPresentable: ordersFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.orders)),
+                 Flowable(nextPresentable: customersFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.customers)),
+				Flowable(nextPresentable: partsFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.parts))])
     }
     
 }
