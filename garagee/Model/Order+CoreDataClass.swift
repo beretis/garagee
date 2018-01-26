@@ -17,6 +17,7 @@ public class Order: NSManagedObject, AutoDTO {
     convenience init(dto: OrderDTO, context: NSManagedObjectContext) {
     self.init(context: context)
     self.createdAt = dto.createdAt
+    self.price = dto.price
     self.id = dto.id
     self.name = dto.name
     self.repeatIntervalDays = dto.repeatIntervalDays

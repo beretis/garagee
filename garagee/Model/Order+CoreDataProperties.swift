@@ -17,6 +17,7 @@ extension Order {
     }
 
     @NSManaged public var createdAt: Date
+    @NSManaged public var price: Int
     @NSManaged public var id: String
     @NSManaged public var name: String
     @NSManaged public var repeatIntervalDays: Int

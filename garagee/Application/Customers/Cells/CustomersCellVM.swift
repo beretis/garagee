@@ -10,7 +10,14 @@ import Foundation
 import RxSwift
 
 class CustomersCellVM: CellVM {
-	var cellClass: UICollectionViewCell.Type { return PartsCell.self }
+    var cellClass: UICollectionViewCell.Type { return CustomersCell.self }
+    //dependency
+    let model: CustomerDTO
+    //output
+    
+    init(model: CustomerDTO) {
+        self.model = model
+    }
 
 
 }

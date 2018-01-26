@@ -6,15 +6,12 @@ import Unbox
 
 public class OrderDTO: AutoEquatable, AutoHashable {
     ///sourcery: skipHashing
-    ///sourcery: skipHashing
-    var createdAt: Date?
-    ///sourcery: skipHashing
-    var id: String?
-    ///sourcery: skipHashing
-    var name: String?
+    var createdAt: Date
+    var price: Int
+    var id: String
+    var name: String
     var repeatIntervalDays: Int
-    ///sourcery: skipHashing
-    var subject: String?
+    var subject: String
     ///sourcery: skipHashing
     var car: Car?
     ///sourcery: skipHashing
@@ -22,8 +19,9 @@ public class OrderDTO: AutoEquatable, AutoHashable {
     ///sourcery: skipHashing
     var usedParts: [PartDTO] = []
 
-    public init(createdAt: Date? , id: String? , name: String? , repeatIntervalDays: Int , subject: String? , car: Car? , customer: Customer? , usedParts: Array<PartDTO> ) { // swiftlint:disable:this line_length
+    public init(createdAt: Date , price: Int , id: String , name: String , repeatIntervalDays: Int , subject: String , car: Car? , customer: Customer? , usedParts: Array<PartDTO> ) { // swiftlint:disable:this line_length
         self.createdAt = createdAt
+        self.price = price
         self.id = id
         self.name = name
         self.repeatIntervalDays = repeatIntervalDays

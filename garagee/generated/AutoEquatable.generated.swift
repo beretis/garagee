@@ -58,11 +58,12 @@ public func == (lhs: CustomerDTO, rhs: CustomerDTO) -> Bool {
 // MARK: - OrderDTO AutoEquatable
 extension OrderDTO: Equatable {}
 public func == (lhs: OrderDTO, rhs: OrderDTO) -> Bool {
-    guard compareOptionals(lhs: lhs.createdAt, rhs: rhs.createdAt, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.id, rhs: rhs.id, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.name, rhs: rhs.name, compare: ==) else { return false }
+    guard lhs.createdAt == rhs.createdAt else { return false }
+    guard lhs.price == rhs.price else { return false }
+    guard lhs.id == rhs.id else { return false }
+    guard lhs.name == rhs.name else { return false }
     guard lhs.repeatIntervalDays == rhs.repeatIntervalDays else { return false }
-    guard compareOptionals(lhs: lhs.subject, rhs: rhs.subject, compare: ==) else { return false }
+    guard lhs.subject == rhs.subject else { return false }
     guard compareOptionals(lhs: lhs.car, rhs: rhs.car, compare: ==) else { return false }
     guard compareOptionals(lhs: lhs.customer, rhs: rhs.customer, compare: ==) else { return false }
     guard lhs.usedParts == rhs.usedParts else { return false }

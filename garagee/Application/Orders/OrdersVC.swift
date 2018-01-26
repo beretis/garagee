@@ -29,5 +29,9 @@ class OrdersVC: BaseCollectionView<OrdersVM> {
 //		self.collectionView.rx.itemSelected.bind(to: self.viewModel.selectedIndexPath)
 //			.disposed(by: self.disposeBag)
 	}
+    
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 80)
+    }
 
 }

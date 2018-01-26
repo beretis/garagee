@@ -17,13 +17,13 @@ extension Car {
     }
 
     @NSManaged public var aditionalInfo: String?
-    @NSManaged public var brand: String?
+    @NSManaged public var brand: String
     @NSManaged public var color: String?
-    @NSManaged public var firstRegistration: Date?
-    @NSManaged public var id: String?
+    @NSManaged public var firstRegistration: Date
+    @NSManaged public var id: String
     @NSManaged public var lastService: Date?
     @NSManaged public var milage: Int32
-    @NSManaged public var model: String?
+    @NSManaged public var model: String
     @NSManaged public var productionDate: Date?
     @NSManaged public var techInspection: Date?
     @NSManaged public var type: String?

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28095DD9201B50BC0064A42C /* CreateOrderFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28095DD8201B50BC0064A42C /* CreateOrderFlow.swift */; };
+		28095DDB201B50C60064A42C /* CreateCustomerFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28095DDA201B50C60064A42C /* CreateCustomerFlow.swift */; };
+		28095DDD201B50D10064A42C /* CreatePartFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28095DDC201B50D10064A42C /* CreatePartFlow.swift */; };
 		281C5D511FF6D6FE0025538F /* SourceryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D501FF6D6FE0025538F /* SourceryProtocols.swift */; };
 		281C5D581FF6D76D0025538F /* AutoHashable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D521FF6D76D0025538F /* AutoHashable.generated.swift */; };
 		281C5D591FF6D76D0025538F /* Customer.dto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D531FF6D76D0025538F /* Customer.dto.swift */; };
@@ -103,6 +106,9 @@
 /* Begin PBXFileReference section */
 		04FA69DC69C2DD5C0A1DA502 /* Pods-garagee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garagee.release.xcconfig"; path = "Pods/Target Support Files/Pods-garagee/Pods-garagee.release.xcconfig"; sourceTree = "<group>"; };
 		124DD83F338258A51A073CC4 /* Pods-garagee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garagee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-garagee/Pods-garagee.debug.xcconfig"; sourceTree = "<group>"; };
+		28095DD8201B50BC0064A42C /* CreateOrderFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderFlow.swift; sourceTree = "<group>"; };
+		28095DDA201B50C60064A42C /* CreateCustomerFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerFlow.swift; sourceTree = "<group>"; };
+		28095DDC201B50D10064A42C /* CreatePartFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartFlow.swift; sourceTree = "<group>"; };
 		281C5D501FF6D6FE0025538F /* SourceryProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceryProtocols.swift; sourceTree = "<group>"; };
 		281C5D521FF6D76D0025538F /* AutoHashable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoHashable.generated.swift; sourceTree = "<group>"; };
 		281C5D531FF6D76D0025538F /* Customer.dto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.dto.swift; sourceTree = "<group>"; };
@@ -388,6 +394,9 @@
 				28CF6D7020193538004314E9 /* OrdersFlow.swift */,
 				28CF6D7220193547004314E9 /* CustomersFlow.swift */,
 				28CF6D7420193570004314E9 /* PartsFlow.swift */,
+				28095DD8201B50BC0064A42C /* CreateOrderFlow.swift */,
+				28095DDA201B50C60064A42C /* CreateCustomerFlow.swift */,
+				28095DDC201B50D10064A42C /* CreatePartFlow.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -958,6 +967,7 @@
 				287EB1491FF57B5700AFE22A /* BaseCollectionView.swift in Sources */,
 				287EB1351FF5773C00AFE22A /* ErrorHandling.swift in Sources */,
 				28D7399B2019F4F200504F93 /* OrderCellVM.swift in Sources */,
+				28095DDD201B50D10064A42C /* CreatePartFlow.swift in Sources */,
 				287EB14E1FF57B5700AFE22A /* BaseViewController.swift in Sources */,
 				28D739A2201A002900504F93 /* Container.swift in Sources */,
 				287FCB1B200FFA0B0005461A /* PartsVM.swift in Sources */,
@@ -998,8 +1008,10 @@
 				28D7399D2019F50200504F93 /* CustomersCellVM.swift in Sources */,
 				281C5D581FF6D76D0025538F /* AutoHashable.generated.swift in Sources */,
 				28894E5D1E676AC9005F8F05 /* Storyboards.swift in Sources */,
+				28095DD9201B50BC0064A42C /* CreateOrderFlow.swift in Sources */,
 				28C60DBC1E575C6A00D83C5B /* garagee.xcdatamodeld in Sources */,
 				281C5D7D1FF6DDF60025538F /* Part+CoreDataProperties.swift in Sources */,
+				28095DDB201B50C60064A42C /* CreateCustomerFlow.swift in Sources */,
 				28CF6D7520193570004314E9 /* PartsFlow.swift in Sources */,
 				28D739942019EF1A00504F93 /* PartsCell.swift in Sources */,
 				287EB14F1FF57B5700AFE22A /* ActivityIndicator.swift in Sources */,

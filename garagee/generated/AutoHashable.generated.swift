@@ -63,7 +63,11 @@ extension CustomerDTO: Hashable {
 extension OrderDTO: Hashable {
     public var hashValue: Int {
         return combineHashes([
+            price.hashValue,
+            id.hashValue,
+            name.hashValue,
             repeatIntervalDays.hashValue,
+            subject.hashValue,
             0])
     }
 }

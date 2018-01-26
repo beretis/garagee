@@ -16,8 +16,9 @@ extension Part {
         return NSFetchRequest<Part>(entityName: "Part")
     }
 
+    @NSManaged public var brand: String
     @NSManaged public var code: String?
-    @NSManaged public var id: String?
+    @NSManaged public var id: String
     @NSManaged public var name: String?
     @NSManaged public var warrantyDays: Int
     @NSManaged public var order: Order?
