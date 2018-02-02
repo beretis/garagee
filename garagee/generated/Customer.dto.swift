@@ -7,12 +7,9 @@ import Unbox
 public class CustomerDTO: AutoEquatable, AutoHashable {
     ///sourcery: skipHashing
     var email: String?
-    ///sourcery: skipHashing
-    var firstName: String?
-    ///sourcery: skipHashing
-    var id: String?
-    ///sourcery: skipHashing
-    var lastName: String?
+    var firstName: String
+    var id: String
+    var lastName: String
     ///sourcery: skipHashing
     var phoneNumber: String?
     ///sourcery: skipHashing
@@ -20,7 +17,7 @@ public class CustomerDTO: AutoEquatable, AutoHashable {
     ///sourcery: skipHashing
     var orders: [OrderDTO] = []
 
-    public init(email: String? , firstName: String? , id: String? , lastName: String? , phoneNumber: String? , cars: Array<CarDTO> , orders: Array<OrderDTO> ) { // swiftlint:disable:this line_length
+    public init(email: String? , firstName: String , id: String , lastName: String , phoneNumber: String? , cars: Array<CarDTO> , orders: Array<OrderDTO> ) { // swiftlint:disable:this line_length
         self.email = email
         self.firstName = firstName
         self.id = id

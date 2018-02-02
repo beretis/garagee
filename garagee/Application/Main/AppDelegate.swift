@@ -31,15 +31,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator.rx.didNavigate.subscribe(onNext: { (flow, step) in
             print ("did navigate to flow=\(flow) and step=\(step)")
         }).disposed(by: self.disposeBag)
-        
-        Flows.whenReady(flow: mainFlow, block: { [unowned window] (root) in
-            window.rootViewController = root
-        })
-        
+	
+//        Flows.whenReady(flow: mainFlow, block: { [unowned window] (root) in
+//            window.rootViewController = root
+//        })
+
+
         coordinator.coordinate(flow: mainFlow, withStepper: OneStepper(withSingleStep: GaragerStep.dashboard))
-        
+		window.rootViewController = coordinator.container
+
+
+		UINavigationBar.appearance().barTintColor = .white
+		UINavigationBar.appearance().tintColor = .black
+		UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+		UINavigationBar.appearance().isTranslucent = false
+
         return true
     }
 
 }
+
+
 

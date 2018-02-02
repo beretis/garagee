@@ -17,30 +17,29 @@ class MainFlow: Flow {
         return self.rootViewController
     }
     
-    private let rootViewController: UINavigationController
+    private let rootViewController: UITabBarController
 
     
     init() {
-        self.rootViewController = UINavigationController()
+        self.rootViewController = UITabBarController()
     }
     
-    func navigate(to step: Step) -> [Flowable] {
-        guard let step = step as? GaragerStep else { return Flowable.noFlow }
+    func navigate(to step: Step) -> NextFlowItems {
+        guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
         switch step {
         case .dashboard:
             return navigateToOrders()
         default:
-            return Flowable.noFlow
+            return NextFlowItems.stepNotHandled
         }
     }
     
-    private func navigateToOrders () -> [Flowable] {
-        let tabbarController = UITabBarController()
+    private func navigateToOrders () -> NextFlowItems {
         let partsFlow = PartsFlow()
         let ordersFlow = OrdersFlow()
         let customersFlow = CustomersFlow()
         
-        Flows.whenReady(flow1: ordersFlow, flow2: partsFlow, flow3: customersFlow, block: { [unowned self] (root1: UINavigationController, root2: UINavigationController, root3: UINavigationController) in
+        Flows.whenReady(flow1: ordersFlow, flow2: customersFlow, flow3: partsFlow, block: { [unowned self] (root1: UINavigationController, root2: UINavigationController, root3: UINavigationController) in
             let tabBarItem1 = UITabBarItem(title: "Orders", image: UIImage(named: "wishlist"), selectedImage: nil)
             let tabBarItem2 = UITabBarItem(title: "Customers", image: UIImage(named: "watched"), selectedImage: nil)
             let tabBarItem3 = UITabBarItem(title: "Parts", image: UIImage(named: "sperm"), selectedImage: nil)
@@ -52,13 +51,11 @@ class MainFlow: Flow {
             root3.tabBarItem = tabBarItem3
             root3.title = "Parts"
             
-            tabbarController.setViewControllers([root1, root2, root3], animated: false)
-            self.rootViewController.pushViewController(tabbarController, animated: true)
+            self.rootViewController.setViewControllers([root1, root2, root3], animated: false)
         })
-        
-        return ([Flowable(nextPresentable: ordersFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.orders)),
-                 Flowable(nextPresentable: customersFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.customers)),
-				Flowable(nextPresentable: partsFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.parts))])
+		return NextFlowItems.multiple(flowItems: [NextFlowItem(nextPresentable: ordersFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.orders)),
+										   NextFlowItem(nextPresentable: customersFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.customers)),
+										   NextFlowItem(nextPresentable: partsFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.parts))])
     }
     
 }

@@ -14,9 +14,18 @@ class PartsCellVM: CellVM {
     //dependency
     let model: PartDTO
     //output
-    
+	var nameObs: Observable<String> = .never()
+	var brandObs: Observable<String> = .never()
+	var priceObs: Observable<String> = .never()
     
     init(model: PartDTO) {
         self.model = model
+		self.setupRx()
     }
+
+	private func setupRx() {
+		self.nameObs = Observable.just(model.name)
+		self.brandObs = Observable.just(model.brand)
+		self.priceObs = Observable.just(String(model.price))
+	}
 }

@@ -51,6 +51,10 @@
 		287EB15D1FF57B7600AFE22A /* UICollectionView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1561FF57B7600AFE22A /* UICollectionView+Convenience.swift */; };
 		287EB15E1FF57B7600AFE22A /* UICollectionView+ReusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1571FF57B7600AFE22A /* UICollectionView+ReusCell.swift */; };
 		287EB15F1FF57B7600AFE22A /* UITableView+ReusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1581FF57B7600AFE22A /* UITableView+ReusCell.swift */; };
+		287F847B201F31EE0058503B /* CreatePartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F8479201F31EE0058503B /* CreatePartVC.swift */; };
+		287F847C201F31EE0058503B /* CreatePartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287F847A201F31EE0058503B /* CreatePartVC.xib */; };
+		287F847E201F3AC00058503B /* CreatePartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F847D201F3AC00058503B /* CreatePartVM.swift */; };
+		287F848020208D8E0058503B /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F847F20208D8E0058503B /* ContainerVC.swift */; };
 		287FCB1B200FFA0B0005461A /* PartsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FCB1A200FFA0B0005461A /* PartsVM.swift */; };
 		287FCB1D200FFA170005461A /* CustomersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FCB1C200FFA170005461A /* CustomersVM.swift */; };
 		287FCB1F200FFA210005461A /* OrdersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FCB1E200FFA210005461A /* OrdersVM.swift */; };
@@ -150,6 +154,10 @@
 		287EB1561FF57B7600AFE22A /* UICollectionView+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Convenience.swift"; sourceTree = "<group>"; };
 		287EB1571FF57B7600AFE22A /* UICollectionView+ReusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReusCell.swift"; sourceTree = "<group>"; };
 		287EB1581FF57B7600AFE22A /* UITableView+ReusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusCell.swift"; sourceTree = "<group>"; };
+		287F8479201F31EE0058503B /* CreatePartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartVC.swift; sourceTree = "<group>"; };
+		287F847A201F31EE0058503B /* CreatePartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePartVC.xib; sourceTree = "<group>"; };
+		287F847D201F3AC00058503B /* CreatePartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartVM.swift; sourceTree = "<group>"; };
+		287F847F20208D8E0058503B /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		287FCB1A200FFA0B0005461A /* PartsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsVM.swift; sourceTree = "<group>"; };
 		287FCB1C200FFA170005461A /* CustomersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersVM.swift; sourceTree = "<group>"; };
 		287FCB1E200FFA210005461A /* OrdersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVM.swift; sourceTree = "<group>"; };
@@ -272,6 +280,7 @@
 		282B8FBE1FFECB34000495DB /* Parts */ = {
 			isa = PBXGroup;
 			children = (
+				287F8478201F31990058503B /* Create */,
 				28D739912019EF0600504F93 /* Cells */,
 				282B8FBF1FFECC27000495DB /* PartsVC.swift */,
 				287FCB1A200FFA0B0005461A /* PartsVM.swift */,
@@ -384,6 +393,16 @@
 				287EB1581FF57B7600AFE22A /* UITableView+ReusCell.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		287F8478201F31990058503B /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				287F8479201F31EE0058503B /* CreatePartVC.swift */,
+				287F847A201F31EE0058503B /* CreatePartVC.xib */,
+				287F847D201F3AC00058503B /* CreatePartVM.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 		287FCB20200FFB270005461A /* Flows */ = {
@@ -532,6 +551,7 @@
 				287EB1441FF57B5600AFE22A /* ActivityIndicator */,
 				287EB13B1FF57B5400AFE22A /* UICollectionView */,
 				287EB1421FF57B5600AFE22A /* UIViewController */,
+				287F847F20208D8E0058503B /* ContainerVC.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -700,6 +720,7 @@
 				28C60DBE1E575C6A00D83C5B /* Assets.xcassets in Resources */,
 				28D7398B2019EEE400504F93 /* OrderCell.xib in Resources */,
 				28D739902019EEFF00504F93 /* CustomersCell.xib in Resources */,
+				287F847C201F31EE0058503B /* CreatePartVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,7 +805,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxViewModel/RxViewModel.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -809,7 +829,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -975,6 +994,7 @@
 				287EB15C1FF57B7600AFE22A /* UIButton+BackgroundColor.swift in Sources */,
 				281C5D7B1FF6DDF60025538F /* Customer+CoreDataProperties.swift in Sources */,
 				28C60DB61E575C6A00D83C5B /* ViewController.swift in Sources */,
+				287F847E201F3AC00058503B /* CreatePartVM.swift in Sources */,
 				282B8FC01FFECC27000495DB /* PartsVC.swift in Sources */,
 				287EB1311FF5773C00AFE22A /* Managed.swift in Sources */,
 				28CF6D7320193547004314E9 /* CustomersFlow.swift in Sources */,
@@ -996,6 +1016,7 @@
 				281C5D511FF6D6FE0025538F /* SourceryProtocols.swift in Sources */,
 				282B8FC71FFEDD70000495DB /* TabCoordinator.swift in Sources */,
 				287EB1331FF5773C00AFE22A /* FetchedResultsControllerSectionObserver.swift in Sources */,
+				287F847B201F31EE0058503B /* CreatePartVC.swift in Sources */,
 				281C5D5B1FF6D76D0025538F /* Car.dto.swift in Sources */,
 				287EB15F1FF57B7600AFE22A /* UITableView+ReusCell.swift in Sources */,
 				287EB15D1FF57B7600AFE22A /* UICollectionView+Convenience.swift in Sources */,
@@ -1017,6 +1038,7 @@
 				287EB14F1FF57B5700AFE22A /* ActivityIndicator.swift in Sources */,
 				28CF6D7120193538004314E9 /* OrdersFlow.swift in Sources */,
 				287EB1591FF57B7600AFE22A /* String+Convenience.swift in Sources */,
+				287F848020208D8E0058503B /* ContainerVC.swift in Sources */,
 				281C5D791FF6DDF60025538F /* Customer+CoreDataClass.swift in Sources */,
 				287FCB24200FFD5E0005461A /* MainFlow.swift in Sources */,
 				287EB15A1FF57B7600AFE22A /* String.swift in Sources */,

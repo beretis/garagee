@@ -24,21 +24,21 @@ class CustomersFlow: Flow {
         self.rootViewController = UINavigationController()
     }
     
-    func navigate(to step: Step) -> [Flowable] {
-        guard let step = step as? GaragerStep else { return Flowable.noFlow }
+    func navigate(to step: Step) -> NextFlowItems {
+        guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
         switch step {
         case .customers:
             return navigateToCustomers()
         default:
-            return Flowable.noFlow
+            return NextFlowItems.stepNotHandled
         }
     }
     
-    func navigateToCustomers() -> [Flowable] {
-        let customersVM = CustomersVM()
+    func navigateToCustomers() -> NextFlowItems {
+		let customersVM = CustomersVM(coreDataService: DI.get()!)
         let customersVC = CustomersVC.init(viewModel: customersVM)
         self.rootViewController.pushViewController(customersVC, animated: true)
-        return [Flowable(nextPresentable: customersVC, nextStepper: customersVM)]
+        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: customersVC, nextStepper: customersVM))
     }
 }
 

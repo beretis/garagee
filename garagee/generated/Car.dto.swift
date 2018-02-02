@@ -7,21 +7,17 @@ import Unbox
 public class CarDTO: AutoEquatable, AutoHashable {
     ///sourcery: skipHashing
     var aditionalInfo: String?
-    ///sourcery: skipHashing
-    var brand: String?
+    var brand: String
     ///sourcery: skipHashing
     var color: String?
     ///sourcery: skipHashing
-    ///sourcery: skipHashing
-    var firstRegistration: Date?
-    ///sourcery: skipHashing
-    var id: String?
+    var firstRegistration: Date
+    var id: String
     ///sourcery: skipHashing
     ///sourcery: skipHashing
     var lastService: Date?
     var milage: Int32
-    ///sourcery: skipHashing
-    var model: String?
+    var model: String
     ///sourcery: skipHashing
     ///sourcery: skipHashing
     var productionDate: Date?
@@ -35,7 +31,7 @@ public class CarDTO: AutoEquatable, AutoHashable {
     ///sourcery: skipHashing
     var owner: Customer?
 
-    public init(aditionalInfo: String? , brand: String? , color: String? , firstRegistration: Date? , id: String? , lastService: Date? , milage: Int32 , model: String? , productionDate: Date? , techInspection: Date? , type: String? , orders: Array<OrderDTO> , owner: Customer? ) { // swiftlint:disable:this line_length
+    public init(aditionalInfo: String? , brand: String , color: String? , firstRegistration: Date , id: String , lastService: Date? , milage: Int32 , model: String , productionDate: Date? , techInspection: Date? , type: String? , orders: Array<OrderDTO> , owner: Customer? ) { // swiftlint:disable:this line_length
         self.aditionalInfo = aditionalInfo
         self.brand = brand
         self.color = color

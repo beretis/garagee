@@ -48,7 +48,10 @@ fileprivate func hashDictionary<T: Hashable, U: Hashable>(_ dictionary: [T: U]?)
 extension CarDTO: Hashable {
     public var hashValue: Int {
         return combineHashes([
+            brand.hashValue,
+            id.hashValue,
             milage.hashValue,
+            model.hashValue,
             0])
     }
 }
@@ -56,6 +59,9 @@ extension CarDTO: Hashable {
 extension CustomerDTO: Hashable {
     public var hashValue: Int {
         return combineHashes([
+            firstName.hashValue,
+            id.hashValue,
+            lastName.hashValue,
             0])
     }
 }
@@ -75,6 +81,10 @@ extension OrderDTO: Hashable {
 extension PartDTO: Hashable {
     public var hashValue: Int {
         return combineHashes([
+            brand.hashValue,
+            id.hashValue,
+            name.hashValue,
+            price.hashValue,
             warrantyDays.hashValue,
             0])
     }

@@ -17,9 +17,9 @@ extension Customer {
     }
 
     @NSManaged public var email: String?
-    @NSManaged public var firstName: String?
-    @NSManaged public var id: String?
-    @NSManaged public var lastName: String?
+    @NSManaged public var firstName: String
+    @NSManaged public var id: String
+    @NSManaged public var lastName: String
     @NSManaged public var phoneNumber: String?
 	///sourcery: toMany = "Car"
     @NSManaged public var cars: Set<Car>

@@ -19,6 +19,7 @@ enum GaragerStep: Step {
     case orders
     case orderDetail
     case settings
-    
-    
+	case createOrder
+	case createPart
+	case createPartDone
 }

@@ -23,8 +23,8 @@ class OrdersVM: BaseViewModel, Stepper {
 	}
 
 	private func setupRx() {
-//        let tmp: [BaseSectionModel] = [BaseSectionModel(items: [OrderCellVM(model:OrderDTO(createdAt: Date(), id: "fsdfa", name: "sdaf", repeatIntervalDays: 0, subject: "dsfasf", car: nil, customer: nil, usedParts: []))])]
-//        self.sections.value = tmp
+		let tmp: [BaseSectionModel] = [BaseSectionModel(items: [OrderCellVM(model:OrderDTO(createdAt: Date(), price: 23423, id: "fsdfa", name: "sdaf", repeatIntervalDays: 0, subject: "dsfasf", car: nil, customer: nil, usedParts: []))])]
+        self.sections.value = tmp
 	}
 
 }

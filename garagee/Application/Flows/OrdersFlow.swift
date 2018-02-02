@@ -24,21 +24,21 @@ class OrdersFlow: Flow {
         self.rootViewController = UINavigationController()
     }
     
-    func navigate(to step: Step) -> [Flowable] {
-        guard let step = step as? GaragerStep else { return Flowable.noFlow }
+    func navigate(to step: Step) -> NextFlowItems {
+        guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
         switch step {
         case .orders:
             return navigateToOrders()
         default:
-            return Flowable.noFlow
+            return NextFlowItems.stepNotHandled
         }
     }
     
-    func navigateToOrders() -> [Flowable] {
+    func navigateToOrders() -> NextFlowItems {
 		let ordersVM = OrdersVM(coreDataService: DI.get()!)
         let ordersVC = OrdersVC.init(viewModel: ordersVM)
         self.rootViewController.pushViewController(ordersVC, animated: true)
-        return [Flowable(nextPresentable: ordersVC, nextStepper: ordersVM)]
+        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: ordersVC, nextStepper: ordersVM))
     }
 }
 

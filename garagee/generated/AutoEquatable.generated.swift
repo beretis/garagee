@@ -29,13 +29,13 @@ fileprivate func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs:
 extension CarDTO: Equatable {}
 public func == (lhs: CarDTO, rhs: CarDTO) -> Bool {
     guard compareOptionals(lhs: lhs.aditionalInfo, rhs: rhs.aditionalInfo, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.brand, rhs: rhs.brand, compare: ==) else { return false }
+    guard lhs.brand == rhs.brand else { return false }
     guard compareOptionals(lhs: lhs.color, rhs: rhs.color, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.firstRegistration, rhs: rhs.firstRegistration, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.id, rhs: rhs.id, compare: ==) else { return false }
+    guard lhs.firstRegistration == rhs.firstRegistration else { return false }
+    guard lhs.id == rhs.id else { return false }
     guard compareOptionals(lhs: lhs.lastService, rhs: rhs.lastService, compare: ==) else { return false }
     guard lhs.milage == rhs.milage else { return false }
-    guard compareOptionals(lhs: lhs.model, rhs: rhs.model, compare: ==) else { return false }
+    guard lhs.model == rhs.model else { return false }
     guard compareOptionals(lhs: lhs.productionDate, rhs: rhs.productionDate, compare: ==) else { return false }
     guard compareOptionals(lhs: lhs.techInspection, rhs: rhs.techInspection, compare: ==) else { return false }
     guard compareOptionals(lhs: lhs.type, rhs: rhs.type, compare: ==) else { return false }
@@ -47,9 +47,9 @@ public func == (lhs: CarDTO, rhs: CarDTO) -> Bool {
 extension CustomerDTO: Equatable {}
 public func == (lhs: CustomerDTO, rhs: CustomerDTO) -> Bool {
     guard compareOptionals(lhs: lhs.email, rhs: rhs.email, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.firstName, rhs: rhs.firstName, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.id, rhs: rhs.id, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.lastName, rhs: rhs.lastName, compare: ==) else { return false }
+    guard lhs.firstName == rhs.firstName else { return false }
+    guard lhs.id == rhs.id else { return false }
+    guard lhs.lastName == rhs.lastName else { return false }
     guard compareOptionals(lhs: lhs.phoneNumber, rhs: rhs.phoneNumber, compare: ==) else { return false }
     guard lhs.cars == rhs.cars else { return false }
     guard lhs.orders == rhs.orders else { return false }
@@ -72,9 +72,11 @@ public func == (lhs: OrderDTO, rhs: OrderDTO) -> Bool {
 // MARK: - PartDTO AutoEquatable
 extension PartDTO: Equatable {}
 public func == (lhs: PartDTO, rhs: PartDTO) -> Bool {
+    guard lhs.brand == rhs.brand else { return false }
     guard compareOptionals(lhs: lhs.code, rhs: rhs.code, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.id, rhs: rhs.id, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.name, rhs: rhs.name, compare: ==) else { return false }
+    guard lhs.id == rhs.id else { return false }
+    guard lhs.name == rhs.name else { return false }
+    guard lhs.price == rhs.price else { return false }
     guard lhs.warrantyDays == rhs.warrantyDays else { return false }
     guard compareOptionals(lhs: lhs.order, rhs: rhs.order, compare: ==) else { return false }
     return true

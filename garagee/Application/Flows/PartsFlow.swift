@@ -24,20 +24,28 @@ class PartsFlow: Flow {
         self.rootViewController = UINavigationController()
     }
     
-    func navigate(to step: Step) -> [Flowable] {
-        guard let step = step as? GaragerStep else { return Flowable.noFlow }
+    func navigate(to step: Step) -> NextFlowItems {
+        guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
         switch step {
         case .parts:
             return navigateToParts()
+		case .createPart:
+			return navigateToCreatePartsFlow()
         default:
-            return Flowable.noFlow
+            return NextFlowItems.stepNotHandled
         }
     }
     
-    func navigateToParts() -> [Flowable] {
-        let partsVM = PartsVM()
+    func navigateToParts() -> NextFlowItems {
+		let partsVM = PartsVM(coreDataService: DI.get()!)
         let partsVC = PartsVC.init(viewModel: partsVM)
         self.rootViewController.pushViewController(partsVC, animated: true)
-        return [Flowable(nextPresentable: partsVC, nextStepper: partsVM)]
+        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: partsVC, nextStepper: partsVM))
     }
+
+	func navigateToCreatePartsFlow() -> NextFlowItems {
+		let stepper = CreatePartStepper()
+		let flow = CreatePartFlow()
+		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: stepper, isRootFlowable: true))
+	}
 }

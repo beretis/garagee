@@ -29,7 +29,7 @@ target 'garagee' do
 	pod 'Result'
 	pod 'NVActivityIndicatorView'
 	pod 'Sourcery'
-    pod 'RxFlow'
+    pod 'RxFlow', :git => 'https://github.com/beretis/RxFlow.git', :branch => 'develop'
 
   target 'garageeTests' do
     inherit! :search_paths

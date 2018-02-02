@@ -17,6 +17,11 @@ You will find a very detail explanation of the whole project on my blog:
 - [RxFlow Part 2: In Practice](https://twittemb.github.io/swift/coordinator/reactive/rxflow/reactive%20programming/2017/12/09/rxflow-part-2-in-practice/)
 - [RxFlow Part 3: Tips and Tricks](https://twittemb.github.io/swift/coordinator/reactive/rxswift/reactive%20programming/rxflow/2017/12/22/rxflow-part-3-tips-and-tricks/)
 
+# Migrating from v1.0.x to v1.1.0
+There are two major changes that must be taken care of if you want to use the v1.1 when coming from an older version:
+- **Flowable** has been replaced by **NextFlowItem**. It's exactly the same idea between those 2 names, but "Flowable" was too much related to a Protocol naming convention. The **Flow.navigate(to:)** function has to return a **NextFlowItems**, which is an enum that represents different possibilities of NextFlowItem (multiple, one, none, ...). Take a look at the code snippets below to see some examples.
+- In order to improve RxFlow consistency, it seemed obvious that a Flow that presents a UIViewController also **HAS** to dismiss it. In previous versions, a child Flow was dismissed by itself and not by the Flow that presented it. In the Demo Application you will find an example with the WishlistFlow dismissing the SettingsFlow for the **settingsDone** Step.
+
 # Navigation concerns
 Regarding navigation within an iOS application, two choices are available:
 - Use the builtin mechanism provided by Apple and Xcode: storyboards and segues
@@ -76,7 +81,7 @@ There are 6 terms you have to be familiar with to understand **RxFlow**:
 - **Step**: each **Step** is a navigation state in your application. Combinaisons of **Flows** and **Steps** describe all the possible navigation actions. A **Step** can even embed inner values (such as Ids, URLs, ...) that will be propagated to screens declared in the **Flows**
 - **Stepper**: it can be anything that can emit **Steps**. **Steppers** will be responsible for triggering every navigation actions within the **Flows**
 - **Presentable**: it is an abstraction of something that can be presented (basically **UIViewController** and **Flow** are **Presentable**). **Presentables** offer Reactive observables that the **Coordinator** will subscribe to in order to handle **Flow Steps** in a UIKit compliant way
-- **Flowable**: it is a simple data structure that combines a **Presentable** and a **stepper**. It tells the **Coordinator** what will be the next thing that will produce new **Steps** in your Reactive mechanism
+- **NextFlowItem**: it is a simple data structure that combines a **Presentable** and a **stepper**. It tells the **Coordinator** what will be the next thing that will produce new **Steps** in your Reactive mechanism
 - **Coordinator**: once the developer has defined the suitable combinations of **Flows** and **Steps** representing the navigation possibilities, the job of the **Coordinator** is to mix these combinaisons in a consistent way.
 
 # How to use RxFlow
@@ -109,7 +114,7 @@ The following **Flow** is used as a Navigation stack. All you have to do is:
 - declare a root UIViewController on which your navigation will be based
 - implement the **navigate(to:)** function to transform a **Step** into a navigation action
 
-The **navigate(to:)** function returns an array of **Flowable**. This is how the next navigation actions will be produced (the **Stepper** defined in a **Flowable** will emit the next **Steps**)
+The **navigate(to:)** function returns a **NextFlowItems**. This is how the next navigation actions will be produced (the **Stepper** defined in a **NextFlowItem** will emit the next **Steps**)
 
 ```swift
 class WatchedFlow: Flow {
@@ -125,9 +130,9 @@ class WatchedFlow: Flow {
         self.service = service
     }
 
-    func navigate(to step: Step) -> [Flowable] {
+    func navigate(to step: Step) -> NextFlowItems {
 
-        guard let step = step as? DemoStep else { return Flowable.noFlow }
+        guard let step = step as? DemoStep else { return NextFlowItems.stepIsNotHandled }
 
         switch step {
 
@@ -138,32 +143,32 @@ class WatchedFlow: Flow {
         case .castPicked(let castId):
             return navigateToCastDetailScreen(with: castId)
         default:
-            return Flowable.noFlow
+            return NextFlowItems.stepIsNotHandled
     	}
     }
 
-    private func navigateToMovieListScreen () -> [Flowable] {
+    private func navigateToMovieListScreen () -> NextFlowItems {
         let viewModel = WatchedViewModel(with: self.service)
         let viewController = WatchedViewController.instantiate(with: viewModel)
         viewController.title = "Watched"
         self.rootViewController.pushViewController(viewController, animated: true)
-        return [Flowable(nextPresentable: viewController, nextStepper: viewModel)]
+	return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
     }
 
-    private func navigateToMovieDetailScreen (with movieId: Int) -> [Flowable] {
+    private func navigateToMovieDetailScreen (with movieId: Int) -> NextFlowItems {
         let viewModel = MovieDetailViewModel(withService: self.service, andMovieId: movieId)
         let viewController = MovieDetailViewController.instantiate(with: viewModel)
         viewController.title = viewModel.title
         self.rootViewController.pushViewController(viewController, animated: true)
-        return [Flowable(nextPresentable: viewController, nextStepper: viewModel)]
+	return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: viewController, nextStepper: viewModel))
     }
 
-    private func navigateToCastDetailScreen (with castId: Int) -> [Flowable] {
+    private func navigateToCastDetailScreen (with castId: Int) -> NextFlowItems {
         let viewModel = CastDetailViewModel(withService: self.service, andCastId: castId)
         let viewController = CastDetailViewController.instantiate(with: viewModel)
         viewController.title = viewModel.name
         self.rootViewController.pushViewController(viewController, animated: true)
-        return Flowable.noFlow
+        return NextFlowItems.none
     }
 }
 ```
@@ -188,11 +193,30 @@ class WatchedViewModel: Stepper {
     // when a movie is picked, a new Step is emitted.
     // That will trigger a navigation action within the WatchedFlow
     public func pick (movieId: Int) {
-        self.step.onNext(DemoStep.moviePicked(withMovieId: movieId))
+        self.step.accept(DemoStep.moviePicked(withMovieId: movieId))
     }
 
 }
 ```
+
+### Is it possible to coordinate multiple Flows ?
+
+Of course, it is the aim of a Coordinator. As a Flow is a Presentable, a Flow can launch one other Flow or even several other Flows.
+
+For instance, from the WishlistFlow, we launch the SettingsFlow in a popup.
+
+```swift
+private func navigateToSettings () -> NextFlowItems {     
+    let settingsStepper = SettingsStepper()
+    let settingsFlow = SettingsFlow(withService: self.service, andStepper: settingsStepper)
+    Flows.whenReady(flow: settingsFlow, block: { [unowned self] (root: UISplitViewController) in
+        self.rootViewController.present(root, animated: true)
+    })
+    return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: settingsFlow, nextStepper: settingsStepper))
+}
+```
+
+For a more complex case, see the **MainFlow.swift** file in which we handle a UITabBarController.
 
 ### How to bootstrap the RxFlow process
 
