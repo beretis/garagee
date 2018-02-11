@@ -27,8 +27,8 @@ class CreatePartFlow: Flow {
 		switch step {
 		case .createPart:
 			return self.goToCreate()
-		case .createPartDone:
-			return self.dismiss()
+        case .createPartDone:
+            return self.dismiss()
 		default:
 			return NextFlowItems.stepNotHandled
 		}
@@ -39,19 +39,14 @@ class CreatePartFlow: Flow {
 		let vc = CreatePartVC(viewModel: vm, nibName: "CreatePartVC", bundle: Bundle.main)
 		self.rootViewController.pushViewController(vc, animated: true)
 
-		return NextFlowItems.none
+		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: vc, nextStepper: vm))
 	}
-
-	private func dismiss() -> NextFlowItems {
-		
-	}
-
-}
-
-class CreatePartStepper: Stepper {
-
-	init() {
-		self.step.accept(GaragerStep.createPart)
-	}
+    
+    private func dismiss() -> NextFlowItems {
+        self.rootViewController.popToRootViewController(animated: false)
+        let flow = MainFlow()
+        let stepper = OneStepper.init(withSingleStep: GaragerStep.dashboard(index: 2))
+        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: stepper, isRootFlowable: true))
+    }
 
 }

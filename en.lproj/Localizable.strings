@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  garagee
+
+  Created by Jozef Matus on 10/02/2018.
+  Copyright © 2018 Jozef Matus. All rights reserved.
+*/
+
+"create_part_brand" = "brand";
+"create_part_code" = "code";
+"create_part_name" = "name";
+"create_part_price" = "price";
+"create_part_warrantyDays" = "warranty(days)";
+"create_part_button_scan" = "Scan code";
+"create_part_button_save" = "Save";
+"create_part_button_cancel" = "Cancel";
+

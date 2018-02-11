@@ -30,6 +30,7 @@ target 'garagee' do
 	pod 'NVActivityIndicatorView'
 	pod 'Sourcery'
     pod 'RxFlow', :git => 'https://github.com/beretis/RxFlow.git', :branch => 'develop'
+    pod 'BarcodeScanner'
 
   target 'garageeTests' do
     inherit! :search_paths

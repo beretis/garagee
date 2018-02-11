@@ -85,6 +85,8 @@
 		28D7399D2019F50200504F93 /* CustomersCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D7399C2019F50200504F93 /* CustomersCellVM.swift */; };
 		28D7399F2019F50E00504F93 /* PartsCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D7399E2019F50E00504F93 /* PartsCellVM.swift */; };
 		28D739A2201A002900504F93 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D739A1201A002900504F93 /* Container.swift */; };
+		28F21741202F52E000D1AA85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28F21743202F52E000D1AA85 /* Localizable.strings */; };
+		28F21748202F55B600D1AA85 /* XIBLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F21747202F55B600D1AA85 /* XIBLocalizable.swift */; };
 		483EDF319621A186F9DE33DA /* Pods_garageeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B42FC222D8E5F5FCFCE59D /* Pods_garageeUITests.framework */; };
 		B0F87BCF1494973040105BEA /* Pods_garagee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1ADBE4212E6F7FD30987E7 /* Pods_garagee.framework */; };
 		ED0A208E9EB3B1F43A48F54E /* Pods_garageeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B5E37A41FAD3846E0FCF2D /* Pods_garageeTests.framework */; };
@@ -194,6 +196,10 @@
 		28D7399C2019F50200504F93 /* CustomersCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersCellVM.swift; sourceTree = "<group>"; };
 		28D7399E2019F50E00504F93 /* PartsCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsCellVM.swift; sourceTree = "<group>"; };
 		28D739A1201A002900504F93 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		28F21742202F52E000D1AA85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		28F21744202F52F200D1AA85 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		28F21745202F52F200D1AA85 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		28F21747202F55B600D1AA85 /* XIBLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBLocalizable.swift; sourceTree = "<group>"; };
 		40B42FC222D8E5F5FCFCE59D /* Pods_garageeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_garageeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B568EF1D39406876C1D939 /* Pods-garageeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garageeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-garageeUITests/Pods-garageeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		630E9520E9CE4FC090FD755B /* Pods-garageeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-garageeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-garageeUITests/Pods-garageeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -337,6 +343,7 @@
 		287EB1361FF577E600AFE22A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				28F21746202F55A500D1AA85 /* Localization */,
 				28D739A0201A002900504F93 /* DependencyInjection */,
 				28D739962019F2DE00504F93 /* UI */,
 				287EB1371FF57B5300AFE22A /* ViewModel */,
@@ -423,6 +430,7 @@
 		28C60DA71E575C6A00D83C5B = {
 			isa = PBXGroup;
 			children = (
+				28F21743202F52E000D1AA85 /* Localizable.strings */,
 				28C60DB11E575C6A00D83C5B /* Products */,
 				28C60DB21E575C6A00D83C5B /* garagee */,
 				28C60DCA1E575C6B00D83C5B /* garageeTests */,
@@ -572,6 +580,14 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		28F21746202F55A500D1AA85 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				28F21747202F55B600D1AA85 /* XIBLocalizable.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		3717FA125576D553197EC8EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,6 +713,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 28C60DA71E575C6A00D83C5B;
 			productRefGroup = 28C60DB11E575C6A00D83C5B /* Products */;
@@ -718,6 +735,7 @@
 				28C60DC11E575C6A00D83C5B /* LaunchScreen.storyboard in Resources */,
 				28D739952019EF1A00504F93 /* PartsCell.xib in Resources */,
 				28C60DBE1E575C6A00D83C5B /* Assets.xcassets in Resources */,
+				28F21741202F52E000D1AA85 /* Localizable.strings in Resources */,
 				28D7398B2019EEE400504F93 /* OrderCell.xib in Resources */,
 				28D739902019EEFF00504F93 /* CustomersCell.xib in Resources */,
 				287F847C201F31EE0058503B /* CreatePartVC.xib in Resources */,
@@ -788,6 +806,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-garagee/Pods-garagee-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BarcodeScanner/BarcodeScanner.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -812,6 +831,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BarcodeScanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -1023,6 +1043,7 @@
 				287EB1321FF5773C00AFE22A /* FetchedResultsControllerControllerEntityObserver.swift in Sources */,
 				281C5D761FF6DDF60025538F /* Car+CoreDataClass.swift in Sources */,
 				287EB15B1FF57B7600AFE22A /* UIAlertController+Convenience.swift in Sources */,
+				28F21748202F55B600D1AA85 /* XIBLocalizable.swift in Sources */,
 				287EB1341FF5773C00AFE22A /* NSManagedObjectContext+Rx.swift in Sources */,
 				287FCB1D200FFA170005461A /* CustomersVM.swift in Sources */,
 				287EB1301FF5773C00AFE22A /* CoreDataStack.swift in Sources */,
@@ -1083,9 +1104,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				28C60DC01E575C6A00D83C5B /* Base */,
+				28F21744202F52F200D1AA85 /* cs */,
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
+			sourceTree = "<group>";
+		};
+		28F21743202F52E000D1AA85 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28F21742202F52E000D1AA85 /* en */,
+				28F21745202F52F200D1AA85 /* cs */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1095,6 +1126,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1145,6 +1177,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

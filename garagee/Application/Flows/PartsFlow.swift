@@ -44,8 +44,7 @@ class PartsFlow: Flow {
     }
 
 	func navigateToCreatePartsFlow() -> NextFlowItems {
-		let stepper = CreatePartStepper()
 		let flow = CreatePartFlow()
-		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: stepper, isRootFlowable: true))
+        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createPart), isRootFlowable: true))
 	}
 }

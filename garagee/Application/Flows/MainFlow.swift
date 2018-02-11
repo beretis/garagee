@@ -12,7 +12,6 @@ import RxSwift
 
 class MainFlow: Flow {
 
-    
     var root: UIViewController {
         return self.rootViewController
     }
@@ -27,14 +26,14 @@ class MainFlow: Flow {
     func navigate(to step: Step) -> NextFlowItems {
         guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
         switch step {
-        case .dashboard:
-            return navigateToOrders()
+        case .dashboard(let index):
+            return navigateToOrders(index: index)
         default:
             return NextFlowItems.stepNotHandled
         }
     }
     
-    private func navigateToOrders () -> NextFlowItems {
+    private func navigateToOrders (index: Int = 0) -> NextFlowItems {
         let partsFlow = PartsFlow()
         let ordersFlow = OrdersFlow()
         let customersFlow = CustomersFlow()
@@ -52,6 +51,7 @@ class MainFlow: Flow {
             root3.title = "Parts"
             
             self.rootViewController.setViewControllers([root1, root2, root3], animated: false)
+            self.rootViewController.selectedIndex = index
         })
 		return NextFlowItems.multiple(flowItems: [NextFlowItem(nextPresentable: ordersFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.orders)),
 										   NextFlowItem(nextPresentable: customersFlow, nextStepper: OneStepper(withSingleStep: GaragerStep.customers)),
