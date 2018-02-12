@@ -177,7 +177,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="xibLocPlaceholderKey" value="placeholder"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNf-HW-WUo">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="730" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNf-HW-WUo">
                                                     <rect key="frame" x="150" y="5.5" width="217" height="39"/>
                                                     <color key="backgroundColor" red="0.95913617230000003" green="0.95913617230000003" blue="0.95913617230000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="textColor"/>

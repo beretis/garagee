@@ -14,4 +14,6 @@
 "create_part_button_scan" = "Scan code";
 "create_part_button_save" = "Save";
 "create_part_button_cancel" = "Cancel";
-
+"create_part_alert_part_exist_text" = "Part with this code already exist, by changing values you will overwrite them permanently";
+"create_part_alert_part_exist_title" = "Warning";
+"create_part_alert_part_exist_OKButton_title" = "OK";

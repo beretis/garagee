@@ -82,7 +82,7 @@ extension PartDTO: Hashable {
     public var hashValue: Int {
         return combineHashes([
             brand.hashValue,
-            id.hashValue,
+            code.hashValue,
             name.hashValue,
             price.hashValue,
             warrantyDays.hashValue,

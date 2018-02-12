@@ -29,7 +29,7 @@ class PartsVM: BaseViewModel, Stepper {
 	}
 
 	private func setupRx() {
-		let partDto = PartDTO(brand: "sdf", code: "sdf", id: "sdf", name: "sdfa", price: 2143, warrantyDays: 324, order: nil)
+		let partDto = PartDTO(brand: "sdf", code: "sdf", name: "sdfa", price: 2143, warrantyDays: 324, orders: [])
 		let tmpItems: [PartsCellVM] = [ PartsCellVM(model: partDto) ]
 		let tmp: [BaseSectionModel] = [BaseSectionModel(items: tmpItems)]
 		self.sections.value = tmp

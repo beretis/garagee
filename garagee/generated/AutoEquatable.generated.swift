@@ -73,12 +73,11 @@ public func == (lhs: OrderDTO, rhs: OrderDTO) -> Bool {
 extension PartDTO: Equatable {}
 public func == (lhs: PartDTO, rhs: PartDTO) -> Bool {
     guard lhs.brand == rhs.brand else { return false }
-    guard compareOptionals(lhs: lhs.code, rhs: rhs.code, compare: ==) else { return false }
-    guard lhs.id == rhs.id else { return false }
+    guard lhs.code == rhs.code else { return false }
     guard lhs.name == rhs.name else { return false }
     guard lhs.price == rhs.price else { return false }
     guard lhs.warrantyDays == rhs.warrantyDays else { return false }
-    guard compareOptionals(lhs: lhs.order, rhs: rhs.order, compare: ==) else { return false }
+    guard lhs.orders == rhs.orders else { return false }
     return true
 }
 

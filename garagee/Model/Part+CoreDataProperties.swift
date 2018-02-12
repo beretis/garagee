@@ -17,11 +17,11 @@ extension Part {
     }
 
     @NSManaged public var brand: String
-    @NSManaged public var code: String?
-    @NSManaged public var id: String
+    @NSManaged public var code: String
     @NSManaged public var name: String
 	@NSManaged public var price: Int
     @NSManaged public var warrantyDays: Int
-    @NSManaged public var order: Order?
+	///sourcery: toMany = "Order"
+    @NSManaged public var orders: Set<Order>
 
 }
