@@ -24,9 +24,14 @@ class CreatePartVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
 			guard self.validate(Inputs: data) else {
 				return self.defaultErrorHandler.error.onNext(AppError.validationFailed as! Error)
 			}
-
-//            event.
-//            self.partExist(WithCode: =)
+            guard let partDTO: PartDTO = try? self.createPartDTO(FromInput: data) else {
+                return self.defaultErrorHandler.error.onNext(AppError.validationFailed as! Error)
+            }
+            do {
+                try self.save(Part: partDTO)
+            } catch {
+                return self.defaultErrorHandler.error.onNext(AppError.validationFailed as! Error)
+            }
             self.step.accept(GaragerStep.createPartDone)
         }
     })
@@ -58,19 +63,27 @@ class CreatePartVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
 		let (brand, name, price, warranty, code) = unwrapedInputs
 		guard let priceFloat = Float(price), let warrantyInt = Int(warranty) else { throw AppError.validationFailed(message: nil) }
 		let priceInCents: Int = Int(priceFloat * 100)
-		return PartDTO(brand: brand, code: code, name: name, price: priceInCents, warrantyDays: warrantyInt, orders: [])
+		return PartDTO(brand: brand, code: code, name: name, price: Int64(priceInCents), warrantyDays: Int16(warrantyInt), orders: [])
 	}
+    
+    private func save(Part part: PartDTO) throws {
+        let bgContext = CoreDataService.shared.persistentContainer.newBackgroundContext()
+        let _: Part = Part(dto: part, context: bgContext)
+        try bgContext.save()
+    }
 
-    public func partExist(WithCode code: String) -> Bool {
+    public func partExist(WithCode code: String) -> (exists: Bool, part: Part?) {
         var result = false
-        CoreDataService.shared.persistentContainer.performBackgroundTask({ (context) in
-            let fr: NSFetchRequest<Part> = Part.fetchRequest()
-            fr.predicate = NSPredicate(format: "code = %@", code)
-            if let partsResult = try? context.fetch(fr).isEmpty {
-                result = partsResult
+        var part: Part? = nil
+        let fr: NSFetchRequest<Part> = Part.fetchRequest()
+        fr.predicate = NSPredicate(format: "code = %@", code)
+        CoreDataService.shared.viewContext.performAndWait {
+            if let partsResult = (try? fr.execute().first) ?? nil {
+                result = true
+                part = partsResult
             }
-        })
-        return result
+        }
+        return (result, part)
     }
 
 

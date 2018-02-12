@@ -104,6 +104,7 @@ public enum AppError: Swift.Error, AppSpecificError {
 	case withMessage(message: String)
 	case unexpectedError(message: String?)
 	case validationFailed(message: String?)
+    case coreDataSaveError
 
 	public var description: String? {
 		switch self {
@@ -115,6 +116,8 @@ public enum AppError: Swift.Error, AppSpecificError {
 			return "Opps something went wrong \(message ?? "")"
 		case .validationFailed(let message) :
 			return "\(message ?? "Validation failed")"
+        case .coreDataSaveError :
+            return "Unable to save data"
 		}
 	}
 

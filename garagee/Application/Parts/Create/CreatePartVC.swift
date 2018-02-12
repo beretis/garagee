@@ -34,21 +34,6 @@ class CreatePartVC: BaseViewController<CreatePartVM>, MVVMView, BarcodeScannerCo
 		self.setupErrorPresenter()
     }
 
-	private func setupNavigationBar() {
-		let save = UIBarButtonItem(title: "Save".localized(), style: .done, target: nil, action: nil)
-        save.rx.tap.asObservable()
-            .map { _ -> (String?, String?, String?, String?, String?) in
-				let values = (brand: self.brandTextField.text, name: self.nameTextField.text, price: self.priceTextField.text, warranty: self.warrantyTextField.text, code: self.codeTextField.text)
-                return values
-            }
-            .bind(to: self.viewModel.save)
-            .disposed(by: self.disposeBag)
-		self.navigationItem.setRightBarButtonItems([save], animated: true)
-        
-        let cancel = UIBarButtonItem(title: "Cancel".localized(), style: .plain, target: nil, action: nil)
-        cancel.rx.tap.asObservable().bind(to: self.viewModel.cancel).disposed(by: self.disposeBag)
-        self.navigationItem.setLeftBarButtonItems([cancel], animated: true)
-	}
 
     @IBAction func scanAction(_ sender: Any) {
         let viewController = BarcodeScannerViewController()
@@ -62,12 +47,14 @@ class CreatePartVC: BaseViewController<CreatePartVM>, MVVMView, BarcodeScannerCo
     func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         print(code)
         self.codeTextField.text = code
-		if self.viewModel.partExist(WithCode: code) {
+        let partExits = self.viewModel.partExist(WithCode: code)
+		if  partExits.exists {
 			UIAlertController.alert("create_part_alert_part_exist_title".localized(), message: "create_part_alert_part_exist_text".localized(), OKActionTitle: "create_part_alert_part_exist_OKButton_title".localized(), cancelActionTitle: nil, destructiveActionTitle: nil, OKAction: { (action) in
 				controller.dismiss(animated: true, completion: nil)
-			}, cancelAction: nil, destructiveAction: nil)
+			}, cancelAction: nil, destructiveAction: nil).show(controller)
+            guard let part = partExits.part else { return }
+            self.populateUI(WithPart: part)
 		} else {
-			print("it doesnt exist")
 			controller.dismiss(animated: true, completion: nil)
 		}
     }
@@ -79,6 +66,32 @@ class CreatePartVC: BaseViewController<CreatePartVM>, MVVMView, BarcodeScannerCo
     func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
+    
+    //private
+    private func setupNavigationBar() {
+        let save = UIBarButtonItem(title: "Save".localized(), style: .done, target: nil, action: nil)
+        save.rx.tap.asObservable()
+            .map { _ -> (String?, String?, String?, String?, String?) in
+                let values = (brand: self.brandTextField.text, name: self.nameTextField.text, price: self.priceTextField.text, warranty: self.warrantyTextField.text, code: self.codeTextField.text)
+                return values
+            }
+            .bind(to: self.viewModel.save)
+            .disposed(by: self.disposeBag)
+        self.navigationItem.setRightBarButtonItems([save], animated: true)
+        
+        let cancel = UIBarButtonItem(title: "Cancel".localized(), style: .plain, target: nil, action: nil)
+        cancel.rx.tap.asObservable().bind(to: self.viewModel.cancel).disposed(by: self.disposeBag)
+        self.navigationItem.setLeftBarButtonItems([cancel], animated: true)
+    }
+    
+    private func populateUI(WithPart part: Part) {
+        self.brandTextField.text = part.brand
+        self.nameTextField.text = part.name
+        self.priceTextField.text = "\(part.price)"
+        self.warrantyTextField.text = "\(part.warrantyDays)"
+        self.codeTextField.text = part.code
+    }
+    
     
     
 }

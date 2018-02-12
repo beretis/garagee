@@ -8,12 +8,12 @@ public class PartDTO: AutoEquatable, AutoHashable {
     var brand: String
     var code: String
     var name: String
-    var price: Int
-    var warrantyDays: Int
+    var price: Int64
+    var warrantyDays: Int16
     ///sourcery: skipHashing
     var orders: [OrderDTO] = []
 
-    public init(brand: String , code: String , name: String , price: Int , warrantyDays: Int , orders: Array<OrderDTO> ) { // swiftlint:disable:this line_length
+    public init(brand: String , code: String , name: String , price: Int64 , warrantyDays: Int16 , orders: Array<OrderDTO> ) { // swiftlint:disable:this line_length
         self.brand = brand
         self.code = code
         self.name = name
