@@ -21,4 +21,6 @@ public class PartDTO: AutoEquatable, AutoHashable {
         self.warrantyDays = warrantyDays
         self.orders = orders
     }
+    
+    
 }

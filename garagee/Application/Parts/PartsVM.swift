@@ -33,6 +33,12 @@ class PartsVM: BaseViewModel, Stepper {
 		let tmpItems: [PartsCellVM] = [ PartsCellVM(model: partDto) ]
 		let tmp: [BaseSectionModel] = [BaseSectionModel(items: tmpItems)]
 		self.sections.value = tmp
+        
+        CoreDataService.shared.viewContext.rx.entities(fetchRequest: Part.fetchRequest()).map { parts -> [PartsCellVM] in
+            return parts.map({ (<#Part#>) -> T in
+                <#code#>
+            })
+        }
 		print(self.sections.value)
 	}
 }
