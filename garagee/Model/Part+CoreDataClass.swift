@@ -24,9 +24,10 @@ public class Part: NSManagedObject, AutoDTO {
     self.orders = Set<Order>(dto.orders.map { Order.init(dto: $0, context: context) })
 }
 
-func createDTO() -> PartDTO {
-	return PartDTO(brand: brand , code: code , name: name , price: price , warrantyDays: warrantyDays , orders: Array(self.orders.map { $0.createDTO() }) )
+ func createDTO() -> PartDTO {
+    return PartDTO(brand: brand , code: code , name: name , price: price , warrantyDays: warrantyDays , orders: Array(self.orders.map { $0.createDTO() }) )
 }
+
 
 // sourcery:file:Part.dto.swift
 // sourcery:end

@@ -31,9 +31,10 @@ public class Car: NSManagedObject, AutoDTO {
     self.owner = dto.owner
 }
 
-func createDTO() -> CarDTO {
-	return CarDTO(aditionalInfo: aditionalInfo , brand: brand , color: color , firstRegistration: firstRegistration , id: id , lastService: lastService , milage: milage , model: model , productionDate: productionDate , techInspection: techInspection , type: type , orders: Array(self.orders.map { $0.createDTO() }) , owner: owner )
+ func createDTO() -> CarDTO {
+    return CarDTO(aditionalInfo: aditionalInfo , brand: brand , color: color , firstRegistration: firstRegistration , id: id , lastService: lastService , milage: milage , model: model , productionDate: productionDate , techInspection: techInspection , type: type , orders: Array(self.orders.map { $0.createDTO() }) , owner: owner )
 }
+
 
 // sourcery:file:Car.dto.swift
 // sourcery:end

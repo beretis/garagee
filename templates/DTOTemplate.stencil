@@ -1,6 +1,7 @@
 {% for type in types.implementing.AutoDTO %}
 {% macro unboxVariable unboxVar %}{%if not unboxVar.isOptional%}try {%endif%}unboxer.unbox(key: "{% call unboxerKey unboxVar %}"){% endmacro %}
 {% macro unboxerKey varToUnbox %}{% if varToUnbox.annotations.unboxerKey %}{{varToUnbox.annotations.unboxerKey}}{%else%}{{varToUnbox.name}}{% endif %}{% endmacro %}
+{% map type.storedVariables into dtoParameters using tmpVar %}{{ tmpVar.name }}: {% if tmpVar.annotations.toMany %}Array(self.{{tmpVar.name}}.map { $0.createDTO() }){% else %}{{tmpVar.name}}{% endif %} {% endmap %}
 
 // sourcery:inline:auto:{{type.name}}.DTOTemplate
 {% set spacing %}{% if type.parentName %}    {% endif %}{% endset %}
@@ -14,13 +15,18 @@
 {% endif %}
 {% endfor %}
 }
-// sourcery: end
+
+{{spacing}} func createDTO() -> {{type.name}}DTO {
+    return {{type.name}}DTO({{ dtoParameters|join:", " }})
+}
+
+
 // sourcery:file:{{type.name}}.dto.swift
 import Foundation
 import Unbox
 {% macro variableType var %}{% if var.annotations.toMany %}[{{var.annotations.toMany}}DTO] = []{% else %}{{var.typeName}}{% endif %}{% endmacro %}
 
-public class {{type.name}}DTO: AutoEquatable, AutoHashable, Unboxable {
+public class {{type.name}}DTO: AutoEquatable, AutoHashable {
 {% for variable in type.variables where variable.attributes.NSManaged %}
     {% if not variable.type %} 
     ///sourcery: skipHashing
@@ -33,20 +39,9 @@ public class {{type.name}}DTO: AutoEquatable, AutoHashable, Unboxable {
 
 {% set spacing %}{% if type.parentName %}    {% endif %}{% endset %}
 {% map type.storedVariables into parameters using tmpVar %}{{ tmpVar.name }}: {% if tmpVar.annotations.toMany %}Array<{{tmpVar.annotations.toMany}}DTO>{% else %}{{tmpVar.typeName}}{% endif %} {% endmap %}
-{{spacing}}    {{ type.accessLevel }} init({{ parameters|join }}) { // swiftlint:disable:this line_length
+{{spacing}}    {{ type.accessLevel }} init({{ parameters|join:", " }}) { // swiftlint:disable:this line_length
 {{spacing}}        {% for variable in type.storedVariables %}
 {{spacing}}        self.{{ variable.name }} = {{ variable.name }}
-{{spacing}}        {% endfor %}
-{{spacing}}    }
-
-{{spacing}}    {{ type.accessLevel }} required init(unboxer: Unboxer) throws {
-{{spacing}}        {% for variable in type.storedVariables %}
-                   {% for thing in variable.annotations.customUnboxable %}
-{{spacing}}        {{thing}}
-                   {% endfor %}
-                   {% if not variable.annotations.skipUnboxable %}
-{{spacing}}        self.{{ variable.name }} = {% call unboxVariable variable %}
-                   {% endif %}
 {{spacing}}        {% endfor %}
 {{spacing}}    }
 }
