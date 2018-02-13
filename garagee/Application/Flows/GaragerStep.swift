@@ -10,16 +10,23 @@ import Foundation
 import RxFlow
 
 enum GaragerStep: Step {
-    
+    //main
     case dashboard(index: Int)
-    case parts
-    case partDetail
-    case customers
+	case settings
+	//listFlows
+	case customers
+	case parts
+	case orders
+	//details
     case customerDetail
-    case orders
     case orderDetail
-    case settings
-	case createOrder
+	case partDetail
+	//createflows
 	case createPart
 	case createPartDone
+	case createCustomer
+	case createCarForCustomer(customer: String)
+	case createCustomerDone
+	case createOrder
+
 }

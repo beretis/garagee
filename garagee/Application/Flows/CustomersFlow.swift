@@ -29,6 +29,8 @@ class CustomersFlow: Flow {
         switch step {
         case .customers:
             return navigateToCustomers()
+		case .createCustomer:
+			return navigatoToCreateCustomer()
         default:
             return NextFlowItems.stepNotHandled
         }
@@ -40,6 +42,11 @@ class CustomersFlow: Flow {
         self.rootViewController.pushViewController(customersVC, animated: true)
         return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: customersVC, nextStepper: customersVM))
     }
+
+	func navigatoToCreateCustomer() -> NextFlowItems {
+		let flow = CreatePartFlow()
+		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createPart), isRootFlowable: true))
+	}
 }
 
 

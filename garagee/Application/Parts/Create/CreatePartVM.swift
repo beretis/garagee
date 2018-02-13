@@ -22,15 +22,15 @@ class CreatePartVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
     lazy var save: AnyObserver<(String?, String?, String?, String?, String?)> = AnyObserver(eventHandler: { [unowned self] event in
         if case let Event.next(data) = event {
 			guard self.validate(Inputs: data) else {
-				return self.defaultErrorHandler.error.onNext(AppError.validationFailed as! Error)
+				return self.defaultErrorHandler.error.onNext(AppError.validationFailed(message: nil))
 			}
             guard let partDTO: PartDTO = try? self.createPartDTO(FromInput: data) else {
-                return self.defaultErrorHandler.error.onNext(AppError.validationFailed as! Error)
+                return self.defaultErrorHandler.error.onNext(AppError.validationFailed(message: nil))
             }
             do {
                 try self.save(Part: partDTO)
             } catch {
-                return self.defaultErrorHandler.error.onNext(AppError.validationFailed as! Error)
+                return self.defaultErrorHandler.error.onNext(AppError.validationFailed(message: nil))
             }
             self.step.accept(GaragerStep.createPartDone)
         }

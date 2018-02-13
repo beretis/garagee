@@ -34,7 +34,7 @@ class BaseCollectionView<VM: BaseViewModel>: BaseViewController<VM>, ReusableCol
         super.init(viewModel: viewModel)
         self.view.insertSubview(collectionView, at: 0)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-		collectionView!.addSubview(refresher)
+//		collectionView!.addSubview(refresher)
 
         self.view.addConstraints([
             NSLayoutConstraint(item: collectionView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0),

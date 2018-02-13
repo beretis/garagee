@@ -64,6 +64,9 @@
 		28894E5F1E676F5C005F8F05 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E5E1E676F5B005F8F05 /* Images.swift */; };
 		28894E611E676F68005F8F05 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E601E676F68005F8F05 /* Colors.swift */; };
 		28894E631E676F6F005F8F05 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E621E676F6F005F8F05 /* Fonts.swift */; };
+		28C339C5203321EA0076ABE4 /* CreateCustomerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */; };
+		28C339C8203321FC0076ABE4 /* CreateCustomerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */; };
+		28C339C9203321FC0076ABE4 /* CreateCustomerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C339C7203321FC0076ABE4 /* CreateCustomerVC.xib */; };
 		28C60DB41E575C6A00D83C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C60DB31E575C6A00D83C5B /* AppDelegate.swift */; };
 		28C60DB61E575C6A00D83C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C60DB51E575C6A00D83C5B /* ViewController.swift */; };
 		28C60DBC1E575C6A00D83C5B /* garagee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28C60DBA1E575C6A00D83C5B /* garagee.xcdatamodeld */; };
@@ -169,6 +172,9 @@
 		28894E5E1E676F5B005F8F05 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		28894E601E676F68005F8F05 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		28894E621E676F6F005F8F05 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerVM.swift; sourceTree = "<group>"; };
+		28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerVC.swift; sourceTree = "<group>"; };
+		28C339C7203321FC0076ABE4 /* CreateCustomerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCustomerVC.xib; sourceTree = "<group>"; };
 		28C60DB01E575C6A00D83C5B /* garagee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = garagee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C60DB31E575C6A00D83C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28C60DB51E575C6A00D83C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +282,7 @@
 		282B8FBD1FFECB2D000495DB /* Customers */ = {
 			isa = PBXGroup;
 			children = (
+				28C339C3203321D60076ABE4 /* Create */,
 				28D7398C2019EEEA00504F93 /* Cells */,
 				282B8FC11FFECC34000495DB /* CustomersVC.swift */,
 				287FCB1C200FFA170005461A /* CustomersVM.swift */,
@@ -425,6 +432,16 @@
 				28095DDC201B50D10064A42C /* CreatePartFlow.swift */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		28C339C3203321D60076ABE4 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */,
+				28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */,
+				28C339C7203321FC0076ABE4 /* CreateCustomerVC.xib */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 		28C60DA71E575C6A00D83C5B = {
@@ -691,8 +708,8 @@
 				TargetAttributes = {
 					28C60DAF1E575C6A00D83C5B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = B62A4LG5GA;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = ZSU72LARHF;
+						ProvisioningStyle = Manual;
 					};
 					28C60DC61E575C6B00D83C5B = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -736,6 +753,7 @@
 				28D739952019EF1A00504F93 /* PartsCell.xib in Resources */,
 				28C60DBE1E575C6A00D83C5B /* Assets.xcassets in Resources */,
 				28F21741202F52E000D1AA85 /* Localizable.strings in Resources */,
+				28C339C9203321FC0076ABE4 /* CreateCustomerVC.xib in Resources */,
 				28D7398B2019EEE400504F93 /* OrderCell.xib in Resources */,
 				28D739902019EEFF00504F93 /* CustomersCell.xib in Resources */,
 				287F847C201F31EE0058503B /* CreatePartVC.xib in Resources */,
@@ -1028,6 +1046,7 @@
 				287EB14B1FF57B5700AFE22A /* CellGenerics.swift in Sources */,
 				28D739992019F3D600504F93 /* BaseCell.swift in Sources */,
 				281C5D591FF6D76D0025538F /* Customer.dto.swift in Sources */,
+				28C339C8203321FC0076ABE4 /* CreateCustomerVC.swift in Sources */,
 				287EB1501FF57B5700AFE22A /* MBProgressHUD+ReactiveObserver.swift in Sources */,
 				281C5D5C1FF6D76D0025538F /* AutoEquatable.generated.swift in Sources */,
 				28C60DB41E575C6A00D83C5B /* AppDelegate.swift in Sources */,
@@ -1052,6 +1071,7 @@
 				28894E5D1E676AC9005F8F05 /* Storyboards.swift in Sources */,
 				28095DD9201B50BC0064A42C /* CreateOrderFlow.swift in Sources */,
 				28C60DBC1E575C6A00D83C5B /* garagee.xcdatamodeld in Sources */,
+				28C339C5203321EA0076ABE4 /* CreateCustomerVM.swift in Sources */,
 				281C5D7D1FF6DDF60025538F /* Part+CoreDataProperties.swift in Sources */,
 				28095DDB201B50C60064A42C /* CreateCustomerFlow.swift in Sources */,
 				28CF6D7520193570004314E9 /* PartsFlow.swift in Sources */,
@@ -1222,11 +1242,14 @@
 			baseConfigurationReference = 124DD83F338258A51A073CC4 /* Pods-garagee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B62A4LG5GA;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = ZSU72LARHF;
 				INFOPLIST_FILE = garagee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.romakrim.garagee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "79d3c659-0081-427b-9633-97f0efa2d791";
+				PROVISIONING_PROFILE_SPECIFIER = bbWildcard;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1236,11 +1259,13 @@
 			baseConfigurationReference = 04FA69DC69C2DD5C0A1DA502 /* Pods-garagee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B62A4LG5GA;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = garagee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.romakrim.garagee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

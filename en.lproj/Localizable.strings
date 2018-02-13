@@ -6,14 +6,21 @@
   Copyright © 2018 Jozef Matus. All rights reserved.
 */
 
-"create_part_brand" = "brand";
-"create_part_code" = "code";
-"create_part_name" = "name";
-"create_part_price" = "price";
-"create_part_warrantyDays" = "warranty(days)";
+"create_part_brand" = "Brand";
+"create_part_code" = "Code";
+"create_part_name" = "Name";
+"create_part_price" = "Price";
+"create_part_warrantyDays" = "Warranty(days)";
 "create_part_button_scan" = "Scan code";
 "create_part_button_save" = "Save";
 "create_part_button_cancel" = "Cancel";
 "create_part_alert_part_exist_text" = "Part with this code already exist, by changing values you will overwrite them permanently";
 "create_part_alert_part_exist_title" = "Warning";
 "create_part_alert_part_exist_OKButton_title" = "OK";
+
+"create_customer_label_firstName" = "First Name";
+"create_customer_label_lastName" = "Last Name";
+"create_customer_label_email" = "Email";
+"create_customer_label_phoneNumber" = "Phone Number";
+"create_customer_label_carsSection" = "Cars";
+"create_customer_label_ordersSection" = "Orders";
