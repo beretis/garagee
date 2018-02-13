@@ -24,6 +24,11 @@ public class Customer: NSManagedObject, AutoDTO {
     self.cars = Set<Car>(dto.cars.map { Car.init(dto: $0, context: context) })
     self.orders = Set<Order>(dto.orders.map { Order.init(dto: $0, context: context) })
 }
+
+func createDTO() -> CustomerDTO {
+	return CustomerDTO(email: email , firstName: firstName , id: id , lastName: lastName , phoneNumber: phoneNumber , cars: Array(self.cars.map { $0.createDTO() }) , orders: Array(self.orders.map { $0.createDTO() }) )
+}
+
 // sourcery:file:Customer.dto.swift
 // sourcery:end
 }
