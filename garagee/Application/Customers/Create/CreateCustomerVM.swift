@@ -12,6 +12,10 @@ import RxSwift
 import RxFlow
 
 class CreateCustomerVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
+    
+    var carsSection: Variable<[BaseSectionModel]> = Variable<[BaseSectionModel]>([])
+    var ordersSection: Variable<[BaseSectionModel]> = Variable<[BaseSectionModel]>([])
+
 
 	lazy var cancel: AnyObserver<Void> = AnyObserver(eventHandler: { [unowned self] event in
 		if case Event.next = event {
@@ -30,5 +34,8 @@ class CreateCustomerVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
 		self.step.accept(GaragerStep.createCustomer)
 	}
 
+    private func setupRx() {
+        
+    }
 
 }

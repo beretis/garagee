@@ -41,15 +41,82 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setupRx() {
+        
     }
-    */
 
+}
+
+class CreateCustomerCarsCollectionViewFlowDelegate: NSObject, UICollectionViewDelegate, ReusableCollectionView, UICollectionViewDelegateFlowLayout {
+    var collectionView: UICollectionView!
+    
+    var cellClasses: [UICollectionViewCell.Type] = []
+    
+    var headerClasses: [UICollectionReusableView.Type] = []
+    
+    var footerClasses: [UICollectionReusableView.Type] = []
+    
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        var cell = (cell as! Cell)
+        cell.isPresented = true
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        var cell = (cell as! Cell)
+        cell.isPresented = false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 55)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize.zero
+    }
+    
+}
+
+class CreateCustomerOrdersCollectionViewFlowDelegate: NSObject, UICollectionViewDelegate, ReusableCollectionView, UICollectionViewDelegateFlowLayout  {
+    var collectionView: UICollectionView!
+    
+    var cellClasses: [UICollectionViewCell.Type] = []
+    
+    var headerClasses: [UICollectionReusableView.Type] = []
+    
+    var footerClasses: [UICollectionReusableView.Type] = []
+    
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        var cell = (cell as! Cell)
+        cell.isPresented = true
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        var cell = (cell as! Cell)
+        cell.isPresented = false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 55)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize.zero
+    }
+    
 }

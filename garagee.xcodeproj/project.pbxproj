@@ -64,6 +64,12 @@
 		28894E5F1E676F5C005F8F05 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E5E1E676F5B005F8F05 /* Images.swift */; };
 		28894E611E676F68005F8F05 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E601E676F68005F8F05 /* Colors.swift */; };
 		28894E631E676F6F005F8F05 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E621E676F6F005F8F05 /* Fonts.swift */; };
+		288AE3C22033829E001A8113 /* CreateCustomerCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AE3C02033829E001A8113 /* CreateCustomerCarCell.swift */; };
+		288AE3C32033829E001A8113 /* CreateCustomerCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288AE3C12033829E001A8113 /* CreateCustomerCarCell.xib */; };
+		288AE3C6203382B9001A8113 /* CreateCustomerOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AE3C4203382B9001A8113 /* CreateCustomerOrderCell.swift */; };
+		288AE3C7203382B9001A8113 /* CreateCustomerOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288AE3C5203382B9001A8113 /* CreateCustomerOrderCell.xib */; };
+		288AE3CB2033834B001A8113 /* CreateCustomerOrderCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AE3CA2033834B001A8113 /* CreateCustomerOrderCellVM.swift */; };
+		288AE3CD2033835D001A8113 /* CreateCustomerCarCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AE3CC2033835D001A8113 /* CreateCustomerCarCellVM.swift */; };
 		28C339C5203321EA0076ABE4 /* CreateCustomerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */; };
 		28C339C8203321FC0076ABE4 /* CreateCustomerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */; };
 		28C339C9203321FC0076ABE4 /* CreateCustomerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C339C7203321FC0076ABE4 /* CreateCustomerVC.xib */; };
@@ -172,6 +178,12 @@
 		28894E5E1E676F5B005F8F05 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		28894E601E676F68005F8F05 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		28894E621E676F6F005F8F05 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		288AE3C02033829E001A8113 /* CreateCustomerCarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerCarCell.swift; sourceTree = "<group>"; };
+		288AE3C12033829E001A8113 /* CreateCustomerCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCustomerCarCell.xib; sourceTree = "<group>"; };
+		288AE3C4203382B9001A8113 /* CreateCustomerOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerOrderCell.swift; sourceTree = "<group>"; };
+		288AE3C5203382B9001A8113 /* CreateCustomerOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCustomerOrderCell.xib; sourceTree = "<group>"; };
+		288AE3CA2033834B001A8113 /* CreateCustomerOrderCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerOrderCellVM.swift; sourceTree = "<group>"; };
+		288AE3CC2033835D001A8113 /* CreateCustomerCarCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerCarCellVM.swift; sourceTree = "<group>"; };
 		28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerVM.swift; sourceTree = "<group>"; };
 		28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerVC.swift; sourceTree = "<group>"; };
 		28C339C7203321FC0076ABE4 /* CreateCustomerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCustomerVC.xib; sourceTree = "<group>"; };
@@ -434,9 +446,39 @@
 			path = Flows;
 			sourceTree = "<group>";
 		};
+		288AE3BF20338277001A8113 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				288AE3C920338305001A8113 /* Orders */,
+				288AE3C8203382FE001A8113 /* Cars */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		288AE3C8203382FE001A8113 /* Cars */ = {
+			isa = PBXGroup;
+			children = (
+				288AE3C02033829E001A8113 /* CreateCustomerCarCell.swift */,
+				288AE3C12033829E001A8113 /* CreateCustomerCarCell.xib */,
+				288AE3CC2033835D001A8113 /* CreateCustomerCarCellVM.swift */,
+			);
+			path = Cars;
+			sourceTree = "<group>";
+		};
+		288AE3C920338305001A8113 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				288AE3C4203382B9001A8113 /* CreateCustomerOrderCell.swift */,
+				288AE3C5203382B9001A8113 /* CreateCustomerOrderCell.xib */,
+				288AE3CA2033834B001A8113 /* CreateCustomerOrderCellVM.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
 		28C339C3203321D60076ABE4 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				288AE3BF20338277001A8113 /* Cells */,
 				28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */,
 				28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */,
 				28C339C7203321FC0076ABE4 /* CreateCustomerVC.xib */,
@@ -751,8 +793,10 @@
 			files = (
 				28C60DC11E575C6A00D83C5B /* LaunchScreen.storyboard in Resources */,
 				28D739952019EF1A00504F93 /* PartsCell.xib in Resources */,
+				288AE3C7203382B9001A8113 /* CreateCustomerOrderCell.xib in Resources */,
 				28C60DBE1E575C6A00D83C5B /* Assets.xcassets in Resources */,
 				28F21741202F52E000D1AA85 /* Localizable.strings in Resources */,
+				288AE3C32033829E001A8113 /* CreateCustomerCarCell.xib in Resources */,
 				28C339C9203321FC0076ABE4 /* CreateCustomerVC.xib in Resources */,
 				28D7398B2019EEE400504F93 /* OrderCell.xib in Resources */,
 				28D739902019EEFF00504F93 /* CustomersCell.xib in Resources */,
@@ -1038,6 +1082,7 @@
 				28CF6D7320193547004314E9 /* CustomersFlow.swift in Sources */,
 				287EB1471FF57B5700AFE22A /* BaseViewModel.swift in Sources */,
 				282B8FC41FFECC40000495DB /* OrdersVC.swift in Sources */,
+				288AE3CD2033835D001A8113 /* CreateCustomerCarCellVM.swift in Sources */,
 				287FCB22200FFB3A0005461A /* GaragerStep.swift in Sources */,
 				28D7398F2019EEFF00504F93 /* CustomersCell.swift in Sources */,
 				287EB14C1FF57B5700AFE22A /* ReusableCollectionView.swift in Sources */,
@@ -1052,12 +1097,15 @@
 				28C60DB41E575C6A00D83C5B /* AppDelegate.swift in Sources */,
 				281C5D771FF6DDF60025538F /* Order+CoreDataProperties.swift in Sources */,
 				287EB12D1FF5773C00AFE22A /* MoyaResponseParsing.swift in Sources */,
+				288AE3C22033829E001A8113 /* CreateCustomerCarCell.swift in Sources */,
 				281C5D511FF6D6FE0025538F /* SourceryProtocols.swift in Sources */,
 				282B8FC71FFEDD70000495DB /* TabCoordinator.swift in Sources */,
+				288AE3CB2033834B001A8113 /* CreateCustomerOrderCellVM.swift in Sources */,
 				287EB1331FF5773C00AFE22A /* FetchedResultsControllerSectionObserver.swift in Sources */,
 				287F847B201F31EE0058503B /* CreatePartVC.swift in Sources */,
 				281C5D5B1FF6D76D0025538F /* Car.dto.swift in Sources */,
 				287EB15F1FF57B7600AFE22A /* UITableView+ReusCell.swift in Sources */,
+				288AE3C6203382B9001A8113 /* CreateCustomerOrderCell.swift in Sources */,
 				287EB15D1FF57B7600AFE22A /* UICollectionView+Convenience.swift in Sources */,
 				287EB1321FF5773C00AFE22A /* FetchedResultsControllerControllerEntityObserver.swift in Sources */,
 				281C5D761FF6DDF60025538F /* Car+CoreDataClass.swift in Sources */,
