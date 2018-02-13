@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePartVC" customModule="garagee" customModuleProvider="target">
             <connections>
                 <outlet property="brandTextField" destination="iqk-xm-fp5" id="xAn-Un-fTz"/>
-                <outlet property="codeTextField" destination="cnS-NV-5wn" id="ZAp-hS-Ghv"/>
+                <outlet property="codeTextField" destination="cnS-NV-5wn" id="Ofm-Ao-0th"/>
                 <outlet property="nameTextField" destination="emh-PJ-B08" id="CXa-vN-0aF"/>
                 <outlet property="priceTextField" destination="dWh-rX-X2y" id="FnX-BZ-qV4"/>
                 <outlet property="scanButton" destination="qLK-aV-teh" id="wh7-g5-PuT"/>

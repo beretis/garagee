@@ -29,6 +29,8 @@
 		282B8FC21FFECC34000495DB /* CustomersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B8FC11FFECC34000495DB /* CustomersVC.swift */; };
 		282B8FC41FFECC40000495DB /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B8FC31FFECC40000495DB /* OrdersVC.swift */; };
 		282B8FC71FFEDD70000495DB /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B8FC61FFEDD70000495DB /* TabCoordinator.swift */; };
+		283D6B0F20339B9900FE2CEE /* CustomerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */; };
+		283D6B1020339B9900FE2CEE /* CustomerDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */; };
 		287EB12D1FF5773C00AFE22A /* MoyaResponseParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */; };
 		287EB1301FF5773C00AFE22A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1251FF5773A00AFE22A /* CoreDataStack.swift */; };
 		287EB1311FF5773C00AFE22A /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1261FF5773A00AFE22A /* Managed.swift */; };
@@ -143,6 +145,8 @@
 		282B8FC11FFECC34000495DB /* CustomersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersVC.swift; sourceTree = "<group>"; };
 		282B8FC31FFECC40000495DB /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
 		282B8FC61FFEDD70000495DB /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailVC.swift; sourceTree = "<group>"; };
+		283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerDetailVC.xib; sourceTree = "<group>"; };
 		287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaResponseParsing.swift; sourceTree = "<group>"; };
 		287EB1251FF5773A00AFE22A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		287EB1261FF5773A00AFE22A /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 		282B8FBD1FFECB2D000495DB /* Customers */ = {
 			isa = PBXGroup;
 			children = (
+				283D6B0C20339B4B00FE2CEE /* Detail */,
 				28C339C3203321D60076ABE4 /* Create */,
 				28D7398C2019EEEA00504F93 /* Cells */,
 				282B8FC11FFECC34000495DB /* CustomersVC.swift */,
@@ -320,6 +325,15 @@
 				28C60DB31E575C6A00D83C5B /* AppDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		283D6B0C20339B4B00FE2CEE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */,
+				283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		287EB1201FF5773A00AFE22A /* Networking */ = {
@@ -797,6 +811,7 @@
 				28C60DBE1E575C6A00D83C5B /* Assets.xcassets in Resources */,
 				28F21741202F52E000D1AA85 /* Localizable.strings in Resources */,
 				288AE3C32033829E001A8113 /* CreateCustomerCarCell.xib in Resources */,
+				283D6B1020339B9900FE2CEE /* CustomerDetailVC.xib in Resources */,
 				28C339C9203321FC0076ABE4 /* CreateCustomerVC.xib in Resources */,
 				28D7398B2019EEE400504F93 /* OrderCell.xib in Resources */,
 				28D739902019EEFF00504F93 /* CustomersCell.xib in Resources */,
@@ -1069,6 +1084,7 @@
 				287EB1351FF5773C00AFE22A /* ErrorHandling.swift in Sources */,
 				28D7399B2019F4F200504F93 /* OrderCellVM.swift in Sources */,
 				28095DDD201B50D10064A42C /* CreatePartFlow.swift in Sources */,
+				283D6B0F20339B9900FE2CEE /* CustomerDetailVC.swift in Sources */,
 				287EB14E1FF57B5700AFE22A /* BaseViewController.swift in Sources */,
 				28D739A2201A002900504F93 /* Container.swift in Sources */,
 				287FCB1B200FFA0B0005461A /* PartsVM.swift in Sources */,

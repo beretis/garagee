@@ -10,7 +10,7 @@ import Foundation
 import RxFlow
 import RxSwift
 
-class CreateCustomerFlow: Flow {
+class CreateOrderFlow: Flow {
 
 	var root: UIViewController {
 		return self.rootViewController

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class PartsVC: BaseCollectionView<PartsVM> {
 
@@ -14,7 +15,7 @@ class PartsVC: BaseCollectionView<PartsVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		self.title = "Parts"
+		self.title = "Parts".localized()
 		self.setupNavigationBar()
     }
 

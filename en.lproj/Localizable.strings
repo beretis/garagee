@@ -24,3 +24,6 @@
 "create_customer_label_phoneNumber" = "Phone Number";
 "create_customer_label_carsSection" = "Cars";
 "create_customer_label_ordersSection" = "Orders";
+
+"customers_vc_name" = "Customers";
+"parts_vc_name" = "Parts";

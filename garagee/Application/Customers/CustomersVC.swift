@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class CustomersVC: BaseCollectionView<CustomersVM> {
 
@@ -14,6 +15,8 @@ class CustomersVC: BaseCollectionView<CustomersVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Customers".localized()
+        self.setupNavigationBar()
     }
 
 	override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

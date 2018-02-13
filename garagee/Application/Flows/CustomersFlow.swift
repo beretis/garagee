@@ -44,8 +44,8 @@ class CustomersFlow: Flow {
     }
 
 	func navigatoToCreateCustomer() -> NextFlowItems {
-		let flow = CreatePartFlow()
-		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createPart), isRootFlowable: true))
+		let flow = CreateCustomerFlow()
+		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createCustomer), isRootFlowable: true))
 	}
 }
 
