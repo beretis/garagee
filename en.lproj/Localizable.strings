@@ -24,6 +24,9 @@
 "create_customer_label_phoneNumber" = "Phone Number";
 "create_customer_label_carsSection" = "Cars";
 "create_customer_label_ordersSection" = "Orders";
+"create_customer_button_addFromContacts" = "Pick from contacts";
+"create_customer_button_importMultipleContacts" = "Import multiple contacts";
+
 
 "customers_vc_name" = "Customers";
 "parts_vc_name" = "Parts";

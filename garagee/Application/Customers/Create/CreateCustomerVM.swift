@@ -23,7 +23,7 @@ class CreateCustomerVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
 		}
 	})
 
-	lazy var save: AnyObserver<(String?, String?, String?, String?, String?)> = AnyObserver(eventHandler: { [unowned self] event in
+	lazy var save: AnyObserver<(firstName: String?, lastName: String?, phone: String?, email: String?, cars: [CarDTO])> = AnyObserver(eventHandler: { [unowned self] event in
 		if case let Event.next(data) = event {
 		}
 	})

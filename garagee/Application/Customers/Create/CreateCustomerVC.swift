@@ -7,12 +7,13 @@
 //
 
 import Contacts
+import ContactsUI
 import Localize_Swift
 import RxCocoa
 import RxSwift
 import UIKit
 
-class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultErrorPresenter  {
+class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultErrorPresenter, CNContactPickerDelegate {
 
 	@IBOutlet weak var nameTF: UITextField!
 	@IBOutlet weak var surnameTF: UITextField!
@@ -21,6 +22,8 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
 	@IBOutlet weak var carsView: UIView!
 	@IBOutlet weak var carsCollectionView: UICollectionView!
 	@IBOutlet weak var addCarButton: UIButton!
+	@IBOutlet weak var pickCustomerButton: UIButton!
+	@IBOutlet weak var importMutipleButton: UIButton!
 
 	lazy var errorStream: Observable<AppError> = { [unowned self] in
 		return self.viewModel.defaultErrorHandler.error.asObservable().map { error in
@@ -31,50 +34,29 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar()
+		self.setupRx()
     }
     
     private func setupRx() {
-        
-    }
-    
-    func getContacts() {
-        let store = CNContactStore()
-        
-        if CNContactStore.authorizationStatus(for: .contacts) == .notDetermined {
-            store.requestAccess(for: .contacts, completionHandler: { (authorized: Bool, error: NSError?) -> Void in
-                if authorized {
-                    self.retrieveContactsWithStore(store)
-                }
-                } as! (Bool, Error?) -> Void)
-        } else if CNContactStore.authorizationStatus(for: .contacts) == .authorized {
-            self.retrieveContactsWithStore(store)
-        }
-    }
-    
-    func retrieveContactsWithStore(_ store: CNContactStore) {
-        do {
-            let groups = try store.groups(matching: nil)
-            let predicate = CNContact.predicateForContactsInGroup(withIdentifier: groups[0].identifier)
-            //let predicate = CNContact.predicateForContactsMatchingName("John")
-            let keysToFetch = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName), CNContactEmailAddressesKey] as [Any]
-            
-            let contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
-            print("pes")
-        } catch {
-            print(error)
-        }
+		self.pickCustomerButton.rx.tap.asObservable().do(onNext: { _ in
+			let contactPickerViewController = CNContactPickerViewController()
+			contactPickerViewController.delegate = self
+			contactPickerViewController.predicateForSelectionOfContact = NSPredicate(value: true)
+			contactPickerViewController.predicateForSelectionOfProperty = NSPredicate(value: true)
+			self.present(contactPickerViewController, animated: true, completion: nil)
+		}).subscribe().disposed(by: self.disposeBag)
     }
     
     //private
     private func setupNavigationBar() {
         let save = UIBarButtonItem(title: "Save".localized(), style: .done, target: nil, action: nil)
-//        save.rx.tap.asObservable()
-//            .map { _ -> (String?, String?, String?, String?, String?) in
-//                let values = (brand: self.brandTextField.text, name: self.nameTextField.text, price: self.priceTextField.text, warranty: self.warrantyTextField.text, code: self.codeTextField.text)
-//                return values
-//            }
-//            .bind(to: self.viewModel.save)
-//            .disposed(by: self.disposeBag)
+        save.rx.tap.asObservable()
+            .map { _ -> (String?, String?, String?, String?, [CarDTO]) in
+				let values = (firstName: self.nameTF.text, lastName: self.surnameTF.text, phone: self.phoneTF.text, email: self.emailTF.text, cars: [CarDTO]())
+                return values
+            }
+            .bind(to: self.viewModel.save)
+            .disposed(by: self.disposeBag)
         self.navigationItem.setRightBarButtonItems([save], animated: true)
         
         let cancel = UIBarButtonItem(title: "Cancel".localized(), style: .plain, target: nil, action: nil)
@@ -82,6 +64,20 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
         self.navigationItem.setLeftBarButtonItems([cancel], animated: true)
     }
 
+	func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+		picker.dismiss(animated: true) {
+			self.fillUI(WithContact: contact)
+		}
+	}
+
+	func fillUI(WithContact contact: CNContact) {
+		self.nameTF.text = contact.givenName
+		self.surnameTF.text = contact.familyName
+		let email = contact.emailAddresses.first?.value ?? ""
+		self.phoneTF.text = String(email)
+		let phone = contact.phoneNumbers.first?.value.stringValue ?? ""
+		self.emailTF.text = String(phone)
+	}
 }
 
 class CreateCustomerCarsCollectionViewFlowDelegate: NSObject, UICollectionViewDelegate, ReusableCollectionView, UICollectionViewDelegateFlowLayout {

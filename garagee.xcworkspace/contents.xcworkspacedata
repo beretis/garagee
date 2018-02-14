@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:garagee/Model/Part+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:garagee.xcodeproj">
    </FileRef>
    <FileRef
