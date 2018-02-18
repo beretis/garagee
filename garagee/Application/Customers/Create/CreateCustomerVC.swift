@@ -35,6 +35,7 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
         super.viewDidLoad()
         self.setupNavigationBar()
 		self.setupRx()
+		self.setupErrorPresenter()
     }
     
     private func setupRx() {

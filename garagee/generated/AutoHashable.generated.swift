@@ -59,9 +59,7 @@ extension CarDTO: Hashable {
 extension CustomerDTO: Hashable {
     public var hashValue: Int {
         return combineHashes([
-            firstName.hashValue,
             id.hashValue,
-            lastName.hashValue,
             0])
     }
 }

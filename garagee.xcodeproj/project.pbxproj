@@ -31,6 +31,7 @@
 		282B8FC71FFEDD70000495DB /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B8FC61FFEDD70000495DB /* TabCoordinator.swift */; };
 		283D6B0F20339B9900FE2CEE /* CustomerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */; };
 		283D6B1020339B9900FE2CEE /* CustomerDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */; };
+		284B853D2036D93C007BE2ED /* CustomerDTO+ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */; };
 		287EB12D1FF5773C00AFE22A /* MoyaResponseParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */; };
 		287EB1301FF5773C00AFE22A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1251FF5773A00AFE22A /* CoreDataStack.swift */; };
 		287EB1311FF5773C00AFE22A /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1261FF5773A00AFE22A /* Managed.swift */; };
@@ -147,6 +148,8 @@
 		282B8FC61FFEDD70000495DB /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailVC.swift; sourceTree = "<group>"; };
 		283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerDetailVC.xib; sourceTree = "<group>"; };
+		284B851B2035BEEF007BE2ED /* garagee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "garagee-Bridging-Header.h"; sourceTree = "<group>"; };
+		284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomerDTO+ID.swift"; sourceTree = "<group>"; };
 		287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaResponseParsing.swift; sourceTree = "<group>"; };
 		287EB1251FF5773A00AFE22A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		287EB1261FF5773A00AFE22A /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 				281C5D541FF6D76D0025538F /* Order.dto.swift */,
 				281C5D571FF6D76D0025538F /* Part.dto.swift */,
 				281C5D501FF6D6FE0025538F /* SourceryProtocols.swift */,
+				284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */,
 			);
 			path = generated;
 			sourceTree = "<group>";
@@ -510,6 +514,7 @@
 				28C60DD51E575C6B00D83C5B /* garageeUITests */,
 				A4597001530A9206303E7594 /* Pods */,
 				3717FA125576D553197EC8EF /* Frameworks */,
+				284B851B2035BEEF007BE2ED /* garagee-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -765,6 +770,7 @@
 					28C60DAF1E575C6A00D83C5B = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = ZSU72LARHF;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Manual;
 					};
 					28C60DC61E575C6B00D83C5B = {
@@ -1100,6 +1106,7 @@
 				282B8FC41FFECC40000495DB /* OrdersVC.swift in Sources */,
 				288AE3CD2033835D001A8113 /* CreateCustomerCarCellVM.swift in Sources */,
 				287FCB22200FFB3A0005461A /* GaragerStep.swift in Sources */,
+				284B853D2036D93C007BE2ED /* CustomerDTO+ID.swift in Sources */,
 				28D7398F2019EEFF00504F93 /* CustomersCell.swift in Sources */,
 				287EB14C1FF57B5700AFE22A /* ReusableCollectionView.swift in Sources */,
 				28894E5F1E676F5C005F8F05 /* Images.swift in Sources */,
@@ -1306,6 +1313,7 @@
 			baseConfigurationReference = 124DD83F338258A51A073CC4 /* Pods-garagee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ZSU72LARHF;
 				INFOPLIST_FILE = garagee/Info.plist;
@@ -1314,6 +1322,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "79d3c659-0081-427b-9633-97f0efa2d791";
 				PROVISIONING_PROFILE_SPECIFIER = bbWildcard;
+				SWIFT_OBJC_BRIDGING_HEADER = "garagee-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1323,6 +1333,7 @@
 			baseConfigurationReference = 04FA69DC69C2DD5C0A1DA502 /* Pods-garagee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = garagee/Info.plist;
@@ -1330,6 +1341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.romakrim.garagee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "garagee-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

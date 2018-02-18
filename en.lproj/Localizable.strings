@@ -6,6 +6,8 @@
   Copyright © 2018 Jozef Matus. All rights reserved.
 */
 
+"error_customer_id_stringTooShort_md5" = "Id string is empty";
+
 "create_part_brand" = "Brand";
 "create_part_code" = "Code";
 "create_part_name" = "Name";

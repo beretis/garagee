@@ -17,14 +17,12 @@ extension Customer {
     }
 
     @NSManaged public var email: String?
-    @NSManaged public var firstName: String
+    @NSManaged public var firstName: String?
     @NSManaged public var id: String
-    @NSManaged public var lastName: String
+    @NSManaged public var lastName: String?
     @NSManaged public var phoneNumber: String?
 	///sourcery: toMany = "Car"
     @NSManaged public var cars: Set<Car>
-	///sourcery: toMany = "Order"
-    @NSManaged public var orders: Set<Order>
 
 }
 
@@ -42,22 +40,5 @@ extension Customer {
 
     @objc(removeCars:)
     @NSManaged public func removeFromCars(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for orders
-extension Customer {
-
-    @objc(addOrdersObject:)
-    @NSManaged public func addToOrders(_ value: Order)
-
-    @objc(removeOrdersObject:)
-    @NSManaged public func removeFromOrders(_ value: Order)
-
-    @objc(addOrders:)
-    @NSManaged public func addToOrders(_ values: NSSet)
-
-    @objc(removeOrders:)
-    @NSManaged public func removeFromOrders(_ values: NSSet)
 
 }

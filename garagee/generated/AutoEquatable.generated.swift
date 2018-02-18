@@ -47,12 +47,11 @@ public func == (lhs: CarDTO, rhs: CarDTO) -> Bool {
 extension CustomerDTO: Equatable {}
 public func == (lhs: CustomerDTO, rhs: CustomerDTO) -> Bool {
     guard compareOptionals(lhs: lhs.email, rhs: rhs.email, compare: ==) else { return false }
-    guard lhs.firstName == rhs.firstName else { return false }
+    guard compareOptionals(lhs: lhs.firstName, rhs: rhs.firstName, compare: ==) else { return false }
     guard lhs.id == rhs.id else { return false }
-    guard lhs.lastName == rhs.lastName else { return false }
+    guard compareOptionals(lhs: lhs.lastName, rhs: rhs.lastName, compare: ==) else { return false }
     guard compareOptionals(lhs: lhs.phoneNumber, rhs: rhs.phoneNumber, compare: ==) else { return false }
     guard lhs.cars == rhs.cars else { return false }
-    guard lhs.orders == rhs.orders else { return false }
     return true
 }
 // MARK: - OrderDTO AutoEquatable

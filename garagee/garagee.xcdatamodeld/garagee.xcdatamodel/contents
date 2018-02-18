@@ -17,12 +17,11 @@
     </entity>
     <entity name="Customer" representedClassName="Customer" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
-        <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="owner" inverseEntity="Car" syncable="YES"/>
-        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="customer" inverseEntity="Order" syncable="YES"/>
     </entity>
     <entity name="Order" representedClassName="Order" syncable="YES">
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -32,7 +31,7 @@
         <attribute name="repeatIntervalDays" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="subject" attributeType="String" syncable="YES"/>
         <relationship name="car" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="orders" inverseEntity="Car" syncable="YES"/>
-        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="orders" inverseEntity="Customer" syncable="YES"/>
+        <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" syncable="YES"/>
         <relationship name="usedParts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Part" inverseName="orders" inverseEntity="Part" syncable="YES"/>
     </entity>
     <entity name="Part" representedClassName="Part" syncable="YES">
@@ -45,7 +44,7 @@
     </entity>
     <elements>
         <element name="Car" positionX="-63" positionY="18" width="128" height="240"/>
-        <element name="Customer" positionX="-54" positionY="27" width="128" height="150"/>
+        <element name="Customer" positionX="-54" positionY="27" width="128" height="135"/>
         <element name="Order" positionX="-45" positionY="36" width="128" height="180"/>
         <element name="Part" positionX="-36" positionY="45" width="128" height="135"/>
     </elements>
