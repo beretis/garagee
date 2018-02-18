@@ -26,8 +26,8 @@ class CustomersCellVM: CellVM {
     }
 
 	private func setupRx() {
-		self.initialsObs = Observable.just(self.getInitials(text1: self.model.firstName ?? "*", text2: self.model.lastName ?? "*"))
-		self.nameObs = Observable.just("\(self.model.firstName) \(self.model.lastName)")
+//        self.initialsObs = Observable.just(self.getInitials(text1: self.model.firstName ?? "*", text2: self.model.lastName ?? "*"))
+		self.nameObs = Observable.just("\(self.model.firstName ?? "") \(self.model.lastName ?? "")")
 		self.contactObs = Observable.just("0938509283")
 	}
 

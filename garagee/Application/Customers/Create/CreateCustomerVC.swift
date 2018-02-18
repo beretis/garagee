@@ -53,7 +53,7 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
         let save = UIBarButtonItem(title: "Save".localized(), style: .done, target: nil, action: nil)
         save.rx.tap.asObservable()
             .map { _ -> (String?, String?, String?, String?, [CarDTO]) in
-				let values = (firstName: self.nameTF.text, lastName: self.surnameTF.text, phone: self.phoneTF.text, email: self.emailTF.text, cars: [CarDTO]())
+				let values = (firstName: self.nameTF.text, lastName: self.surnameTF.text, email: self.emailTF.text, phone: self.phoneTF.text, cars: [CarDTO]())
                 return values
             }
             .bind(to: self.viewModel.save)
@@ -75,9 +75,9 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
 		self.nameTF.text = contact.givenName
 		self.surnameTF.text = contact.familyName
 		let email = contact.emailAddresses.first?.value ?? ""
-		self.phoneTF.text = String(email)
+        self.emailTF.text = String(email)
 		let phone = contact.phoneNumbers.first?.value.stringValue ?? ""
-		self.emailTF.text = String(phone)
+        self.phoneTF.text = String(phone)
 	}
 }
 

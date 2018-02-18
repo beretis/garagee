@@ -29,4 +29,10 @@ class CustomersVC: BaseCollectionView<CustomersVM> {
 		self.navigationItem.setRightBarButtonItems([addButton], animated: true)
 	}
 
+    override func setupRx() {
+        super.setupRx()
+        self.viewModel.sections.asObservable().bind(to: self.collectionView.rx.items(dataSource: self.dataSource))
+            .disposed(by: self.disposeBag)
+    }
+    
 }

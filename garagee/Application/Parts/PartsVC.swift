@@ -27,7 +27,6 @@ class PartsVC: BaseCollectionView<PartsVM> {
 		super.setupRx()
 		self.viewModel.sections.asObservable().bind(to: self.collectionView.rx.items(dataSource: self.dataSource))
 			.disposed(by: self.disposeBag)
-
 	}
 
 	override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

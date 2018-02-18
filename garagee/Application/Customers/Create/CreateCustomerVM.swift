@@ -55,20 +55,16 @@ class CreateCustomerVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
 
 	private func validate(Inputs inputs: (name: String?, surname: String?, email: String?, phone: String?, cars: [CarDTO])) -> Bool {
 		let (n, s, e, p, _) = inputs
-		guard ((n != nil) || (s != nil)) else {
+		guard !(n?.isBlank ?? true) || !(s?.isBlank ?? true) else {
 			return false
 		}
-		guard (e != nil || p != nil) else {
+		guard !(e?.isBlank ?? true) || !(p?.isBlank ?? true) else {
 			return false
 		}
-		if let email = e {
-			guard !email.isBlank && !email.isEmail else {
+		if let email = e, !email.isBlank  {
+			guard email.isEmail else {
 				return false
-				
 			}
-		}
-		guard String.validate(OptionalStringInput: n) && String.validate(OptionalStringInput: s) && String.validate(OptionalStringInput: p) else {
-			return false
 		}
 		return true
 	}
