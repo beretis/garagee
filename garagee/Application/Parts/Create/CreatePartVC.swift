@@ -20,6 +20,7 @@ class CreatePartVC: BaseViewController<CreatePartVM>, MVVMView, BarcodeScannerCo
 			error.convertToAppSpecificError()
 		}
 	}()
+
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var brandTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!

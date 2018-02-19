@@ -47,6 +47,7 @@ class CreateCustomerFlow: Flow {
         let flow = MainFlow()
         let stepper = OneStepper.init(withSingleStep: GaragerStep.dashboard(index: 1))
         return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: stepper, isRootFlowable: true))
+		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: , nextStepper: OneStepper(withSingleStep: GaragerStep.settings)))
     }
     
 }

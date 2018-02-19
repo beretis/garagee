@@ -22,3 +22,15 @@ public extension CustomerDTO {
 	}
 
 }
+
+public extension CustomerDTO {
+	public func getContact() -> String {
+		if self.phoneNumber != nil {
+			return self.phoneNumber!
+		}
+		if self.email != nil {
+			return self.email!
+		}
+		return "unknown"
+	}
+}

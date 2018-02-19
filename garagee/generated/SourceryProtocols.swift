@@ -13,3 +13,5 @@ public protocol AutoEquatable {}
 public protocol AutoHashable {}
 public protocol AutoUnboxable {}
 public protocol MVVMView {}
+public protocol AutoDefaultErrorPresenter {}
+

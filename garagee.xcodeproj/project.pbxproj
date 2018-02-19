@@ -340,6 +340,20 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		284B853E203ADC75007BE2ED /* Customers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Customers;
+			sourceTree = "<group>";
+		};
+		284B853F203ADC78007BE2ED /* Cars */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cars;
+			sourceTree = "<group>";
+		};
 		287EB1201FF5773A00AFE22A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +510,8 @@
 		28C339C3203321D60076ABE4 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				284B853F203ADC78007BE2ED /* Cars */,
+				284B853E203ADC75007BE2ED /* Customers */,
 				288AE3BF20338277001A8113 /* Cells */,
 				28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */,
 				28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */,

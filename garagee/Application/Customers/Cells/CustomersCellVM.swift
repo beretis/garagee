@@ -26,13 +26,13 @@ class CustomersCellVM: CellVM {
     }
 
 	private func setupRx() {
-//        self.initialsObs = Observable.just(self.getInitials(text1: self.model.firstName ?? "*", text2: self.model.lastName ?? "*"))
+        self.initialsObs = Observable.just(self.getInitials(text1: model.firstName ?? "", text2: model.lastName ?? ""))
 		self.nameObs = Observable.just("\(self.model.firstName ?? "") \(self.model.lastName ?? "")")
-		self.contactObs = Observable.just("0938509283")
+		self.contactObs = Observable.just(self.model.getContact())
 	}
 
 	private func getInitials(text1: String, text2: String) -> String {
-		return "\(String(describing: text1.first))\(String(describing: text2.first))"
+		return "\(text1.first ?? "*")\(text2.first ?? "*")"
 	}
 
 }
