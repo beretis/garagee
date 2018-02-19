@@ -16,7 +16,6 @@ extension Car {
         return NSFetchRequest<Car>(entityName: "Car")
     }
 
-    @NSManaged public var aditionalInfo: String?
     @NSManaged public var brand: String
     @NSManaged public var color: String?
     @NSManaged public var firstRegistration: Date
@@ -24,9 +23,10 @@ extension Car {
     @NSManaged public var lastService: Date?
     @NSManaged public var milage: Int32
     @NSManaged public var model: String
+    @NSManaged public var fuel: String
     @NSManaged public var productionDate: Date?
     @NSManaged public var techInspection: Date?
-    @NSManaged public var type: String?
+    @NSManaged public var engine: String?
 	///sourcery: toMany = "Order"
     @NSManaged public var orders: Set<Order>
     @NSManaged public var owner: Customer?

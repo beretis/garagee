@@ -52,6 +52,7 @@ extension CarDTO: Hashable {
             id.hashValue,
             milage.hashValue,
             model.hashValue,
+            fuel.hashValue,
             0])
     }
 }

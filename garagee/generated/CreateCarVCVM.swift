@@ -7,7 +7,7 @@ import RxFlow
 import RxSwift
 import RxViewModel
 
-class CreateCustomerVCVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
+class CreateCarVCVM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
 
 	override init() {
         super.init()

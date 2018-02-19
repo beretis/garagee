@@ -28,7 +28,6 @@ fileprivate func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs:
 // MARK: - CarDTO AutoEquatable
 extension CarDTO: Equatable {}
 public func == (lhs: CarDTO, rhs: CarDTO) -> Bool {
-    guard compareOptionals(lhs: lhs.aditionalInfo, rhs: rhs.aditionalInfo, compare: ==) else { return false }
     guard lhs.brand == rhs.brand else { return false }
     guard compareOptionals(lhs: lhs.color, rhs: rhs.color, compare: ==) else { return false }
     guard lhs.firstRegistration == rhs.firstRegistration else { return false }
@@ -36,9 +35,10 @@ public func == (lhs: CarDTO, rhs: CarDTO) -> Bool {
     guard compareOptionals(lhs: lhs.lastService, rhs: rhs.lastService, compare: ==) else { return false }
     guard lhs.milage == rhs.milage else { return false }
     guard lhs.model == rhs.model else { return false }
+    guard lhs.fuel == rhs.fuel else { return false }
     guard compareOptionals(lhs: lhs.productionDate, rhs: rhs.productionDate, compare: ==) else { return false }
     guard compareOptionals(lhs: lhs.techInspection, rhs: rhs.techInspection, compare: ==) else { return false }
-    guard compareOptionals(lhs: lhs.type, rhs: rhs.type, compare: ==) else { return false }
+    guard compareOptionals(lhs: lhs.engine, rhs: rhs.engine, compare: ==) else { return false }
     guard lhs.orders == rhs.orders else { return false }
     guard compareOptionals(lhs: lhs.owner, rhs: rhs.owner, compare: ==) else { return false }
     return true

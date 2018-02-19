@@ -5,8 +5,6 @@ import Foundation
 import Unbox
 
 public class CarDTO: AutoEquatable, AutoHashable {
-    ///sourcery: skipHashing
-    var aditionalInfo: String?
     var brand: String
     ///sourcery: skipHashing
     var color: String?
@@ -18,6 +16,7 @@ public class CarDTO: AutoEquatable, AutoHashable {
     var lastService: Date?
     var milage: Int32
     var model: String
+    var fuel: String
     ///sourcery: skipHashing
     ///sourcery: skipHashing
     var productionDate: Date?
@@ -25,14 +24,13 @@ public class CarDTO: AutoEquatable, AutoHashable {
     ///sourcery: skipHashing
     var techInspection: Date?
     ///sourcery: skipHashing
-    var type: String?
+    var engine: String?
     ///sourcery: skipHashing
     var orders: [OrderDTO] = []
     ///sourcery: skipHashing
     var owner: Customer?
 
-    public init(aditionalInfo: String? , brand: String , color: String? , firstRegistration: Date , id: String , lastService: Date? , milage: Int32 , model: String , productionDate: Date? , techInspection: Date? , type: String? , orders: Array<OrderDTO> , owner: Customer? ) { // swiftlint:disable:this line_length
-        self.aditionalInfo = aditionalInfo
+    public init(brand: String , color: String? , firstRegistration: Date , id: String , lastService: Date? , milage: Int32 , model: String , fuel: String , productionDate: Date? , techInspection: Date? , engine: String? , orders: Array<OrderDTO> , owner: Customer? ) { // swiftlint:disable:this line_length
         self.brand = brand
         self.color = color
         self.firstRegistration = firstRegistration
@@ -40,9 +38,10 @@ public class CarDTO: AutoEquatable, AutoHashable {
         self.lastService = lastService
         self.milage = milage
         self.model = model
+        self.fuel = fuel
         self.productionDate = productionDate
         self.techInspection = techInspection
-        self.type = type
+        self.engine = engine
         self.orders = orders
         self.owner = owner
     }

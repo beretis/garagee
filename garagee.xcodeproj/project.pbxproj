@@ -29,6 +29,9 @@
 		282B8FC21FFECC34000495DB /* CustomersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B8FC11FFECC34000495DB /* CustomersVC.swift */; };
 		282B8FC41FFECC40000495DB /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B8FC31FFECC40000495DB /* OrdersVC.swift */; };
 		282B8FC71FFEDD70000495DB /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B8FC61FFEDD70000495DB /* TabCoordinator.swift */; };
+		2832ADB1203B5A6F009BE814 /* CreateCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832ADAF203B5A6F009BE814 /* CreateCarVC.swift */; };
+		2832ADB2203B5A6F009BE814 /* CreateCarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2832ADB0203B5A6F009BE814 /* CreateCarVC.xib */; };
+		2832ADB6203B6478009BE814 /* CreateCarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832ADB5203B6478009BE814 /* CreateCarVM.swift */; };
 		283D6B0F20339B9900FE2CEE /* CustomerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */; };
 		283D6B1020339B9900FE2CEE /* CustomerDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */; };
 		284B853D2036D93C007BE2ED /* CustomerDTO+ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */; };
@@ -146,6 +149,9 @@
 		282B8FC11FFECC34000495DB /* CustomersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersVC.swift; sourceTree = "<group>"; };
 		282B8FC31FFECC40000495DB /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
 		282B8FC61FFEDD70000495DB /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		2832ADAF203B5A6F009BE814 /* CreateCarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCarVC.swift; sourceTree = "<group>"; };
+		2832ADB0203B5A6F009BE814 /* CreateCarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCarVC.xib; sourceTree = "<group>"; };
+		2832ADB5203B6478009BE814 /* CreateCarVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCarVM.swift; sourceTree = "<group>"; };
 		283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailVC.swift; sourceTree = "<group>"; };
 		283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerDetailVC.xib; sourceTree = "<group>"; };
 		284B851B2035BEEF007BE2ED /* garagee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "garagee-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -302,6 +308,7 @@
 		282B8FBD1FFECB2D000495DB /* Customers */ = {
 			isa = PBXGroup;
 			children = (
+				2832ADAE203B5864009BE814 /* Car */,
 				283D6B0C20339B4B00FE2CEE /* Detail */,
 				28C339C3203321D60076ABE4 /* Create */,
 				28D7398C2019EEEA00504F93 /* Cells */,
@@ -331,6 +338,26 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		2832ADAD203B583D009BE814 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */,
+				28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */,
+				28C339C7203321FC0076ABE4 /* CreateCustomerVC.xib */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		2832ADAE203B5864009BE814 /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				2832ADAF203B5A6F009BE814 /* CreateCarVC.swift */,
+				2832ADB0203B5A6F009BE814 /* CreateCarVC.xib */,
+				2832ADB5203B6478009BE814 /* CreateCarVM.swift */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
 		283D6B0C20339B4B00FE2CEE /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,20 +365,6 @@
 				283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */,
 			);
 			path = Detail;
-			sourceTree = "<group>";
-		};
-		284B853E203ADC75007BE2ED /* Customers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Customers;
-			sourceTree = "<group>";
-		};
-		284B853F203ADC78007BE2ED /* Cars */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cars;
 			sourceTree = "<group>";
 		};
 		287EB1201FF5773A00AFE22A /* Networking */ = {
@@ -510,12 +523,8 @@
 		28C339C3203321D60076ABE4 /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				284B853F203ADC78007BE2ED /* Cars */,
-				284B853E203ADC75007BE2ED /* Customers */,
+				2832ADAD203B583D009BE814 /* Customer */,
 				288AE3BF20338277001A8113 /* Cells */,
-				28C339C4203321EA0076ABE4 /* CreateCustomerVM.swift */,
-				28C339C6203321FC0076ABE4 /* CreateCustomerVC.swift */,
-				28C339C7203321FC0076ABE4 /* CreateCustomerVC.xib */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -835,6 +844,7 @@
 				288AE3C32033829E001A8113 /* CreateCustomerCarCell.xib in Resources */,
 				283D6B1020339B9900FE2CEE /* CustomerDetailVC.xib in Resources */,
 				28C339C9203321FC0076ABE4 /* CreateCustomerVC.xib in Resources */,
+				2832ADB2203B5A6F009BE814 /* CreateCarVC.xib in Resources */,
 				28D7398B2019EEE400504F93 /* OrderCell.xib in Resources */,
 				28D739902019EEFF00504F93 /* CustomersCell.xib in Resources */,
 				287F847C201F31EE0058503B /* CreatePartVC.xib in Resources */,
@@ -1109,6 +1119,7 @@
 				283D6B0F20339B9900FE2CEE /* CustomerDetailVC.swift in Sources */,
 				287EB14E1FF57B5700AFE22A /* BaseViewController.swift in Sources */,
 				28D739A2201A002900504F93 /* Container.swift in Sources */,
+				2832ADB1203B5A6F009BE814 /* CreateCarVC.swift in Sources */,
 				287FCB1B200FFA0B0005461A /* PartsVM.swift in Sources */,
 				282B8FC21FFECC34000495DB /* CustomersVC.swift in Sources */,
 				287EB15C1FF57B7600AFE22A /* UIButton+BackgroundColor.swift in Sources */,
@@ -1154,6 +1165,7 @@
 				287FCB1D200FFA170005461A /* CustomersVM.swift in Sources */,
 				287EB1301FF5773C00AFE22A /* CoreDataStack.swift in Sources */,
 				28D7399D2019F50200504F93 /* CustomersCellVM.swift in Sources */,
+				2832ADB6203B6478009BE814 /* CreateCarVM.swift in Sources */,
 				281C5D581FF6D76D0025538F /* AutoHashable.generated.swift in Sources */,
 				28894E5D1E676AC9005F8F05 /* Storyboards.swift in Sources */,
 				28095DD9201B50BC0064A42C /* CreateOrderFlow.swift in Sources */,

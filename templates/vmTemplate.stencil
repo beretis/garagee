@@ -2,18 +2,14 @@
 // sourcery:file:{{type.name}}VM.swift
 import Foundation
 import RxCocoa
+import RxFlow
 import RxSwift
 import RxViewModel
 
-class {{type.name}}VM: BaseViewModel, RxDefaultErrorHandlable {
+class {{type.name}}VM: BaseViewModel, Stepper, RxDefaultErrorHandlable {
 
-    public var defaultHandler: RxErrorHandler
-
-	init(coordinator: ExploreCoordinatorType, defaultErrorHandler: RxErrorHandler) {
-		self.defaultHandler = defaultErrorHandler
+	override init() {
         super.init()
-		self.coordinator = coordinator
-		self.setupRx()
     }
 
     private func setupRx() {
