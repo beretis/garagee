@@ -10,12 +10,21 @@ import UIKit
 
 class CreateCarVC: BaseViewController<CreateCarVM>, MVVMView {
 
+    @IBOutlet weak var brandTF: UITextField!
+    @IBOutlet weak var modelTF: UITextField!
+    @IBOutlet weak var firstRegTF: UITextField!
+    @IBOutlet weak var dateOfProduction: UITextField!
+    @IBOutlet weak var vinTF: UITextField!
+    @IBOutlet weak var milageTF: UITextField!
+    @IBOutlet weak var fuelTF: UITextField!
+    @IBOutlet weak var engineTF: UITextField!
+    @IBOutlet weak var documentsCV: UICollectionView!
+    @IBOutlet weak var photosCV: UICollectionView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }

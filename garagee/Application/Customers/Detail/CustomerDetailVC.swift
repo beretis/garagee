@@ -6,30 +6,40 @@
 //  Copyright © 2018 Jozef Matus. All rights reserved.
 //
 
+import Localize_Swift
+import RxCocoa
+import RxSwift
 import UIKit
 
-class CustomerDetailVC: UIViewController {
+class CustomerDetailVC: BaseViewController<CustomerDetailVM>, DefaultErrorPresenter {
+
+    lazy var errorStream: Observable<AppError> = { [unowned self] in
+        return self.viewModel.defaultErrorHandler.error.asObservable().map { error in
+            error.convertToAppSpecificError()
+        }
+        }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.setupNavigationBar()
+        self.setupErrorPresenter()
     }
     
+    //private
+    private func setupNavigationBar() {
+        let back = UIBarButtonItem(title: "Back".localized(), style: .done, target: nil, action: nil)
+        back.rx.tap.asObservable()
+            .map { _ -> (String?, String?, String?, String?, String?) in
+                let values = (brand: self.brandTextField.text, name: self.nameTextField.text, price: self.priceTextField.text, warranty: self.warrantyTextField.text, code: self.codeTextField.text)
+                return values
+            }
+            .bind(to: self.viewModel.back)
+            .disposed(by: self.disposeBag)
+        self.navigationItem.setRightBarButtonItems([back], animated: true)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let edit = UIBarButtonItem(title: "Edit".localized(), style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+//        cancel.rx.tap.asObservable().bind(to: self.viewModel.cancel).disposed(by: self.disposeBag)
+        self.navigationItem.setLeftBarButtonItems([edit], animated: true)
     }
-    */
-
+    
 }

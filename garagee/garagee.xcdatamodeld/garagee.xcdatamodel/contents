@@ -3,13 +3,14 @@
     <entity name="Car" representedClassName="Car" syncable="YES">
         <attribute name="brand" attributeType="String" syncable="YES"/>
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="documents" optional="YES" syncable="YES"/>
+        <attribute name="documents" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="engine" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstRegistration" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="fuel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastService" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="milage" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="model" attributeType="String" syncable="YES"/>
+        <attribute name="photos" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="productionDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="techInspection" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="vin" attributeType="String" syncable="YES"/>
@@ -44,7 +45,7 @@
         <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="usedParts" inverseEntity="Order" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Car" positionX="-63" positionY="18" width="128" height="255"/>
+        <element name="Car" positionX="-63" positionY="18" width="128" height="270"/>
         <element name="Customer" positionX="-54" positionY="27" width="128" height="135"/>
         <element name="Order" positionX="-45" positionY="36" width="128" height="180"/>
         <element name="Part" positionX="-36" positionY="45" width="128" height="135"/>

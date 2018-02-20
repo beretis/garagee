@@ -18,15 +18,20 @@ enum GaragerStep: Step {
 	case parts
 	case orders
 	//details
-    case customerDetail
+    case customerDetail(customer: Customer)
     case orderDetail
 	case partDetail
 	//createflows
+        //Part
 	case createPart
 	case createPartDone
+        //Ccustomer
 	case createCustomer
-	case createCarForCustomer(customer: String)
-	case createCustomerDone
+    case createCustomerDone
+        //Car
+	case createCarForCustomer(customer: Customer)
+    case createCarDone
+    //Order
 	case createOrder
 
 }

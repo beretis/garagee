@@ -31,6 +31,8 @@ class CustomersFlow: Flow {
             return navigateToCustomers()
 		case .createCustomer:
 			return navigatoToCreateCustomer()
+//        case .customerDetail(let customer):
+//            return navigatoToCustomerDetail(customer)
         default:
             return NextFlowItems.stepNotHandled
         }
@@ -47,6 +49,11 @@ class CustomersFlow: Flow {
 		let flow = CreateCustomerFlow()
 		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createCustomer), isRootFlowable: true))
 	}
+    
+//    func navigatoToCustomerDetail(_ customer: Customer) -> NextFlowItems {
+////        let vm =
+//        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createCustomer), isRootFlowable: true))
+//    }
 }
 
 

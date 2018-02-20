@@ -8,6 +8,8 @@
 
 "error_customer_id_stringTooShort_md5" = "Id string is empty";
 
+"general_back" = "Back";
+
 "create_part_brand" = "Brand";
 "create_part_code" = "Code";
 "create_part_name" = "Name";
@@ -32,3 +34,15 @@
 
 "customers_vc_name" = "Customers";
 "parts_vc_name" = "Parts";
+
+"create_car_brand" = "Brand";
+"create_car_model" = "Model";
+"create_car_registration" = "First registration";
+"create_car_productionYear" = "Year of production";
+"create_car_vin" = "VIN";
+"create_car_milage" = "Milage";
+"create_car_fuel" = "Fuel";
+"create_car_engine" = "engine";
+"create_car_documents" = "Documents";
+"create_car_photos" = "Photos";
+

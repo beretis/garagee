@@ -34,6 +34,8 @@
 		2832ADB6203B6478009BE814 /* CreateCarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832ADB5203B6478009BE814 /* CreateCarVM.swift */; };
 		283D6B0F20339B9900FE2CEE /* CustomerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */; };
 		283D6B1020339B9900FE2CEE /* CustomerDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */; };
+		2846722C203CCA0B0085C3CE /* CreateCarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846722B203CCA0B0085C3CE /* CreateCarFlow.swift */; };
+		2846722E203CD5F80085C3CE /* CustomerDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846722D203CD5F80085C3CE /* CustomerDetailVM.swift */; };
 		284B853D2036D93C007BE2ED /* CustomerDTO+ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */; };
 		287EB12D1FF5773C00AFE22A /* MoyaResponseParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */; };
 		287EB1301FF5773C00AFE22A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1251FF5773A00AFE22A /* CoreDataStack.swift */; };
@@ -154,6 +156,8 @@
 		2832ADB5203B6478009BE814 /* CreateCarVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCarVM.swift; sourceTree = "<group>"; };
 		283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailVC.swift; sourceTree = "<group>"; };
 		283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerDetailVC.xib; sourceTree = "<group>"; };
+		2846722B203CCA0B0085C3CE /* CreateCarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCarFlow.swift; sourceTree = "<group>"; };
+		2846722D203CD5F80085C3CE /* CustomerDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailVM.swift; sourceTree = "<group>"; };
 		284B851B2035BEEF007BE2ED /* garagee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "garagee-Bridging-Header.h"; sourceTree = "<group>"; };
 		284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomerDTO+ID.swift"; sourceTree = "<group>"; };
 		287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaResponseParsing.swift; sourceTree = "<group>"; };
@@ -363,6 +367,7 @@
 			children = (
 				283D6B0D20339B9900FE2CEE /* CustomerDetailVC.swift */,
 				283D6B0E20339B9900FE2CEE /* CustomerDetailVC.xib */,
+				2846722D203CD5F80085C3CE /* CustomerDetailVM.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				28095DD8201B50BC0064A42C /* CreateOrderFlow.swift */,
 				28095DDA201B50C60064A42C /* CreateCustomerFlow.swift */,
 				28095DDC201B50D10064A42C /* CreatePartFlow.swift */,
+				2846722B203CCA0B0085C3CE /* CreateCarFlow.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -1111,6 +1117,7 @@
 				281C5D5D1FF6D76D0025538F /* Part.dto.swift in Sources */,
 				28D7398A2019EEE400504F93 /* OrderCell.swift in Sources */,
 				287EB15E1FF57B7600AFE22A /* UICollectionView+ReusCell.swift in Sources */,
+				2846722C203CCA0B0085C3CE /* CreateCarFlow.swift in Sources */,
 				281C5D5A1FF6D76D0025538F /* Order.dto.swift in Sources */,
 				287EB1491FF57B5700AFE22A /* BaseCollectionView.swift in Sources */,
 				287EB1351FF5773C00AFE22A /* ErrorHandling.swift in Sources */,
@@ -1122,6 +1129,7 @@
 				2832ADB1203B5A6F009BE814 /* CreateCarVC.swift in Sources */,
 				287FCB1B200FFA0B0005461A /* PartsVM.swift in Sources */,
 				282B8FC21FFECC34000495DB /* CustomersVC.swift in Sources */,
+				2846722E203CD5F80085C3CE /* CustomerDetailVM.swift in Sources */,
 				287EB15C1FF57B7600AFE22A /* UIButton+BackgroundColor.swift in Sources */,
 				281C5D7B1FF6DDF60025538F /* Customer+CoreDataProperties.swift in Sources */,
 				28C60DB61E575C6A00D83C5B /* ViewController.swift in Sources */,

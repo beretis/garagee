@@ -12,16 +12,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCarVC" customModule="garagee" customModuleProvider="target">
             <connections>
+                <outlet property="brandTF" destination="C5K-Ia-sVV" id="Awg-Kr-dZ6"/>
+                <outlet property="dateOfProduction" destination="jns-UH-vFf" id="Fb6-PU-yCs"/>
+                <outlet property="documentsCV" destination="yJt-x8-hl0" id="mf3-yP-gkI"/>
+                <outlet property="engineTF" destination="7kJ-7i-xbL" id="Cmv-0g-fCQ"/>
+                <outlet property="firstRegTF" destination="GDr-3U-N52" id="qfo-rz-Acd"/>
+                <outlet property="fuelTF" destination="4Ca-Md-IFA" id="FTm-D9-b6h"/>
+                <outlet property="milageTF" destination="s3Y-mD-x9U" id="FL3-ev-DRs"/>
+                <outlet property="modelTF" destination="vLB-Pe-wQY" id="LPs-Eh-clz"/>
+                <outlet property="photosCV" destination="DuD-wZ-ic2" id="rPb-Ct-Kny"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vinTF" destination="0aD-N8-SX7" id="Pjt-Ot-dcJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="1170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skb-E0-qOE">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="1170"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2E-RV-mSg" userLabel="ContainerView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
@@ -44,7 +54,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_customer_label_firstName"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_brand"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5K-Ia-sVV">
@@ -85,7 +95,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_customer_label_lastName"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_model"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLB-Pe-wQY">
@@ -126,7 +136,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_customer_label_email"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_registration"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GDr-3U-N52">
@@ -167,7 +177,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_customer_label_phoneNumber"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_productionYear"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jns-UH-vFf">
@@ -208,7 +218,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_customer_label_phoneNumber"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_vin"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0aD-N8-SX7">
@@ -249,7 +259,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_customer_label_phoneNumber"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_milage"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3Y-mD-x9U">
@@ -290,7 +300,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_customer_label_phoneNumber"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_fuel"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ca-Md-IFA">
@@ -331,7 +341,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_customer_label_phoneNumber"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_engine"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kJ-7i-xbL">
@@ -388,12 +398,86 @@
                                         </view>
                                     </subviews>
                                 </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4b-JZ-C7w" userLabel="Documets">
+                                    <rect key="frame" x="0.0" y="458" width="375" height="197"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-x8-hl0">
+                                            <rect key="frame" x="0.0" y="49" width="375" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zAu-ap-YrM">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="800" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vp8-eO-qAp">
+                                            <rect key="frame" x="8" y="16" width="160" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_documents"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFk-7q-IFh">
+                                            <rect key="frame" x="345" y="17" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="197" id="dN2-Xh-apy"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZb-2d-KsI" userLabel="Photos">
+                                    <rect key="frame" x="0.0" y="655" width="375" height="197"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DuD-wZ-ic2">
+                                            <rect key="frame" x="0.0" y="49" width="375" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FqX-JM-nbO">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="800" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDE-aw-x2z">
+                                            <rect key="frame" x="8" y="16" width="142" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="create_car_photos"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqH-jx-dBJ">
+                                            <rect key="frame" x="345" y="17" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="197" id="nJk-yY-SH6"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="eOb-GC-sCh" firstAttribute="top" secondItem="n2E-RV-mSg" secondAttribute="top" id="0C7-W6-6Wl"/>
+                                <constraint firstItem="dZb-2d-KsI" firstAttribute="leading" secondItem="n2E-RV-mSg" secondAttribute="leading" id="6IO-kJ-3Pe"/>
                                 <constraint firstAttribute="trailing" secondItem="eOb-GC-sCh" secondAttribute="trailing" id="6JY-lw-XC9"/>
                                 <constraint firstItem="eOb-GC-sCh" firstAttribute="leading" secondItem="n2E-RV-mSg" secondAttribute="leading" id="EXl-1j-fu0"/>
+                                <constraint firstAttribute="trailing" secondItem="X4b-JZ-C7w" secondAttribute="trailing" id="Q4y-jM-xRh"/>
+                                <constraint firstItem="X4b-JZ-C7w" firstAttribute="leading" secondItem="n2E-RV-mSg" secondAttribute="leading" id="QOs-Yj-heL"/>
                                 <constraint firstAttribute="height" constant="500" placeholder="YES" id="Xx2-nw-VVa"/>
+                                <constraint firstItem="X4b-JZ-C7w" firstAttribute="top" secondItem="eOb-GC-sCh" secondAttribute="bottom" id="Z7v-oG-cSD"/>
+                                <constraint firstAttribute="trailing" secondItem="dZb-2d-KsI" secondAttribute="trailing" id="fqI-ML-Qgf"/>
+                                <constraint firstItem="dZb-2d-KsI" firstAttribute="top" secondItem="X4b-JZ-C7w" secondAttribute="bottom" id="jYK-bk-Ko9"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -412,7 +496,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="skb-E0-qOE" secondAttribute="bottom" id="9OP-Ok-nv8"/>
                 <constraint firstItem="skb-E0-qOE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dAT-Xl-zp0"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="24.5" y="304"/>
         </view>
     </objects>
 </document>
