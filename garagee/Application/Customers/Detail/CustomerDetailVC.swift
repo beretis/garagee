@@ -29,17 +29,13 @@ class CustomerDetailVC: BaseViewController<CustomerDetailVM>, DefaultErrorPresen
     private func setupNavigationBar() {
         let back = UIBarButtonItem(title: "Back".localized(), style: .done, target: nil, action: nil)
         back.rx.tap.asObservable()
-            .map { _ -> (String?, String?, String?, String?, String?) in
-                let values = (brand: self.brandTextField.text, name: self.nameTextField.text, price: self.priceTextField.text, warranty: self.warrantyTextField.text, code: self.codeTextField.text)
-                return values
-            }
             .bind(to: self.viewModel.back)
             .disposed(by: self.disposeBag)
-        self.navigationItem.setRightBarButtonItems([back], animated: true)
+        self.navigationItem.setLeftBarButtonItems([back], animated: true)
 
         let edit = UIBarButtonItem(title: "Edit".localized(), style: UIBarButtonItemStyle.plain, target: nil, action: nil)
 //        cancel.rx.tap.asObservable().bind(to: self.viewModel.cancel).disposed(by: self.disposeBag)
-        self.navigationItem.setLeftBarButtonItems([edit], animated: true)
+        self.navigationItem.setRightBarButtonItems([edit], animated: true)
     }
     
 }

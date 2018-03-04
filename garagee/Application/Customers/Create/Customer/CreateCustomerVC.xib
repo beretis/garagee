@@ -17,6 +17,7 @@
                 <outlet property="nameTF" destination="00m-4r-Vva" id="1jC-e3-h2R"/>
                 <outlet property="phoneTF" destination="EVp-yW-0NN" id="eea-CX-hXj"/>
                 <outlet property="pickCustomerButton" destination="hOh-1q-ked" id="vJw-r3-cQo"/>
+                <outlet property="scrollView" destination="iMU-pU-2b5" id="GsQ-dA-8sL"/>
                 <outlet property="surnameTF" destination="Kco-pk-Pam" id="cGY-yJ-040"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-pU-2b5">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-pU-2b5">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUO-ir-MHI" userLabel="ContainerView">
@@ -235,7 +236,7 @@
                                 </stackView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="500" placeholder="YES" id="5aG-rk-Ebe"/>
+                                <constraint firstAttribute="height" priority="1" constant="500" id="5aG-rk-Ebe"/>
                                 <constraint firstItem="JCz-yM-vF5" firstAttribute="top" secondItem="SUO-ir-MHI" secondAttribute="top" id="Ko3-kY-luw"/>
                                 <constraint firstAttribute="trailing" secondItem="JCz-yM-vF5" secondAttribute="trailing" id="ND2-3A-t1q"/>
                                 <constraint firstItem="JCz-yM-vF5" firstAttribute="leading" secondItem="SUO-ir-MHI" secondAttribute="leading" id="oQw-zw-qaz"/>

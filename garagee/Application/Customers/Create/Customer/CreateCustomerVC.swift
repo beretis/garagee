@@ -24,7 +24,8 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
 	@IBOutlet weak var addCarButton: UIButton!
 	@IBOutlet weak var pickCustomerButton: UIButton!
 	@IBOutlet weak var importMutipleButton: UIButton!
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
 	lazy var errorStream: Observable<AppError> = { [unowned self] in
 		return self.viewModel.defaultErrorHandler.error.asObservable().map { error in
 			error.convertToAppSpecificError()
@@ -33,6 +34,7 @@ class CreateCustomerVC: BaseViewController<CreateCustomerVM>, MVVMView, DefaultE
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.scrollView.touche
         self.setupNavigationBar()
 		self.setupRx()
 		self.setupErrorPresenter()
