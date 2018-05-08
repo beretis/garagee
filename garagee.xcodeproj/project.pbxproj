@@ -37,13 +37,6 @@
 		2846722C203CCA0B0085C3CE /* CreateCarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846722B203CCA0B0085C3CE /* CreateCarFlow.swift */; };
 		2846722E203CD5F80085C3CE /* CustomerDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2846722D203CD5F80085C3CE /* CustomerDetailVM.swift */; };
 		284B853D2036D93C007BE2ED /* CustomerDTO+ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */; };
-		287EB12D1FF5773C00AFE22A /* MoyaResponseParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */; };
-		287EB1301FF5773C00AFE22A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1251FF5773A00AFE22A /* CoreDataStack.swift */; };
-		287EB1311FF5773C00AFE22A /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1261FF5773A00AFE22A /* Managed.swift */; };
-		287EB1321FF5773C00AFE22A /* FetchedResultsControllerControllerEntityObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1281FF5773A00AFE22A /* FetchedResultsControllerControllerEntityObserver.swift */; };
-		287EB1331FF5773C00AFE22A /* FetchedResultsControllerSectionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1291FF5773A00AFE22A /* FetchedResultsControllerSectionObserver.swift */; };
-		287EB1341FF5773C00AFE22A /* NSManagedObjectContext+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB12A1FF5773A00AFE22A /* NSManagedObjectContext+Rx.swift */; };
-		287EB1351FF5773C00AFE22A /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB12C1FF5773B00AFE22A /* ErrorHandling.swift */; };
 		287EB1471FF57B5700AFE22A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB1381FF57B5300AFE22A /* BaseViewModel.swift */; };
 		287EB1491FF57B5700AFE22A /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB13C1FF57B5400AFE22A /* BaseCollectionView.swift */; };
 		287EB14A1FF57B5700AFE22A /* BaseSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EB13D1FF57B5400AFE22A /* BaseSectionModel.swift */; };
@@ -72,6 +65,13 @@
 		28894E5F1E676F5C005F8F05 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E5E1E676F5B005F8F05 /* Images.swift */; };
 		28894E611E676F68005F8F05 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E601E676F68005F8F05 /* Colors.swift */; };
 		28894E631E676F6F005F8F05 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28894E621E676F6F005F8F05 /* Fonts.swift */; };
+		288A1ACD20A1ED25000B0EE5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A1ACB20A1ED25000B0EE5 /* CoreDataStack.swift */; };
+		288A1ACE20A1ED25000B0EE5 /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A1ACC20A1ED25000B0EE5 /* Managed.swift */; };
+		288A1AD220A1ED31000B0EE5 /* FetchedResultsControllerControllerEntityObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A1ACF20A1ED31000B0EE5 /* FetchedResultsControllerControllerEntityObserver.swift */; };
+		288A1AD320A1ED31000B0EE5 /* FetchedResultsControllerSectionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A1AD020A1ED31000B0EE5 /* FetchedResultsControllerSectionObserver.swift */; };
+		288A1AD420A1ED31000B0EE5 /* NSManagedObjectContext+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A1AD120A1ED31000B0EE5 /* NSManagedObjectContext+Rx.swift */; };
+		288A1ADB20A1F36C000B0EE5 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A1ADA20A1F36C000B0EE5 /* ErrorHandling.swift */; };
+		288A1ADD20A1F37F000B0EE5 /* MoyaResponseParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A1ADC20A1F37F000B0EE5 /* MoyaResponseParsing.swift */; };
 		288AE3C22033829E001A8113 /* CreateCustomerCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AE3C02033829E001A8113 /* CreateCustomerCarCell.swift */; };
 		288AE3C32033829E001A8113 /* CreateCustomerCarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288AE3C12033829E001A8113 /* CreateCustomerCarCell.xib */; };
 		288AE3C6203382B9001A8113 /* CreateCustomerOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288AE3C4203382B9001A8113 /* CreateCustomerOrderCell.swift */; };
@@ -160,13 +160,6 @@
 		2846722D203CD5F80085C3CE /* CustomerDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailVM.swift; sourceTree = "<group>"; };
 		284B851B2035BEEF007BE2ED /* garagee-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "garagee-Bridging-Header.h"; sourceTree = "<group>"; };
 		284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomerDTO+ID.swift"; sourceTree = "<group>"; };
-		287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaResponseParsing.swift; sourceTree = "<group>"; };
-		287EB1251FF5773A00AFE22A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		287EB1261FF5773A00AFE22A /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
-		287EB1281FF5773A00AFE22A /* FetchedResultsControllerControllerEntityObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerControllerEntityObserver.swift; sourceTree = "<group>"; };
-		287EB1291FF5773A00AFE22A /* FetchedResultsControllerSectionObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerSectionObserver.swift; sourceTree = "<group>"; };
-		287EB12A1FF5773A00AFE22A /* NSManagedObjectContext+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Rx.swift"; sourceTree = "<group>"; };
-		287EB12C1FF5773B00AFE22A /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		287EB1381FF57B5300AFE22A /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		287EB13C1FF57B5400AFE22A /* BaseCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 		287EB13D1FF57B5400AFE22A /* BaseSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSectionModel.swift; sourceTree = "<group>"; };
@@ -195,6 +188,13 @@
 		28894E5E1E676F5B005F8F05 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		28894E601E676F68005F8F05 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		28894E621E676F6F005F8F05 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		288A1ACB20A1ED25000B0EE5 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		288A1ACC20A1ED25000B0EE5 /* Managed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
+		288A1ACF20A1ED31000B0EE5 /* FetchedResultsControllerControllerEntityObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerControllerEntityObserver.swift; sourceTree = "<group>"; };
+		288A1AD020A1ED31000B0EE5 /* FetchedResultsControllerSectionObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerSectionObserver.swift; sourceTree = "<group>"; };
+		288A1AD120A1ED31000B0EE5 /* NSManagedObjectContext+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Rx.swift"; sourceTree = "<group>"; };
+		288A1ADA20A1F36C000B0EE5 /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		288A1ADC20A1F37F000B0EE5 /* MoyaResponseParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaResponseParsing.swift; sourceTree = "<group>"; };
 		288AE3C02033829E001A8113 /* CreateCustomerCarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerCarCell.swift; sourceTree = "<group>"; };
 		288AE3C12033829E001A8113 /* CreateCustomerCarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCustomerCarCell.xib; sourceTree = "<group>"; };
 		288AE3C4203382B9001A8113 /* CreateCustomerOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomerOrderCell.swift; sourceTree = "<group>"; };
@@ -372,46 +372,10 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		287EB1201FF5773A00AFE22A /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				287EB1211FF5773A00AFE22A /* MoyaResponseParsing.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		287EB1241FF5773A00AFE22A /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				287EB1251FF5773A00AFE22A /* CoreDataStack.swift */,
-				287EB1261FF5773A00AFE22A /* Managed.swift */,
-				287EB1271FF5773A00AFE22A /* RxCoreData */,
-			);
-			name = CoreData;
-			path = "../../../ios-BlueBerryExampleProject/BlueBerryExampleProject/BlueBerryExampleProject/Managers/CoreData";
-			sourceTree = "<group>";
-		};
-		287EB1271FF5773A00AFE22A /* RxCoreData */ = {
-			isa = PBXGroup;
-			children = (
-				287EB1281FF5773A00AFE22A /* FetchedResultsControllerControllerEntityObserver.swift */,
-				287EB1291FF5773A00AFE22A /* FetchedResultsControllerSectionObserver.swift */,
-				287EB12A1FF5773A00AFE22A /* NSManagedObjectContext+Rx.swift */,
-			);
-			path = RxCoreData;
-			sourceTree = "<group>";
-		};
-		287EB12B1FF5773B00AFE22A /* ErrorHandling */ = {
-			isa = PBXGroup;
-			children = (
-				287EB12C1FF5773B00AFE22A /* ErrorHandling.swift */,
-			);
-			path = ErrorHandling;
-			sourceTree = "<group>";
-		};
 		287EB1361FF577E600AFE22A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				288A1AC920A1ECE8000B0EE5 /* CoreData */,
 				28F21746202F55A500D1AA85 /* Localization */,
 				28D739A0201A002900504F93 /* DependencyInjection */,
 				28D739962019F2DE00504F93 /* UI */,
@@ -497,6 +461,35 @@
 			path = Flows;
 			sourceTree = "<group>";
 		};
+		288A1AC920A1ECE8000B0EE5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				288A1ACB20A1ED25000B0EE5 /* CoreDataStack.swift */,
+				288A1ACC20A1ED25000B0EE5 /* Managed.swift */,
+				288A1ACA20A1ED01000B0EE5 /* RxCoreData */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		288A1ACA20A1ED01000B0EE5 /* RxCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				288A1ACF20A1ED31000B0EE5 /* FetchedResultsControllerControllerEntityObserver.swift */,
+				288A1AD020A1ED31000B0EE5 /* FetchedResultsControllerSectionObserver.swift */,
+				288A1AD120A1ED31000B0EE5 /* NSManagedObjectContext+Rx.swift */,
+			);
+			path = RxCoreData;
+			sourceTree = "<group>";
+		};
+		288A1ADE20A1F392000B0EE5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				288A1ADC20A1F37F000B0EE5 /* MoyaResponseParsing.swift */,
+				288A1ADA20A1F36C000B0EE5 /* ErrorHandling.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		288AE3BF20338277001A8113 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,11 +555,11 @@
 		28C60DB21E575C6A00D83C5B /* garagee */ = {
 			isa = PBXGroup;
 			children = (
+				288A1ADE20A1F392000B0EE5 /* Managers */,
 				282B8FBB1FFECB0B000495DB /* Application */,
 				281C5D471FF6D1190025538F /* generated */,
 				287EB1511FF57B7600AFE22A /* Extensions */,
 				287EB1361FF577E600AFE22A /* Common */,
-				28C60DE61E575CA200D83C5B /* Managers */,
 				28C60DE51E575C9E00D83C5B /* Model */,
 				28C60DE71E575CAC00D83C5B /* Resources */,
 				28C60DBD1E575C6A00D83C5B /* Assets.xcassets */,
@@ -609,16 +602,6 @@
 				281C5D751FF6DDF60025538F /* Part+CoreDataProperties.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		28C60DE61E575CA200D83C5B /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				287EB1241FF5773A00AFE22A /* CoreData */,
-				287EB12B1FF5773B00AFE22A /* ErrorHandling */,
-				287EB1201FF5773A00AFE22A /* Networking */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		28C60DE71E575CAC00D83C5B /* Resources */ = {
@@ -735,7 +718,6 @@
 				281C5D451FF6CF990025538F /* ShellScript */,
 				281C5D461FF6CF9B0025538F /* ShellScript */,
 				37C7581BEC5B37DC984FDC6A /* [CP] Embed Pods Frameworks */,
-				F321AF9F78B6AD1828ADF443 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -754,8 +736,6 @@
 				28C60DC31E575C6B00D83C5B /* Sources */,
 				28C60DC41E575C6B00D83C5B /* Frameworks */,
 				28C60DC51E575C6B00D83C5B /* Resources */,
-				9FB5F4C77B60FA8B29440C05 /* [CP] Embed Pods Frameworks */,
-				F7257F27D266D2EFED4D87D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -775,8 +755,6 @@
 				28C60DCE1E575C6B00D83C5B /* Sources */,
 				28C60DCF1E575C6B00D83C5B /* Frameworks */,
 				28C60DD01E575C6B00D83C5B /* Resources */,
-				ECBB04D3487A2AB5074E9AEC /* [CP] Embed Pods Frameworks */,
-				E6BA7EFD884189F6D6CE95FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1027,81 +1005,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9FB5F4C77B60FA8B29440C05 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-garageeTests/Pods-garageeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E6BA7EFD884189F6D6CE95FA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-garageeUITests/Pods-garageeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECBB04D3487A2AB5074E9AEC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-garageeUITests/Pods-garageeUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F321AF9F78B6AD1828ADF443 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-garagee/Pods-garagee-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F7257F27D266D2EFED4D87D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-garageeTests/Pods-garageeTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1114,15 +1017,17 @@
 				28894E631E676F6F005F8F05 /* Fonts.swift in Sources */,
 				281C5D7C1FF6DDF60025538F /* Part+CoreDataClass.swift in Sources */,
 				287EB14A1FF57B5700AFE22A /* BaseSectionModel.swift in Sources */,
+				288A1ADB20A1F36C000B0EE5 /* ErrorHandling.swift in Sources */,
 				281C5D5D1FF6D76D0025538F /* Part.dto.swift in Sources */,
 				28D7398A2019EEE400504F93 /* OrderCell.swift in Sources */,
 				287EB15E1FF57B7600AFE22A /* UICollectionView+ReusCell.swift in Sources */,
 				2846722C203CCA0B0085C3CE /* CreateCarFlow.swift in Sources */,
 				281C5D5A1FF6D76D0025538F /* Order.dto.swift in Sources */,
 				287EB1491FF57B5700AFE22A /* BaseCollectionView.swift in Sources */,
-				287EB1351FF5773C00AFE22A /* ErrorHandling.swift in Sources */,
 				28D7399B2019F4F200504F93 /* OrderCellVM.swift in Sources */,
 				28095DDD201B50D10064A42C /* CreatePartFlow.swift in Sources */,
+				288A1ACE20A1ED25000B0EE5 /* Managed.swift in Sources */,
+				288A1AD320A1ED31000B0EE5 /* FetchedResultsControllerSectionObserver.swift in Sources */,
 				283D6B0F20339B9900FE2CEE /* CustomerDetailVC.swift in Sources */,
 				287EB14E1FF57B5700AFE22A /* BaseViewController.swift in Sources */,
 				28D739A2201A002900504F93 /* Container.swift in Sources */,
@@ -1135,14 +1040,15 @@
 				28C60DB61E575C6A00D83C5B /* ViewController.swift in Sources */,
 				287F847E201F3AC00058503B /* CreatePartVM.swift in Sources */,
 				282B8FC01FFECC27000495DB /* PartsVC.swift in Sources */,
-				287EB1311FF5773C00AFE22A /* Managed.swift in Sources */,
 				28CF6D7320193547004314E9 /* CustomersFlow.swift in Sources */,
 				287EB1471FF57B5700AFE22A /* BaseViewModel.swift in Sources */,
 				282B8FC41FFECC40000495DB /* OrdersVC.swift in Sources */,
+				288A1ACD20A1ED25000B0EE5 /* CoreDataStack.swift in Sources */,
 				288AE3CD2033835D001A8113 /* CreateCustomerCarCellVM.swift in Sources */,
 				287FCB22200FFB3A0005461A /* GaragerStep.swift in Sources */,
 				284B853D2036D93C007BE2ED /* CustomerDTO+ID.swift in Sources */,
 				28D7398F2019EEFF00504F93 /* CustomersCell.swift in Sources */,
+				288A1AD220A1ED31000B0EE5 /* FetchedResultsControllerControllerEntityObserver.swift in Sources */,
 				287EB14C1FF57B5700AFE22A /* ReusableCollectionView.swift in Sources */,
 				28894E5F1E676F5C005F8F05 /* Images.swift in Sources */,
 				281C5D781FF6DDF60025538F /* Order+CoreDataClass.swift in Sources */,
@@ -1154,29 +1060,26 @@
 				281C5D5C1FF6D76D0025538F /* AutoEquatable.generated.swift in Sources */,
 				28C60DB41E575C6A00D83C5B /* AppDelegate.swift in Sources */,
 				281C5D771FF6DDF60025538F /* Order+CoreDataProperties.swift in Sources */,
-				287EB12D1FF5773C00AFE22A /* MoyaResponseParsing.swift in Sources */,
 				288AE3C22033829E001A8113 /* CreateCustomerCarCell.swift in Sources */,
 				281C5D511FF6D6FE0025538F /* SourceryProtocols.swift in Sources */,
 				282B8FC71FFEDD70000495DB /* TabCoordinator.swift in Sources */,
 				288AE3CB2033834B001A8113 /* CreateCustomerOrderCellVM.swift in Sources */,
-				287EB1331FF5773C00AFE22A /* FetchedResultsControllerSectionObserver.swift in Sources */,
 				287F847B201F31EE0058503B /* CreatePartVC.swift in Sources */,
 				281C5D5B1FF6D76D0025538F /* Car.dto.swift in Sources */,
 				287EB15F1FF57B7600AFE22A /* UITableView+ReusCell.swift in Sources */,
 				288AE3C6203382B9001A8113 /* CreateCustomerOrderCell.swift in Sources */,
 				287EB15D1FF57B7600AFE22A /* UICollectionView+Convenience.swift in Sources */,
-				287EB1321FF5773C00AFE22A /* FetchedResultsControllerControllerEntityObserver.swift in Sources */,
+				288A1AD420A1ED31000B0EE5 /* NSManagedObjectContext+Rx.swift in Sources */,
 				281C5D761FF6DDF60025538F /* Car+CoreDataClass.swift in Sources */,
 				287EB15B1FF57B7600AFE22A /* UIAlertController+Convenience.swift in Sources */,
 				28F21748202F55B600D1AA85 /* XIBLocalizable.swift in Sources */,
-				287EB1341FF5773C00AFE22A /* NSManagedObjectContext+Rx.swift in Sources */,
 				287FCB1D200FFA170005461A /* CustomersVM.swift in Sources */,
-				287EB1301FF5773C00AFE22A /* CoreDataStack.swift in Sources */,
 				28D7399D2019F50200504F93 /* CustomersCellVM.swift in Sources */,
 				2832ADB6203B6478009BE814 /* CreateCarVM.swift in Sources */,
 				281C5D581FF6D76D0025538F /* AutoHashable.generated.swift in Sources */,
 				28894E5D1E676AC9005F8F05 /* Storyboards.swift in Sources */,
 				28095DD9201B50BC0064A42C /* CreateOrderFlow.swift in Sources */,
+				288A1ADD20A1F37F000B0EE5 /* MoyaResponseParsing.swift in Sources */,
 				28C60DBC1E575C6A00D83C5B /* garagee.xcdatamodeld in Sources */,
 				28C339C5203321EA0076ABE4 /* CreateCustomerVM.swift in Sources */,
 				281C5D7D1FF6DDF60025538F /* Part+CoreDataProperties.swift in Sources */,

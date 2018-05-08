@@ -12,7 +12,7 @@ import RxSwift
 
 class CreateOrderFlow: Flow {
 
-	var root: UIViewController {
+	var root: Presentable {
 		return self.rootViewController
 	}
 
@@ -23,14 +23,14 @@ class CreateOrderFlow: Flow {
 	}
 
 	func navigate(to step: Step) -> NextFlowItems {
-		guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
+		guard let step = step as? GaragerStep else { return NextFlowItems.none }
 		switch step {
 		case .createCustomer:
 			return self.goToCreate()
 		case .createCustomerDone:
 			return self.dismiss()
 		default:
-			return NextFlowItems.stepNotHandled
+			return NextFlowItems.none
 		}
 	}
 

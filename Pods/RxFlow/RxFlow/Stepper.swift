@@ -13,7 +13,7 @@ private var subjectContext: UInt8 = 0
 
 /// a Stepper has only one purpose is: emits Steps that correspond to specific navigation states.
 /// The Step changes lead to navigation actions in the context of a specific Flow
-public protocol Stepper: Synchronizable {
+public protocol Stepper: class, Synchronizable {
 
     /// The Observable corresponding to the Steps triggered by the Stepper
     var steps: Observable<Step> { get }
@@ -50,7 +50,7 @@ final public class CompositeStepper: Stepper {
 /// a Stepper that triggers NoStep.
 final class NoneStepper: OneStepper {
     convenience init() {
-        self.init(withSingleStep: NoStep())
+        self.init(withSingleStep: NoneStep())
     }
 }
 
@@ -62,7 +62,7 @@ public extension Stepper {
             if let subject = objc_getAssociatedObject(self, &subjectContext) as? BehaviorRelay<Step> {
                 return subject
             }
-            let newSubject = BehaviorRelay<Step>(value: NoStep())
+            let newSubject = BehaviorRelay<Step>(value: NoneStep())
             objc_setAssociatedObject(self, &subjectContext, newSubject, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return newSubject
         }

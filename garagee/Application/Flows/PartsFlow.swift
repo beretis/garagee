@@ -13,7 +13,7 @@ import RxSwift
 class PartsFlow: Flow {
     
     
-    var root: UIViewController {
+    var root: Presentable {
         return self.rootViewController
     }
     
@@ -25,14 +25,14 @@ class PartsFlow: Flow {
     }
     
     func navigate(to step: Step) -> NextFlowItems {
-        guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
+        guard let step = step as? GaragerStep else { return NextFlowItems.none }
         switch step {
         case .parts:
             return navigateToParts()
 		case .createPart:
 			return navigateToCreatePartsFlow()
         default:
-            return NextFlowItems.stepNotHandled
+            return NextFlowItems.none
         }
     }
     

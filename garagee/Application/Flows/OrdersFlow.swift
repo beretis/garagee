@@ -13,7 +13,7 @@ import RxSwift
 class OrdersFlow: Flow {
     
     
-    var root: UIViewController {
+    var root: Presentable {
         return self.rootViewController
     }
     
@@ -25,12 +25,12 @@ class OrdersFlow: Flow {
     }
     
     func navigate(to step: Step) -> NextFlowItems {
-        guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
+        guard let step = step as? GaragerStep else { return NextFlowItems.none }
         switch step {
         case .orders:
             return navigateToOrders()
         default:
-            return NextFlowItems.stepNotHandled
+            return NextFlowItems.none
         }
     }
     

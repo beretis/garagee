@@ -12,7 +12,7 @@ import RxSwift
 
 class MainFlow: Flow {
 
-    var root: UIViewController {
+    var root: Presentable {
         return self.rootViewController
     }
     
@@ -24,12 +24,12 @@ class MainFlow: Flow {
     }
     
     func navigate(to step: Step) -> NextFlowItems {
-        guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
+        guard let step = step as? GaragerStep else { return NextFlowItems.none }
         switch step {
         case .dashboard(let index):
             return navigateToOrders(index: index)
         default:
-            return NextFlowItems.stepNotHandled
+            return NextFlowItems.none
         }
     }
     

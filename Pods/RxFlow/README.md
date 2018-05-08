@@ -17,10 +17,20 @@ You will find a very detail explanation of the whole project on my blog:
 - [RxFlow Part 2: In Practice](https://twittemb.github.io/swift/coordinator/reactive/rxflow/reactive%20programming/2017/12/09/rxflow-part-2-in-practice/)
 - [RxFlow Part 3: Tips and Tricks](https://twittemb.github.io/swift/coordinator/reactive/rxswift/reactive%20programming/rxflow/2017/12/22/rxflow-part-3-tips-and-tricks/)
 
+The Jazzy documentation can be seen here as well: [Documentation](http://community.rxswift.org/RxFlow/)
+
 # Migrating from v1.0.x to v1.1.0
-There are two major changes that must be taken care of if you want to use the v1.1 when coming from an older version:
+There are two major changes that must be taken care of if you want to use the v1.1.0 when coming from an older version:
 - **Flowable** has been replaced by **NextFlowItem**. It's exactly the same idea between those 2 names, but "Flowable" was too much related to a Protocol naming convention. The **Flow.navigate(to:)** function has to return a **NextFlowItems**, which is an enum that represents different possibilities of NextFlowItem (multiple, one, none, ...). Take a look at the code snippets below to see some examples.
 - In order to improve RxFlow consistency, it seemed obvious that a Flow that presents a UIViewController also **HAS** to dismiss it. In previous versions, a child Flow was dismissed by itself and not by the Flow that presented it. In the Demo Application you will find an example with the WishlistFlow dismissing the SettingsFlow for the **settingsDone** Step.
+
+# Migrating from v1.x.x to v1.3.0
+There are two major changes that must be taken care of if you want to use the v1.3.0 when coming from an older version:
+- **NextFlowItems.stepNotHandled** has been removed for the sake of simplicity. If you want a received step to have no effect at all in a **navigate(to:)** function, all you need to do is returning a **NextFlowItems.none** value. It means that no new **Stepper** will be registered in the Coordinator.
+- **NextFlowItems.end(withStepForParentFlow: Step)** allows to explicitly tell the Coordinator that you want to dismiss the current Flow. You can pass the Step you want the parent Flow to receive in its **navigate(to:)** function. That is where you will dismiss the child Flow root **Presentable**. It can be also used to pass data to the parent **
+Flow** thanks to an enum parameter (withStepForParentFlow could be something like: DemoStep.loginIsComplete(idUser: xxx))
+
+The DemoApp has been updated to implement those changes. It shows how to swap between 2 Flows attached to the root Window.
 
 # Navigation concerns
 Regarding navigation within an iOS application, two choices are available:
@@ -132,7 +142,7 @@ class WatchedFlow: Flow {
 
     func navigate(to step: Step) -> NextFlowItems {
 
-        guard let step = step as? DemoStep else { return NextFlowItems.stepIsNotHandled }
+        guard let step = step as? DemoStep else { return NextFlowItems.none }
 
         switch step {
 
@@ -143,7 +153,7 @@ class WatchedFlow: Flow {
         case .castPicked(let castId):
             return navigateToCastDetailScreen(with: castId)
         default:
-            return NextFlowItems.stepIsNotHandled
+            return NextFlowItems.none
     	}
     }
 
@@ -229,8 +239,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var coordinator = Coordinator()
     let movieService = MoviesService()
-    lazy var mainFlow = {
-    	return MainFlow(with: self.movieService)
+    lazy var appFlow = {
+    	return AppFlow(with: self.movieService)
     }()
 
     func application(_ application: UIApplication,
@@ -244,14 +254,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }).disposed(by: self.disposeBag)
 
         // when the MainFlow is ready to be displayed, we assign its root the the Window
-        Flows.whenReady(flow: mainFlow, block: { [unowned window] (flowRoot) in
+        Flows.whenReady(flow: appFlow, block: { [unowned window] (flowRoot) in
             window.rootViewController = flowRoot
         })
 
         // The navigation begins with the MainFlow at the apiKey Step
         // We could also have a specific Stepper that could decide if
         // the apiKey should be the fist step or not
-        coordinator.coordinate(flow: mainFlow, withStepper: OneStepper(withSingleStep: DemoStep.apiKey))
+        coordinator.coordinate(flow: appFlow, withStepper: OneStepper(withSingleStep: DemoStep.apiKey))
 
         return true
     }
@@ -262,7 +272,9 @@ As a bonus, **Coordinator** offers a Rx extension that allows you to track the n
 
 ## Demo Application
 A demo application is provided to illustrate the core mechanisms. Pretty much every kind of navigation is addressed. The app consists of:
-- a MainFlow that represents the main navigation section (a settings screen and then a dashboard composed of two screens in a tab bar controller)
+- an AppFlow that represents the main navigation. This Flow will handle the OnboardingFlow and the DashboardFlow
+- an OnBoardingFlow that represents a 2 steps onboarding wizard in a UINavigationController. It will only be displayed the first time the app is used
+- a DashboardFlow that handles the Tabbar for the WishlistFlow and the WatchedFlow
 - a WishlistFlow that represents a navigation stack of movies that you want to watch
 - a WatchedFlow that represents a navigation stack of movies that you've already seen
 - a SettingsFlow that represents the user's preferences in a master/detail presentation

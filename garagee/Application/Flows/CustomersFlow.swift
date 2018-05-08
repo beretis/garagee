@@ -13,7 +13,7 @@ import RxSwift
 class CustomersFlow: Flow {
     
     
-    var root: UIViewController {
+    var root: Presentable {
         return self.rootViewController
     }
     
@@ -25,7 +25,7 @@ class CustomersFlow: Flow {
     }
     
     func navigate(to step: Step) -> NextFlowItems {
-        guard let step = step as? GaragerStep else { return NextFlowItems.stepNotHandled }
+        guard let step = step as? GaragerStep else { return NextFlowItems.none }
         switch step {
         case .customers:
             return navigateToCustomers()
@@ -34,7 +34,7 @@ class CustomersFlow: Flow {
         case .customerDetail(let customer):
             return navigatoToCustomerDetail(customer)
         default:
-            return NextFlowItems.stepNotHandled
+            return NextFlowItems.none
         }
     }
     

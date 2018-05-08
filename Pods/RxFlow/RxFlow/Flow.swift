@@ -21,8 +21,8 @@ public protocol Flow: Presentable {
     /// - Returns: the NextFlowItems matching the Step. These NextFlowItems determines the next navigation steps (Presentables to display / Steppers to listen)
     func navigate (to step: Step) -> NextFlowItems
 
-    /// the UIViewController on which rely the navigation inside this Flow. This method must always give the same instance
-    var root: UIViewController { get }
+    /// the Presentable on which rely the navigation inside this Flow. This method must always give the same instance
+    var root: Presentable { get }
 }
 
 extension Flow {
@@ -59,7 +59,7 @@ public class Flows {
     public static func whenReady<RootType: UIViewController>(flows: [Flow],
                                                              block: @escaping ([RootType]) -> Void) {
         let flowObservables = flows.map { $0.rxFlowReady.asObservable() }
-        let roots = flows.flatMap { $0.root as? RootType }
+        let roots = flows.compactMap { $0.root as? RootType }
         guard roots.count == flows.count else {
             fatalError ("Type mismatch, Flows roots types do not match the types awaited in the block")
         }

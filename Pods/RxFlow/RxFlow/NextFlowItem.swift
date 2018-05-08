@@ -22,20 +22,14 @@ public struct NextFlowItem {
     /// Presentable is displayed
     let nextStepper: Stepper
 
-	/// Flag to determin if this flow is suppose to be root in UIWindow, this mechanism
-	/// proved support to swap flows. In future it would be good to have mechanism to
-	/// swap flows event in spacific place in hierarchy.
-	var isRootFlowItem: Bool
-
     /// Initialize a new NextFlowItem
     ///
     /// - Parameters:
     ///   - nextPresentable: the next presentable to be handled by the Coordinator
     ///   - nextStepper: the next Steper to be handled by the Coordinator
-    public init(nextPresentable presentable: Presentable, nextStepper stepper: Stepper, isRootFlowable isRoot: Bool = false) {
+    public init(nextPresentable presentable: Presentable, nextStepper stepper: Stepper) {
         self.nextPresentable = presentable
         self.nextStepper = stepper
-		self.isRootFlowItem = isRoot
     }
 }
 
@@ -44,15 +38,15 @@ public struct NextFlowItem {
 ///
 /// - multiple: a Flow will trigger several NextFlowItem at the same time for the same Step
 /// - one: a Flow will trigger only one NextFlowItem for a Step
+/// - end: a Flow will trigger a special NextFlowItem that represents the dismissal of this Flow
 /// - none: no further navigation will be triggered for a Step
-/// - stepNotHandled: the Step matches no NextFlowItem at all
 public enum NextFlowItems {
     /// a Flow will trigger several NextFlowItem at the same time for the same Step
     case multiple (flowItems: [NextFlowItem])
     /// a Flow will trigger only one NextFlowItem for a Step
     case one (flowItem: NextFlowItem)
+    /// a Flow will trigger a special NextFlowItem that represents the dismissal of this Flow
+    case end (withStepForParentFlow: Step)
     /// no further navigation will be triggered for a Step
     case none
-    /// the Step matches no NextFlowItem at all
-    case stepNotHandled
 }
