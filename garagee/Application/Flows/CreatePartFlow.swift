@@ -46,7 +46,7 @@ class CreatePartFlow: Flow {
         self.rootViewController.popToRootViewController(animated: false)
         let flow = MainFlow()
         let stepper = OneStepper.init(withSingleStep: GaragerStep.dashboard(index: 2))
-        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: stepper, isRootFlowable: true))
+        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: stepper))
     }
 
 }

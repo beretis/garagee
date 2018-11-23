@@ -12,11 +12,7 @@
 		28095DDD201B50D10064A42C /* CreatePartFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28095DDC201B50D10064A42C /* CreatePartFlow.swift */; };
 		281C5D511FF6D6FE0025538F /* SourceryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D501FF6D6FE0025538F /* SourceryProtocols.swift */; };
 		281C5D581FF6D76D0025538F /* AutoHashable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D521FF6D76D0025538F /* AutoHashable.generated.swift */; };
-		281C5D591FF6D76D0025538F /* Customer.dto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D531FF6D76D0025538F /* Customer.dto.swift */; };
-		281C5D5A1FF6D76D0025538F /* Order.dto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D541FF6D76D0025538F /* Order.dto.swift */; };
-		281C5D5B1FF6D76D0025538F /* Car.dto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D551FF6D76D0025538F /* Car.dto.swift */; };
 		281C5D5C1FF6D76D0025538F /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D561FF6D76D0025538F /* AutoEquatable.generated.swift */; };
-		281C5D5D1FF6D76D0025538F /* Part.dto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D571FF6D76D0025538F /* Part.dto.swift */; };
 		281C5D761FF6DDF60025538F /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D6E1FF6DDF50025538F /* Car+CoreDataClass.swift */; };
 		281C5D771FF6DDF60025538F /* Order+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D6F1FF6DDF50025538F /* Order+CoreDataProperties.swift */; };
 		281C5D781FF6DDF60025538F /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C5D701FF6DDF50025538F /* Order+CoreDataClass.swift */; };
@@ -134,11 +130,7 @@
 		28095DDC201B50D10064A42C /* CreatePartFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartFlow.swift; sourceTree = "<group>"; };
 		281C5D501FF6D6FE0025538F /* SourceryProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceryProtocols.swift; sourceTree = "<group>"; };
 		281C5D521FF6D76D0025538F /* AutoHashable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoHashable.generated.swift; sourceTree = "<group>"; };
-		281C5D531FF6D76D0025538F /* Customer.dto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.dto.swift; sourceTree = "<group>"; };
-		281C5D541FF6D76D0025538F /* Order.dto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.dto.swift; sourceTree = "<group>"; };
-		281C5D551FF6D76D0025538F /* Car.dto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.dto.swift; sourceTree = "<group>"; };
 		281C5D561FF6D76D0025538F /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
-		281C5D571FF6D76D0025538F /* Part.dto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Part.dto.swift; sourceTree = "<group>"; };
 		281C5D6E1FF6DDF50025538F /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
 		281C5D6F1FF6DDF50025538F /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		281C5D701FF6DDF50025538F /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -277,10 +269,6 @@
 			children = (
 				281C5D561FF6D76D0025538F /* AutoEquatable.generated.swift */,
 				281C5D521FF6D76D0025538F /* AutoHashable.generated.swift */,
-				281C5D551FF6D76D0025538F /* Car.dto.swift */,
-				281C5D531FF6D76D0025538F /* Customer.dto.swift */,
-				281C5D541FF6D76D0025538F /* Order.dto.swift */,
-				281C5D571FF6D76D0025538F /* Part.dto.swift */,
 				281C5D501FF6D6FE0025538F /* SourceryProtocols.swift */,
 				284B853C2036D93C007BE2ED /* CustomerDTO+ID.swift */,
 			);
@@ -1018,11 +1006,9 @@
 				281C5D7C1FF6DDF60025538F /* Part+CoreDataClass.swift in Sources */,
 				287EB14A1FF57B5700AFE22A /* BaseSectionModel.swift in Sources */,
 				288A1ADB20A1F36C000B0EE5 /* ErrorHandling.swift in Sources */,
-				281C5D5D1FF6D76D0025538F /* Part.dto.swift in Sources */,
 				28D7398A2019EEE400504F93 /* OrderCell.swift in Sources */,
 				287EB15E1FF57B7600AFE22A /* UICollectionView+ReusCell.swift in Sources */,
 				2846722C203CCA0B0085C3CE /* CreateCarFlow.swift in Sources */,
-				281C5D5A1FF6D76D0025538F /* Order.dto.swift in Sources */,
 				287EB1491FF57B5700AFE22A /* BaseCollectionView.swift in Sources */,
 				28D7399B2019F4F200504F93 /* OrderCellVM.swift in Sources */,
 				28095DDD201B50D10064A42C /* CreatePartFlow.swift in Sources */,
@@ -1054,7 +1040,6 @@
 				281C5D781FF6DDF60025538F /* Order+CoreDataClass.swift in Sources */,
 				287EB14B1FF57B5700AFE22A /* CellGenerics.swift in Sources */,
 				28D739992019F3D600504F93 /* BaseCell.swift in Sources */,
-				281C5D591FF6D76D0025538F /* Customer.dto.swift in Sources */,
 				28C339C8203321FC0076ABE4 /* CreateCustomerVC.swift in Sources */,
 				287EB1501FF57B5700AFE22A /* MBProgressHUD+ReactiveObserver.swift in Sources */,
 				281C5D5C1FF6D76D0025538F /* AutoEquatable.generated.swift in Sources */,
@@ -1065,7 +1050,6 @@
 				282B8FC71FFEDD70000495DB /* TabCoordinator.swift in Sources */,
 				288AE3CB2033834B001A8113 /* CreateCustomerOrderCellVM.swift in Sources */,
 				287F847B201F31EE0058503B /* CreatePartVC.swift in Sources */,
-				281C5D5B1FF6D76D0025538F /* Car.dto.swift in Sources */,
 				287EB15F1FF57B7600AFE22A /* UITableView+ReusCell.swift in Sources */,
 				288AE3C6203382B9001A8113 /* CreateCustomerOrderCell.swift in Sources */,
 				287EB15D1FF57B7600AFE22A /* UICollectionView+Convenience.swift in Sources */,

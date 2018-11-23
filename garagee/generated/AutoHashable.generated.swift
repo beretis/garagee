@@ -44,49 +44,5 @@ fileprivate func hashDictionary<T: Hashable, U: Hashable>(_ dictionary: [T: U]?)
 
 
 // MARK: - AutoHashable for classes, protocols, structs
-// MARK: - CarDTO AutoHashable
-extension CarDTO: Hashable {
-    public var hashValue: Int {
-        return combineHashes([
-            brand.hashValue,
-            id.hashValue,
-            milage.hashValue,
-            model.hashValue,
-            fuel.hashValue,
-            0])
-    }
-}
-// MARK: - CustomerDTO AutoHashable
-extension CustomerDTO: Hashable {
-    public var hashValue: Int {
-        return combineHashes([
-            id.hashValue,
-            0])
-    }
-}
-// MARK: - OrderDTO AutoHashable
-extension OrderDTO: Hashable {
-    public var hashValue: Int {
-        return combineHashes([
-            price.hashValue,
-            id.hashValue,
-            name.hashValue,
-            repeatIntervalDays.hashValue,
-            subject.hashValue,
-            0])
-    }
-}
-// MARK: - PartDTO AutoHashable
-extension PartDTO: Hashable {
-    public var hashValue: Int {
-        return combineHashes([
-            brand.hashValue,
-            code.hashValue,
-            name.hashValue,
-            price.hashValue,
-            warrantyDays.hashValue,
-            0])
-    }
-}
 
 // MARK: - AutoHashable for Enums

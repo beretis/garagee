@@ -47,14 +47,14 @@ class CustomersFlow: Flow {
 
 	func navigatoToCreateCustomer() -> NextFlowItems {
 		let flow = CreateCustomerFlow()
-		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createCustomer), isRootFlowable: true))
+		return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createCustomer)))
 	}
     
     func navigatoToCustomerDetail(_ customer: Customer) -> NextFlowItems {
 //        let vm =
         let customerDetailVM = CustomerDetailVM(customer: customer);
         let customerDetailVC = CustomerDetailVC(viewModel: customerDetailVM, nibName: "CustomerDetailVC", bundle: nil)
-        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: flow, nextStepper: OneStepper(withSingleStep: GaragerStep.createCustomer), isRootFlowable: true))
+        return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: customerDetailVC, nextStepper: OneStepper(withSingleStep: GaragerStep.createCustomer)))
     }
 }
 

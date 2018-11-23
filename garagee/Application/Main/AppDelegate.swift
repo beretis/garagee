@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         coordinator.coordinate(flow: mainFlow, withStepper: OneStepper(withSingleStep: GaragerStep.dashboard(index: 0)))
-		window.rootViewController = coordinator.container
+//        window.rootViewController = coordinator.container
 
 
 		UINavigationBar.appearance().barTintColor = .white

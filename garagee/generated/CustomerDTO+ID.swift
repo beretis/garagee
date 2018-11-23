@@ -1,36 +1,36 @@
+////
+////  CustomerDTO+ID.swift
+////  garagee
+////
+////  Created by Jozef Matus on 16/02/2018.
+////  Copyright © 2018 Jozef Matus. All rights reserved.
+////
 //
-//  CustomerDTO+ID.swift
-//  garagee
+//import Foundation
+//import Localize_Swift
 //
-//  Created by Jozef Matus on 16/02/2018.
-//  Copyright © 2018 Jozef Matus. All rights reserved.
+//public extension CustomerDTO {
 //
-
-import Foundation
-import Localize_Swift
-
-public extension CustomerDTO {
-
-	static func createId(ForName name: String?, surname: String?, email: String?, phone: String?) throws -> String {
-		let name = name ?? ""
-		let surname = surname ?? ""
-		let email = email ?? ""
-		let phone = phone ?? ""
-		let idString = "\(name)\(surname)\(email)\(phone)"
-		guard idString.count > 0 else { throw AppError.unexpectedError(message: "error_customer_id_stringTooShort_md5".localized()) }
-		return String.md5(idString)
-	}
-
-}
-
-public extension CustomerDTO {
-	public func getContact() -> String {
-		if self.phoneNumber != nil {
-			return self.phoneNumber!
-		}
-		if self.email != nil {
-			return self.email!
-		}
-		return "unknown"
-	}
-}
+//    static func createId(ForName name: String?, surname: String?, email: String?, phone: String?) throws -> String {
+//        let name = name ?? ""
+//        let surname = surname ?? ""
+//        let email = email ?? ""
+//        let phone = phone ?? ""
+//        let idString = "\(name)\(surname)\(email)\(phone)"
+//        guard idString.count > 0 else { throw AppError.unexpectedError(message: "error_customer_id_stringTooShort_md5".localized()) }
+//        return String.md5(idString)
+//    }
+//
+//}
+//
+//public extension CustomerDTO {
+//    public func getContact() -> String {
+//        if self.phoneNumber != nil {
+//            return self.phoneNumber!
+//        }
+//        if self.email != nil {
+//            return self.email!
+//        }
+//        return "unknown"
+//    }
+//}
